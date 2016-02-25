@@ -12,6 +12,17 @@
 		9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9295FBC81C7E86FE007B4B95 /* Main.storyboard */; };
 		9295FBCC1C7E86FE007B4B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */; };
 		9295FBCF1C7E86FE007B4B95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9295FBCD1C7E86FE007B4B95 /* LaunchScreen.storyboard */; };
+		9295FBD71C7E882D007B4B95 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBD61C7E882D007B4B95 /* Parse.framework */; };
+		9295FBDA1C7E884A007B4B95 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBD91C7E884A007B4B95 /* Bolts.framework */; };
+		9295FBDC1C7E8886007B4B95 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBDB1C7E8886007B4B95 /* AudioToolbox.framework */; };
+		9295FBDE1C7E888D007B4B95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBDD1C7E888D007B4B95 /* CoreGraphics.framework */; };
+		9295FBE01C7E8895007B4B95 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBDF1C7E8895007B4B95 /* CoreLocation.framework */; };
+		9295FBE21C7E88A1007B4B95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBE11C7E88A1007B4B95 /* QuartzCore.framework */; };
+		9295FBE41C7E88A7007B4B95 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBE31C7E88A7007B4B95 /* Security.framework */; };
+		9295FBE61C7E88AE007B4B95 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBE51C7E88AE007B4B95 /* StoreKit.framework */; };
+		9295FBE81C7E88B8007B4B95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBE71C7E88B8007B4B95 /* SystemConfiguration.framework */; };
+		9295FBEA1C7E88C1007B4B95 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBE91C7E88C1007B4B95 /* libz.tbd */; };
+		9295FBEC1C7E88CD007B4B95 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBEB1C7E88CD007B4B95 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +33,17 @@
 		9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9295FBCE1C7E86FE007B4B95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9295FBD01C7E86FE007B4B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9295FBD61C7E882D007B4B95 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		9295FBD91C7E884A007B4B95 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		9295FBDB1C7E8886007B4B95 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9295FBDD1C7E888D007B4B95 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9295FBDF1C7E8895007B4B95 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9295FBE11C7E88A1007B4B95 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9295FBE31C7E88A7007B4B95 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9295FBE51C7E88AE007B4B95 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9295FBE71C7E88B8007B4B95 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9295FBE91C7E88C1007B4B95 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9295FBEB1C7E88CD007B4B95 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +51,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9295FBEC1C7E88CD007B4B95 /* libsqlite3.tbd in Frameworks */,
+				9295FBEA1C7E88C1007B4B95 /* libz.tbd in Frameworks */,
+				9295FBE81C7E88B8007B4B95 /* SystemConfiguration.framework in Frameworks */,
+				9295FBE61C7E88AE007B4B95 /* StoreKit.framework in Frameworks */,
+				9295FBE41C7E88A7007B4B95 /* Security.framework in Frameworks */,
+				9295FBE21C7E88A1007B4B95 /* QuartzCore.framework in Frameworks */,
+				9295FBE01C7E8895007B4B95 /* CoreLocation.framework in Frameworks */,
+				9295FBDE1C7E888D007B4B95 /* CoreGraphics.framework in Frameworks */,
+				9295FBDC1C7E8886007B4B95 /* AudioToolbox.framework in Frameworks */,
+				9295FBD71C7E882D007B4B95 /* Parse.framework in Frameworks */,
+				9295FBDA1C7E884A007B4B95 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +73,7 @@
 			children = (
 				9295FBC31C7E86FE007B4B95 /* Chacha */,
 				9295FBC21C7E86FE007B4B95 /* Products */,
+				9295FBD81C7E8833007B4B95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +95,25 @@
 				9295FBCD1C7E86FE007B4B95 /* LaunchScreen.storyboard */,
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
 			);
+			path = Chacha;
+			sourceTree = "<group>";
+		};
+		9295FBD81C7E8833007B4B95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9295FBEB1C7E88CD007B4B95 /* libsqlite3.tbd */,
+				9295FBE91C7E88C1007B4B95 /* libz.tbd */,
+				9295FBDB1C7E8886007B4B95 /* AudioToolbox.framework */,
+				9295FBDF1C7E8895007B4B95 /* CoreLocation.framework */,
+				9295FBE11C7E88A1007B4B95 /* QuartzCore.framework */,
+				9295FBE31C7E88A7007B4B95 /* Security.framework */,
+				9295FBE51C7E88AE007B4B95 /* StoreKit.framework */,
+				9295FBD91C7E884A007B4B95 /* Bolts.framework */,
+				9295FBE71C7E88B8007B4B95 /* SystemConfiguration.framework */,
+				9295FBDD1C7E888D007B4B95 /* CoreGraphics.framework */,
+				9295FBD61C7E882D007B4B95 /* Parse.framework */,
+			);
+			name = Frameworks;
 			path = Chacha;
 			sourceTree = "<group>";
 		};
@@ -247,6 +300,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Chacha",
+				);
 				INFOPLIST_FILE = Chacha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dcj.Chong500Productions.Chacha;
@@ -258,6 +315,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Chacha",
+				);
 				INFOPLIST_FILE = Chacha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dcj.Chong500Productions.Chacha;
@@ -284,6 +345,7 @@
 				9295FBD51C7E86FE007B4B95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
