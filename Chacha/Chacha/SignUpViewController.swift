@@ -13,7 +13,8 @@ class SignUpViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(red: 71.0 / 255, green: 175.0 / 255, blue: 169.0 / 255, alpha: 1.0)
+        self.view.backgroundColor = ChachaTeal
+        
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +23,10 @@ class SignUpViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+//    override func prefersStatusBarHidden() -> Bool {
+//        return true;
+//    }
     
 
     /*
