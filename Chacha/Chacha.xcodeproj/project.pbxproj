@@ -88,12 +88,10 @@
 		9295FBC31C7E86FE007B4B95 /* Chacha */ = {
 			isa = PBXGroup;
 			children = (
-				9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */,
-				9295FBC61C7E86FE007B4B95 /* ViewController.swift */,
-				9295FBC81C7E86FE007B4B95 /* Main.storyboard */,
-				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
-				9295FBCD1C7E86FE007B4B95 /* LaunchScreen.storyboard */,
+				9295FBF01C7E9783007B4B95 /* LogIn */,
+				9295FBEF1C7E8BAD007B4B95 /* Main */,
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
+				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
 			);
 			path = Chacha;
 			sourceTree = "<group>";
@@ -115,6 +113,24 @@
 			);
 			name = Frameworks;
 			path = Chacha;
+			sourceTree = "<group>";
+		};
+		9295FBEF1C7E8BAD007B4B95 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9295FBC61C7E86FE007B4B95 /* ViewController.swift */,
+				9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */,
+				9295FBCD1C7E86FE007B4B95 /* LaunchScreen.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9295FBF01C7E9783007B4B95 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				9295FBC81C7E86FE007B4B95 /* Main.storyboard */,
+			);
+			name = LogIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
