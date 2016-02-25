@@ -29,13 +29,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svF-qD-I2P" userLabel="Background">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
-                                                    <color key="backgroundColor" red="0.2784313725" green="0.68627450980000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bi-QA-Rdw">
                                                     <rect key="frame" x="267" y="8" width="45" height="30"/>
                                                     <constraints>
@@ -302,7 +295,7 @@ AVATAR</string>
                                                 <constraint firstItem="pNc-vU-w0c" firstAttribute="bottom" secondItem="ofb-fA-Fc3" secondAttribute="bottom" id="yCy-J8-RWS"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.28235294117647058" green="0.68627450980392157" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="350" id="xI0-15-dYF">
                                         <rect key="frame" x="0.0" y="351" width="320" height="350"/>
@@ -459,7 +452,7 @@ AVATAR</string>
                                                 <constraint firstItem="sxN-VQ-WeJ" firstAttribute="top" secondItem="X3r-pf-Tx6" secondAttribute="top" constant="86" id="wff-eS-8SY"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.27843137254901962" green="0.68627450980392157" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

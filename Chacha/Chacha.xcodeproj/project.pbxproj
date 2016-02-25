@@ -23,6 +23,7 @@
 		9295FBE81C7E88B8007B4B95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBE71C7E88B8007B4B95 /* SystemConfiguration.framework */; };
 		9295FBEA1C7E88C1007B4B95 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBE91C7E88C1007B4B95 /* libz.tbd */; };
 		9295FBEC1C7E88CD007B4B95 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9295FBEB1C7E88CD007B4B95 /* libsqlite3.tbd */; };
+		9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBF51C7E9FF7007B4B95 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9295FBE71C7E88B8007B4B95 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9295FBE91C7E88C1007B4B95 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		9295FBEB1C7E88CD007B4B95 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9295FBF51C7E9FF7007B4B95 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9295FBC81C7E86FE007B4B95 /* Main.storyboard */,
+				9295FBF51C7E9FF7007B4B95 /* SignUpViewController.swift */,
 			);
 			name = LogIn;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */,
 				9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */,
 			);
