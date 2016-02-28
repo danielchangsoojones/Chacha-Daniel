@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Sign Up View Controller-->
+        <!--View Controller-->
         <scene sceneID="YrK-l1-AJ7">
             <objects>
-                <viewController id="I9A-bp-1uT" customClass="SignUpViewController" customModule="Chacha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I9A-bp-1uT" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pBx-uz-7De"/>
                         <viewControllerLayoutGuide type="bottom" id="T0R-ov-iaI"/>
@@ -328,7 +328,7 @@ AVATAR</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXX-vC-b0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983.5" y="990.5"/>
+            <point key="canvasLocation" x="-19.5" y="1109.5"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="bDP-Mn-1Dt">
@@ -428,6 +428,9 @@ AVATAR</string>
                                                             <state key="normal">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="tapAvatar:" destination="KTL-TT-r4Z" eventType="touchUpInside" id="WGR-OD-dcC"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.83529411760000005" green="0.93333333330000001" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -660,24 +663,9 @@ AVATAR</string>
                                                     <state key="highlighted">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vju-Ge-XJd">
-                                                    <rect key="frame" x="159" y="2" width="145" height="30"/>
-                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="7jt-l2-BGL"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                    <state key="normal" title="Female">
-                                                        <color key="titleColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="titleShadowColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <state key="selected">
-                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
+                                                    <connections>
+                                                        <action selector="tapMale:" destination="KTL-TT-r4Z" eventType="touchUpInside" id="PgW-Lf-Qa3"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfA-Rs-eWL">
                                                     <rect key="frame" x="16" y="36" width="288" height="45"/>
@@ -691,6 +679,9 @@ AVATAR</string>
                                                         <color key="titleColor" red="0.28235294119999998" green="0.68627450980000004" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="tapSignUp:" destination="KTL-TT-r4Z" eventType="touchUpInside" id="spi-dB-Dtc"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-XM-NX7">
                                                     <rect key="frame" x="16" y="120" width="288" height="45"/>
@@ -740,9 +731,38 @@ AVATAR</string>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Dn7-iT-frj">
+                                                    <rect key="frame" x="105" y="49" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="eQj-uC-Lff"/>
+                                                        <constraint firstAttribute="width" constant="20" id="uuk-6H-1FR"/>
+                                                    </constraints>
+                                                </activityIndicatorView>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vju-Ge-XJd">
+                                                    <rect key="frame" x="159" y="2" width="145" height="30"/>
+                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="7jt-l2-BGL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <state key="normal" title="Female">
+                                                        <color key="titleColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <state key="selected">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="tapFemale:" destination="KTL-TT-r4Z" eventType="touchUpInside" id="XjI-uU-2yW"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7B3-j5-14A" firstAttribute="leading" secondItem="0O9-rH-67S" secondAttribute="trailing" constant="-1" id="221-Jj-5uI"/>
+                                                <constraint firstItem="Dn7-iT-frj" firstAttribute="centerY" secondItem="lfA-Rs-eWL" secondAttribute="centerY" id="4LI-v4-4Bc"/>
                                                 <constraint firstItem="wfG-tN-3VE" firstAttribute="top" secondItem="PED-h7-xtZ" secondAttribute="bottom" constant="-8" id="5Mq-FD-bA2"/>
                                                 <constraint firstItem="wfG-tN-3VE" firstAttribute="centerX" secondItem="X3r-pf-Tx6" secondAttribute="centerX" id="79X-Oz-laB"/>
                                                 <constraint firstItem="Vju-Ge-XJd" firstAttribute="top" secondItem="X3r-pf-Tx6" secondAttribute="top" constant="2" id="8mZ-co-4QG"/>
@@ -754,6 +774,7 @@ AVATAR</string>
                                                 <constraint firstItem="0O9-rH-67S" firstAttribute="leading" secondItem="X3r-pf-Tx6" secondAttribute="leading" constant="16" id="NIK-F3-25p"/>
                                                 <constraint firstItem="1Ft-XM-NX7" firstAttribute="top" secondItem="QRS-Dy-2tU" secondAttribute="bottom" constant="8" id="SNa-Cc-A4q"/>
                                                 <constraint firstItem="PED-h7-xtZ" firstAttribute="centerX" secondItem="X3r-pf-Tx6" secondAttribute="centerX" id="U6f-JJ-R7Z"/>
+                                                <constraint firstItem="lfA-Rs-eWL" firstAttribute="leading" secondItem="Dn7-iT-frj" secondAttribute="trailing" constant="-109" id="ZeK-4m-IXE"/>
                                                 <constraint firstItem="lfA-Rs-eWL" firstAttribute="top" secondItem="Vju-Ge-XJd" secondAttribute="bottom" constant="4" id="dll-PG-8UP"/>
                                                 <constraint firstItem="Vju-Ge-XJd" firstAttribute="leading" secondItem="7B3-j5-14A" secondAttribute="trailing" id="e97-IH-vQO"/>
                                                 <constraint firstItem="7B3-j5-14A" firstAttribute="centerX" secondItem="X3r-pf-Tx6" secondAttribute="centerX" id="j2d-Yx-HJy"/>
@@ -783,6 +804,23 @@ AVATAR</string>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="700"/>
+                    <connections>
+                        <outlet property="avatarPlusLabel" destination="I60-Hu-kcF" id="abq-Rx-8bb"/>
+                        <outlet property="avatarView" destination="ofb-fA-Fc3" id="68z-2X-ibP"/>
+                        <outlet property="otherView" destination="E4y-ih-5vx" id="CID-FC-6G3"/>
+                        <outlet property="theAvatarButton" destination="1s6-Mt-v3j" id="3nc-xk-549"/>
+                        <outlet property="theAvatarImage" destination="1om-vX-004" id="aBj-dd-JOb"/>
+                        <outlet property="theBirthDate" destination="6jK-GF-X8g" id="9m2-aK-ONc"/>
+                        <outlet property="theEmail" destination="g8h-Jh-5ab" id="KZa-uj-TNK"/>
+                        <outlet property="theFemaleButton" destination="Vju-Ge-XJd" id="Sas-fj-t2H"/>
+                        <outlet property="theFullName" destination="aQg-rF-5DO" id="ldI-7f-KkS"/>
+                        <outlet property="theMaleButton" destination="0O9-rH-67S" id="Vqr-xp-w5l"/>
+                        <outlet property="thePassword" destination="Wlg-8Q-1sl" id="uaA-Kh-SFr"/>
+                        <outlet property="thePasswordConfirm" destination="Ufl-mh-tAX" id="skG-Tr-4gf"/>
+                        <outlet property="theSpinner" destination="Dn7-iT-frj" id="eHr-Bd-3UA"/>
+                        <outlet property="theUsername" destination="Gru-Vu-ifB" id="Dpl-0z-gYW"/>
+                        <outlet property="usernameView" destination="pNc-vU-w0c" id="Avf-Bt-pta"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gss-Aq-TSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
