@@ -30,6 +30,7 @@
 		92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70281C839C0000E3A7B6 /* DateExtensions.swift */; };
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
 		92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */; };
+		92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		92CE70281C839C0000E3A7B6 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = ../DateExtensions.swift; sourceTree = "<group>"; };
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iLikeyDateTextField.swift; sourceTree = "<group>"; };
+		92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				9295FBC81C7E86FE007B4B95 /* Main.storyboard */,
 				9295FBF51C7E9FF7007B4B95 /* SignUpViewController.swift */,
+				92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */,
 			);
 			name = LogIn;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */,
 				9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */,
 				9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */,
+				92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */,
 				92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

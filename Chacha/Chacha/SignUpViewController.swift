@@ -53,6 +53,11 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
         navigationItem.rightBarButtonItem?.setTitleTextAttributes(
             [NSFontAttributeName: UIFont(name: "Lucida Grande", size: 9)!], forState: .Normal)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
