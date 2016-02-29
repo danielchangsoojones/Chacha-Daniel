@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 //Custom colors
-let ChachaTeal = UIColor(red: 72.0 / 255, green: 175.0 / 255, blue: 169.0 / 255, alpha: 1.0)
+let ChachaTeal = UIColor(rgba: "#5ABBB6")
 let iLikeyPink =  UIColor(rgba: "#E91E63")
 let iLikeyPinkLight = UIColor(rgba: "#FA6FEB")
 let iLikeyPinkDark =  UIColor(rgba: "#cc0066")

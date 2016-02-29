@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Parse
+import SCLAlertView
 
 class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -58,7 +59,7 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -86,8 +87,10 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
         if (theBirthDate.text != "") {
             newUser.birthDate = datePicker.date
         }
-        let file = PFFile(name: "avatar.jpg",data: UIImageJPEGRepresentation(theAvatarImage.image!, 0.6)!)
-        newUser.avatarImage = file
+        if let image = theAvatarImage.image {
+            let file = PFFile(name: "avatar.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
+            newUser.avatarImage = file
+        }
         newUser.gender? = theGenderText
         self.view.userInteractionEnabled = false
         theSpinner.startAnimating()
@@ -107,7 +110,6 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
                     let code = error!.code
                     if code == PFErrorCode.ErrorInvalidEmailAddress.rawValue {
                         //iLikeyAlert(self, title: "", message: "Please enter a valid email address.", completion: nil)
-                        
                     }
                     else if code == PFErrorCode.ErrorUsernameTaken.rawValue {
                         //iLikeyAlert(self, title: "Problem Signing Up", message: "Username not available.", completion: nil)

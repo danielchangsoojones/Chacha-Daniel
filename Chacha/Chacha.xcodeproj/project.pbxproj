@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2061C84BEBF00313AB7 /* Alert.swift */; };
 		9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */; };
 		9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC61C7E86FE007B4B95 /* ViewController.swift */; };
 		9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9295FBC81C7E86FE007B4B95 /* Main.storyboard */; };
@@ -31,10 +32,13 @@
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
 		92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */; };
 		92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */; };
-		92CE70331C83FE3B00E3A7B6 /* PersonalFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70321C83FE3B00E3A7B6 /* PersonalFeedViewController.swift */; };
+		92CE70361C83FF4200E3A7B6 /* QuestionFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CE70351C83FF4200E3A7B6 /* QuestionFeed.storyboard */; };
+		92CE703A1C8400A200E3A7B6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70391C8400A200E3A7B6 /* FeedViewController.swift */; };
+		F74FA308D54281B0CF512C21 /* Pods_Chacha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E591D4BDBA0D2B57591ED3EB /* Pods_Chacha.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9238E2061C84BEBF00313AB7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		9295FBC11C7E86FE007B4B95 /* Chacha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chacha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9295FBC61C7E86FE007B4B95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +65,11 @@
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iLikeyDateTextField.swift; sourceTree = "<group>"; };
 		92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		92CE70321C83FE3B00E3A7B6 /* PersonalFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeedViewController.swift; sourceTree = "<group>"; };
+		92CE70351C83FF4200E3A7B6 /* QuestionFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuestionFeed.storyboard; sourceTree = "<group>"; };
+		92CE70391C8400A200E3A7B6 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		CEC0C52EB7CE8FDB4BE73F2A /* Pods-Chacha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chacha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chacha/Pods-Chacha.debug.xcconfig"; sourceTree = "<group>"; };
+		E591D4BDBA0D2B57591ED3EB /* Pods_Chacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F928ED878B9E405364379687 /* Pods-Chacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chacha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chacha/Pods-Chacha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 				9295FBDC1C7E8886007B4B95 /* AudioToolbox.framework in Frameworks */,
 				9295FBD71C7E882D007B4B95 /* Parse.framework in Frameworks */,
 				9295FBDA1C7E884A007B4B95 /* Bolts.framework in Frameworks */,
+				F74FA308D54281B0CF512C21 /* Pods_Chacha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +101,7 @@
 				9295FBC31C7E86FE007B4B95 /* Chacha */,
 				9295FBC21C7E86FE007B4B95 /* Products */,
 				9295FBD81C7E8833007B4B95 /* Frameworks */,
+				B4F17A1938F131CF1B4255DB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,7 +122,7 @@
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
 				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
 				9295FBFB1C838DFD007B4B95 /* Utils */,
-				92CE70321C83FE3B00E3A7B6 /* PersonalFeedViewController.swift */,
+				92CE70341C83FED800E3A7B6 /* Question Feeds */,
 			);
 			path = Chacha;
 			sourceTree = "<group>";
@@ -131,6 +141,7 @@
 				9295FBE71C7E88B8007B4B95 /* SystemConfiguration.framework */,
 				9295FBDD1C7E888D007B4B95 /* CoreGraphics.framework */,
 				9295FBD61C7E882D007B4B95 /* Parse.framework */,
+				E591D4BDBA0D2B57591ED3EB /* Pods_Chacha.framework */,
 			);
 			name = Frameworks;
 			path = Chacha;
@@ -164,6 +175,7 @@
 				9295FBF91C838DE3007B4B95 /* UIColorExtension.swift */,
 				92CE70281C839C0000E3A7B6 /* DateExtensions.swift */,
 				92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */,
+				9238E2061C84BEBF00313AB7 /* Alert.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -176,6 +188,24 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		92CE70341C83FED800E3A7B6 /* Question Feeds */ = {
+			isa = PBXGroup;
+			children = (
+				92CE70351C83FF4200E3A7B6 /* QuestionFeed.storyboard */,
+				92CE70391C8400A200E3A7B6 /* FeedViewController.swift */,
+			);
+			name = "Question Feeds";
+			sourceTree = "<group>";
+		};
+		B4F17A1938F131CF1B4255DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEC0C52EB7CE8FDB4BE73F2A /* Pods-Chacha.debug.xcconfig */,
+				F928ED878B9E405364379687 /* Pods-Chacha.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9295FBD31C7E86FE007B4B95 /* Build configuration list for PBXNativeTarget "Chacha" */;
 			buildPhases = (
+				941C5798DBF2ACC1AEB4F2C6 /* Check Pods Manifest.lock */,
 				9295FBBD1C7E86FE007B4B95 /* Sources */,
 				9295FBBE1C7E86FE007B4B95 /* Frameworks */,
 				9295FBBF1C7E86FE007B4B95 /* Resources */,
+				5F5187C6EEFAD391F6786EE3 /* Embed Pods Frameworks */,
+				2CD3B1E3F30B95BE109B618C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,11 +269,60 @@
 			files = (
 				9295FBCF1C7E86FE007B4B95 /* LaunchScreen.storyboard in Resources */,
 				9295FBCC1C7E86FE007B4B95 /* Assets.xcassets in Resources */,
+				92CE70361C83FF4200E3A7B6 /* QuestionFeed.storyboard in Resources */,
 				9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CD3B1E3F30B95BE109B618C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chacha/Pods-Chacha-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F5187C6EEFAD391F6786EE3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chacha/Pods-Chacha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		941C5798DBF2ACC1AEB4F2C6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9295FBBD1C7E86FE007B4B95 /* Sources */ = {
@@ -252,9 +334,10 @@
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
-				92CE70331C83FE3B00E3A7B6 /* PersonalFeedViewController.swift in Sources */,
 				9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */,
+				9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */,
 				9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */,
+				92CE703A1C8400A200E3A7B6 /* FeedViewController.swift in Sources */,
 				9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */,
 				92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */,
 				92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */,
@@ -366,6 +449,7 @@
 		};
 		9295FBD41C7E86FE007B4B95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC0C52EB7CE8FDB4BE73F2A /* Pods-Chacha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -381,6 +465,7 @@
 		};
 		9295FBD51C7E86FE007B4B95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F928ED878B9E405364379687 /* Pods-Chacha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
