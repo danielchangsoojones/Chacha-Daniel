@@ -82,15 +82,21 @@ class LogInViewController: UIViewController {
     func allValidates() -> Bool
     {
         if theUserName.text!.isEmpty {
-//            iLikeyAlert(self, title: "", message: "Username is required") {
-//                self.theUserName.becomeFirstResponder()
-//            }
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.theUserName.becomeFirstResponder()
+            })
+            alert.createAlert("Username is Required", subtitle: "Please enter your username.", closeButtonTitle: "", type: .Error)
             return false
         }
         else if thePassword.text!.isEmpty {
-//            iLikeyAlert(self, title: "", message: "Password is required") {
-//                self.thePassword.becomeFirstResponder()
-//            }
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.thePassword.becomeFirstResponder()
+            })
+            alert.createAlert("Password is Required", subtitle: "Please enter your password.", closeButtonTitle: "", type: .Error)
             return false
         }
         else {
@@ -109,10 +115,15 @@ class LogInViewController: UIViewController {
             if let error = error {
                 let code = error.code
                 if code == PFErrorCode.ErrorObjectNotFound.rawValue {
-                    //iLikeyAlert(self, title: "", message: "Username or password incorrect", completion: nil)
+                    let alert = Alert()
+                    alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                        alert.closeAlert()
+                        self.theUserName.becomeFirstResponder()
+                    })
+                    alert.createAlert("Log In Problem", subtitle: "Username or Password is incorrect.", closeButtonTitle: "", type: .Error)
                 }
                 else {
-                    //iLikeyErrorAlert(self, title: "Login failed at this time", error: error, completion: nil)
+                    _ = Alert(title: "Failed Login", subtitle: "Login failed at this time.", closeButtonTitle: "Okay", type: .Error)
                 }
                 return;
             }

@@ -109,18 +109,14 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
                 if error != nil {
                     let code = error!.code
                     if code == PFErrorCode.ErrorInvalidEmailAddress.rawValue {
-                        //iLikeyAlert(self, title: "", message: "Please enter a valid email address.", completion: nil)
                          _ = Alert(title: "Invalid Email Address", subtitle: "Please enter a valid email address.", closeButtonTitle: "Okay", type: .Error)
                     }
                     else if code == PFErrorCode.ErrorUsernameTaken.rawValue {
-                        //iLikeyAlert(self, title: "Problem Signing Up", message: "Username not available.", completion: nil)
                         _ = Alert(title: "Problem Signing Up", subtitle: "Username not available.", closeButtonTitle: "Okay", type: .Error)
                     }
                     else if code == PFErrorCode.ErrorUserEmailTaken.rawValue {
-                        //iLikeyAlert(self, title: "Problem Signing Up", message: "Email already being used by another user, please use a differnet one.", completion: nil)
                          _ = Alert(title: "Problem Signing Up", subtitle: "Email already being used by another user, please use a differnet one.", closeButtonTitle: "Okay", type: .Error)
                     }
-                    //iLikeyAlert(self, title: "Problem Signing Up", message: "error:\(error!.code)", completion: nil)
                     _ = Alert(title: "Problem Signing Up", subtitle: "error:\(error!.code)", closeButtonTitle: "Okay", type: .Error)
                 }
             }
@@ -191,73 +187,95 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
             alert.createAlert("Username is Required", subtitle: "Please enter a username.", closeButtonTitle: "", type: .Error)
             return false
         }
-//        else if theUsername.text!.characters.count < 3 {
-//            iLikeyAlert(self, title: "", message: "Username must be at least 3 characters") {
-//                self.theUsername.becomeFirstResponder()
-//            }
-//            return false
-//        }
-//        else if theFullName.text!.isEmpty {
-//            iLikeyAlert(self, title: "", message: "Full Name is required") {
-//                self.theFullName.becomeFirstResponder()
-//            }
-//            return false
-//        }
-//        else if theEmail.text!.isEmpty {
-//            iLikeyAlert(self, title: "", message: "Email is required") {
-//                self.theEmail.becomeFirstResponder()
-//            }
-//            return false
-//        }
-//        else if isValidEmail(theEmail.text!) == false {
-//            iLikeyAlert(self, title: "", message: "Please enter valid email address") {
-//                self.theEmail.becomeFirstResponder()
-//            }
-//            return false
-//        }
-//        else if thePassword.text!.isEmpty {
-//            iLikeyAlert(self, title: "", message: "Password is required") {
-//                self.thePassword.becomeFirstResponder()
-//            }
-//            return false
-//        }
-//        else if thePasswordConfirm.text!.isEmpty {
-//            iLikeyAlert(self, title: "", message: "Confirm Password is required"){
-//                self.thePasswordConfirm.becomeFirstResponder()
-//            }
-//            return false
-//        }
-//        else if thePasswordConfirm.text != thePassword.text {
-//            iLikeyAlert(self, title: "", message: "Passwords do not match") {
-//                self.thePasswordConfirm.becomeFirstResponder()
-//            }
-//            return false
-//        }
-//        else if validBirthdate() == false {
-//            iLikeyAlert(self, title: "", message: "Birth Date not valid.") {
-//                self.theBirthDate.becomeFirstResponder()
-//            }
-//            return false
-//        }
-//            //     Commented because these are optional fields, but this code treats them as required
-//            //        else if theBirthDate.text.isEmpty {
-//            //            iLikeyAlert(self, "", "Birth Date is required") {
-//            //                self.theBirthDate.becomeFirstResponder()
-//            //            }
-//            //            return false
-//            //        }
-//            //        else if theMaleButton.selected == false && theFemaleButton.selected == false {
-//            //            iLikeyAlert(self, "", "Must select gender", nil)
-//            //            return false
-//            //        }
-//        else if theAvatarImage.image == nil {
-//            iLikeyAlert(self, title: "", message: "Must pick your avatar image.", completion: nil)
-//            return false
-//        }
+        else if theUsername.text!.characters.count < 3 {
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.theUsername.becomeFirstResponder()
+            })
+            alert.createAlert("Username must be at least 3 characters.", subtitle: "", closeButtonTitle: "", type: .Error)
+            return false
+        }
+        else if theFullName.text!.isEmpty {
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.theFullName.becomeFirstResponder()
+            })
+            alert.createAlert("Full Name is Required", subtitle: "Please enter your full name.", closeButtonTitle: "", type: .Error)
+            return false
+        }
+        else if theEmail.text!.isEmpty {
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.theEmail.becomeFirstResponder()
+            })
+            alert.createAlert("Email is Required", subtitle: "Please enter an email address.", closeButtonTitle: "", type: .Error)
+            return false
+        }
+        else if isValidEmail(theEmail.text!) == false {let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.theEmail.becomeFirstResponder()
+            })
+            alert.createAlert("Invalid Email", subtitle: "Please enter a valid email address", closeButtonTitle: "", type: .Error)
+            return false
+        }
+        else if thePassword.text!.isEmpty {
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.thePassword.becomeFirstResponder()
+            })
+            alert.createAlert("Password is Required", subtitle: "Please enter a password.", closeButtonTitle: "", type: .Error)
+            return false
+        }
+        else if thePasswordConfirm.text!.isEmpty {
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.thePassword.becomeFirstResponder()
+            })
+            alert.createAlert("Confirmed Password is Required", subtitle: "Please enter your Confirmed Password", closeButtonTitle: "", type: .Error)
+            return false
+        }
+        else if thePasswordConfirm.text != thePassword.text {
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.thePassword.becomeFirstResponder()
+            })
+            alert.createAlert("Password Error", subtitle: "Passwords do not match.", closeButtonTitle: "", type: .Error)
+            return false
+        }
+        else if validBirthdate() == false {
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.theBirthDate.becomeFirstResponder()
+            })
+            alert.createAlert("Invalid Birth Date", subtitle: "Please enter a valid Birth Date", closeButtonTitle: "", type: .Error)
+            return false
+        }
+            //     Commented because these are optional fields, but this code treats them as required
+            //        else if theBirthDate.text.isEmpty {
+            //            iLikeyAlert(self, "", "Birth Date is required") {
+            //                self.theBirthDate.becomeFirstResponder()
+            //            }
+            //            return false
+            //        }
+            //        else if theMaleButton.selected == false && theFemaleButton.selected == false {
+            //            iLikeyAlert(self, "", "Must select gender", nil)
+            //            return false
+            //        }
+        else if theAvatarImage.image == nil {
+            _ = Alert(title: "Avatar Image required", subtitle: "Please pick an avatar image", closeButtonTitle: "Okay", type: .Error)
+            return false
+        }
         else {
             return true
         }
-        return true
     }
     
     //MARK: birthDate
@@ -347,6 +365,12 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
             theAvatarImage.image = img
         }
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func isValidEmail(email:String) -> Bool {
+        let emailRegex = "[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z0-9._%+-]{1,100}";
+        let emailTest = NSPredicate(format: "SELF MATCHES[c] %@", emailRegex)
+        return emailTest.evaluateWithObject(email)
     }
     
 }
