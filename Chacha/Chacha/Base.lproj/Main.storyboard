@@ -874,6 +874,9 @@ AVATAR</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logIn:" destination="WSC-Ic-8C9" eventType="touchUpInside" id="Fta-oo-ijA"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2E-SM-Gje" userLabel="spacer view">
                                 <rect key="frame" x="160" y="286" width="1" height="35"/>
@@ -906,6 +909,9 @@ AVATAR</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInWithFacebook:" destination="WSC-Ic-8C9" eventType="touchUpInside" id="xTm-zx-lTq"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydj-WY-dhe">
                                 <rect key="frame" x="16" y="1" width="288" height="95"/>
@@ -1011,11 +1017,14 @@ AVATAR</string>
                     </navigationItem>
                     <connections>
                         <outlet property="theLoginView" destination="ydj-WY-dhe" id="YOY-JH-mUq"/>
+                        <outlet property="thePassword" destination="2NZ-IX-IXv" id="NJS-ZK-Y9N"/>
+                        <outlet property="theSpinner" destination="WN1-pp-WxI" id="NFs-Gg-U3G"/>
+                        <outlet property="theUserName" destination="2YZ-Nb-x8Z" id="8Zs-Kf-gfN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cka-4J-6lY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="1126"/>
+            <point key="canvasLocation" x="908" y="1126"/>
         </scene>
     </scenes>
     <resources>

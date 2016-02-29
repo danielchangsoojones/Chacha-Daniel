@@ -31,6 +31,7 @@
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
 		92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */; };
 		92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */; };
+		92CE70331C83FE3B00E3A7B6 /* PersonalFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70321C83FE3B00E3A7B6 /* PersonalFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iLikeyDateTextField.swift; sourceTree = "<group>"; };
 		92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		92CE70321C83FE3B00E3A7B6 /* PersonalFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
 				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
 				9295FBFB1C838DFD007B4B95 /* Utils */,
+				92CE70321C83FE3B00E3A7B6 /* PersonalFeedViewController.swift */,
 			);
 			path = Chacha;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
+				92CE70331C83FE3B00E3A7B6 /* PersonalFeedViewController.swift in Sources */,
 				9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */,
 				9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */,
 				9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */,
