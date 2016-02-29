@@ -110,14 +110,18 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
                     let code = error!.code
                     if code == PFErrorCode.ErrorInvalidEmailAddress.rawValue {
                         //iLikeyAlert(self, title: "", message: "Please enter a valid email address.", completion: nil)
+                         _ = Alert(title: "Invalid Email Address", subtitle: "Please enter a valid email address.", closeButtonTitle: "Okay", type: .Error)
                     }
                     else if code == PFErrorCode.ErrorUsernameTaken.rawValue {
                         //iLikeyAlert(self, title: "Problem Signing Up", message: "Username not available.", completion: nil)
+                        _ = Alert(title: "Problem Signing Up", subtitle: "Username not available.", closeButtonTitle: "Okay", type: .Error)
                     }
                     else if code == PFErrorCode.ErrorUserEmailTaken.rawValue {
                         //iLikeyAlert(self, title: "Problem Signing Up", message: "Email already being used by another user, please use a differnet one.", completion: nil)
+                         _ = Alert(title: "Problem Signing Up", subtitle: "Email already being used by another user, please use a differnet one.", closeButtonTitle: "Okay", type: .Error)
                     }
                     //iLikeyAlert(self, title: "Problem Signing Up", message: "error:\(error!.code)", completion: nil)
+                    _ = Alert(title: "Problem Signing Up", subtitle: "error:\(error!.code)", closeButtonTitle: "Okay", type: .Error)
                 }
             }
         }
@@ -177,13 +181,16 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
     
     func allValidates() -> Bool
     {
-//        theUsername.text = theUsername.text?.stringByReplacingOccurrencesOfString(" ", withString: "")
-//        if theUsername.text!.isEmpty {
-//            iLikeyAlert(self, title: "", message: "Username is required") {
-//                self.theUsername.becomeFirstResponder()
-//            }
-//            return false
-//        }
+        theUsername.text = theUsername.text?.stringByReplacingOccurrencesOfString(" ", withString: "")
+        if theUsername.text!.isEmpty {
+            let alert = Alert()
+            alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                alert.closeAlert()
+                self.theUsername.becomeFirstResponder()
+            })
+            alert.createAlert("Username is Required", subtitle: "Please enter a username.", closeButtonTitle: "", type: .Error)
+            return false
+        }
 //        else if theUsername.text!.characters.count < 3 {
 //            iLikeyAlert(self, title: "", message: "Username must be at least 3 characters") {
 //                self.theUsername.becomeFirstResponder()
@@ -247,9 +254,9 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
 //            iLikeyAlert(self, title: "", message: "Must pick your avatar image.", completion: nil)
 //            return false
 //        }
-//        else {
-//            return true
-//        }
+        else {
+            return true
+        }
         return true
     }
     
