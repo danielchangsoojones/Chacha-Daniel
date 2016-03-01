@@ -54,14 +54,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="wak-rG-ju9" customClass="ExploreLayout" customModule="Chacha" customModuleProvider="target"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="s44-mt-eba">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="s44-mt-eba" customClass="AnnotatedPhotoCell" customModule="Chacha" customModuleProvider="target">
+                                <rect key="frame" x="88" y="64" width="200" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7x-z5-UXi" customClass="RoundedCornersView" customModule="Chacha" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="260"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hB7-FI-9ej">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="DN6-xy-Bre"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="hB7-FI-9ej" firstAttribute="top" secondItem="K7x-z5-UXi" secondAttribute="top" id="2Rm-S4-nWh"/>
+                                                <constraint firstAttribute="trailing" secondItem="hB7-FI-9ej" secondAttribute="trailing" id="Clz-e3-irj"/>
+                                                <constraint firstItem="hB7-FI-9ej" firstAttribute="leading" secondItem="K7x-z5-UXi" secondAttribute="leading" id="LVX-xR-psC"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="6"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="K7x-z5-UXi" firstAttribute="top" secondItem="s44-mt-eba" secondAttribute="top" id="Aag-Xj-hp9"/>
+                                    <constraint firstAttribute="trailing" secondItem="K7x-z5-UXi" secondAttribute="trailing" id="EqC-ek-an3"/>
+                                    <constraint firstItem="K7x-z5-UXi" firstAttribute="leading" secondItem="s44-mt-eba" secondAttribute="leading" id="TRY-BG-P30"/>
+                                    <constraint firstAttribute="bottom" secondItem="K7x-z5-UXi" secondAttribute="bottom" id="bxv-tm-Rhy"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="260"/>
+                                <connections>
+                                    <outlet property="imageView" destination="hB7-FI-9ej" id="JDx-7t-hP1"/>
+                                    <outlet property="imageViewHeightLayoutConstraint" destination="DN6-xy-Bre" id="Hnn-TL-zMj"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

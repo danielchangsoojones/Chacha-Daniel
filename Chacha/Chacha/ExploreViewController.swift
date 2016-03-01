@@ -9,19 +9,7 @@
 import UIKit
 
 class ExploreViewController: UICollectionViewController {
-    
-    var colors: [UIColor] {
-        get {
-            var colors = [UIColor]()
-            let palette = [UIColor.redColor(), UIColor.greenColor(), UIColor.blueColor(), UIColor.orangeColor(), UIColor.purpleColor(), UIColor.yellowColor()]
-            var paletteIndex = 0
-            for _ in 0..<photos.count {
-                colors.append(palette[paletteIndex])
-                paletteIndex = paletteIndex == (palette.count - 1) ? 0 : ++paletteIndex
-            }
-            return colors
-        }
-    }
+
     var photos = Photo.allPhotos()
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -35,9 +23,12 @@ class ExploreViewController: UICollectionViewController {
             view.backgroundColor = UIColor(patternImage: patternImage)
         }
         
+        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
         collectionView!.backgroundColor = UIColor.clearColor()
+        
         let layout = collectionViewLayout as! ExploreLayout
         layout.delegate = self
+        layout.cellPadding = 5
         layout.numberOfColumns = 2
     }
     
@@ -51,7 +42,6 @@ extension ExploreViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as UICollectionViewCell
-        cell.contentView.backgroundColor = colors[indexPath.item]
         return cell
     }
     
