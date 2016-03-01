@@ -335,6 +335,14 @@ AVATAR</string>
             </objects>
             <point key="canvasLocation" x="-477.5" y="1091.5"/>
         </scene>
+        <!--QuestionFeed-->
+        <scene sceneID="heU-AC-Klg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QuestionFeed" id="sQa-ig-YW5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8N-gS-wQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735" y="600"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="bDP-Mn-1Dt">
             <objects>
@@ -828,6 +836,7 @@ AVATAR</string>
                         <outlet property="theSpinner" destination="Dn7-iT-frj" id="eHr-Bd-3UA"/>
                         <outlet property="theUsername" destination="Gru-Vu-ifB" id="Dpl-0z-gYW"/>
                         <outlet property="usernameView" destination="pNc-vU-w0c" id="Avf-Bt-pta"/>
+                        <segue destination="sQa-ig-YW5" kind="presentation" identifier="SignUpSuccessSegue" id="l2w-h3-r5c"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gss-Aq-TSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1020,6 +1029,7 @@ AVATAR</string>
                         <outlet property="thePassword" destination="2NZ-IX-IXv" id="NJS-ZK-Y9N"/>
                         <outlet property="theSpinner" destination="WN1-pp-WxI" id="NFs-Gg-U3G"/>
                         <outlet property="theUserName" destination="2YZ-Nb-x8Z" id="8Zs-Kf-gfN"/>
+                        <segue destination="sQa-ig-YW5" kind="presentation" identifier="LogInSuccessSegue" id="oGW-NR-ezq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cka-4J-6lY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1032,4 +1042,7 @@ AVATAR</string>
         <image name="Or Line" width="276" height="13"/>
         <image name="facebook_logo" width="29" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oGW-NR-ezq"/>
+    </inferredMetricsTieBreakers>
 </document>

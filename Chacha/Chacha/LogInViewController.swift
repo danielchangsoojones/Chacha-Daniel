@@ -129,10 +129,10 @@ class LogInViewController: UIViewController {
             }
             
             if user != nil {
+                self.performSegueWithIdentifier("LogInSuccessSegue", sender: self)
                 let installation = PFInstallation.currentInstallation()
                 installation["user"] = PFUser.currentUser()
                 installation.saveEventually(nil)
-                self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
     }

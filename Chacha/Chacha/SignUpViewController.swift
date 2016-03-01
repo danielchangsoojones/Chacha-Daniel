@@ -99,11 +99,10 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
             self.view.userInteractionEnabled = true
             self.theSpinner.stopAnimating()
             if success {
-                
+                self.performSegueWithIdentifier("SignUpSuccessSegue", sender: self)
                 let installation = PFInstallation.currentInstallation()
                 installation["user"] = PFUser.currentUser()
                 installation.saveInBackground()
-                self.dismissViewControllerAnimated(true, completion:nil)
             }
             else {
                 if error != nil {

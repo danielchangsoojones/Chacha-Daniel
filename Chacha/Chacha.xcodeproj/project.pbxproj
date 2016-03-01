@@ -116,13 +116,13 @@
 		9295FBC31C7E86FE007B4B95 /* Chacha */ = {
 			isa = PBXGroup;
 			children = (
-				92CE70271C83986E00E3A7B6 /* Models */,
 				9295FBF01C7E9783007B4B95 /* LogIn */,
+				92CE70341C83FED800E3A7B6 /* Question Feeds */,
 				9295FBEF1C7E8BAD007B4B95 /* Main */,
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
 				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
+				92CE70271C83986E00E3A7B6 /* Models */,
 				9295FBFB1C838DFD007B4B95 /* Utils */,
-				92CE70341C83FED800E3A7B6 /* Question Feeds */,
 			);
 			path = Chacha;
 			sourceTree = "<group>";
