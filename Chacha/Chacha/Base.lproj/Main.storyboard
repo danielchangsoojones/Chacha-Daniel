@@ -836,7 +836,7 @@ AVATAR</string>
                         <outlet property="theSpinner" destination="Dn7-iT-frj" id="eHr-Bd-3UA"/>
                         <outlet property="theUsername" destination="Gru-Vu-ifB" id="Dpl-0z-gYW"/>
                         <outlet property="usernameView" destination="pNc-vU-w0c" id="Avf-Bt-pta"/>
-                        <segue destination="sQa-ig-YW5" kind="presentation" identifier="SignUpSuccessSegue" id="l2w-h3-r5c"/>
+                        <segue destination="sQa-ig-YW5" kind="presentation" identifier="SignUpSuccessSegue" animates="NO" id="l2w-h3-r5c"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gss-Aq-TSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1043,6 +1043,6 @@ AVATAR</string>
         <image name="facebook_logo" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oGW-NR-ezq"/>
+        <segue reference="l2w-h3-r5c"/>
     </inferredMetricsTieBreakers>
 </document>
