@@ -21,5 +21,11 @@ class AnnotatedPhotoCell: UICollectionViewCell {
         }
     }
     
+    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.applyLayoutAttributes(layoutAttributes)
+        let attributes = layoutAttributes as! ExploreLayoutAttributes
+        imageViewHeightLayoutConstraint.constant = attributes.photoHeight
+    }
+    
 }
 

@@ -49,9 +49,13 @@ extension ExploreViewController {
 
 extension ExploreViewController: ExploreLayoutDelegate {
     
-    func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
         let random = arc4random_uniform(4) + 1
         return CGFloat(random * 100)
+    }
+    
+    func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
+        return 60
     }
     
 }
