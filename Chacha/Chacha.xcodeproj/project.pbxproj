@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2061C84BEBF00313AB7 /* Alert.swift */; };
+		9238E2111C861AA000313AB7 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2101C861AA000313AB7 /* ExploreViewController.swift */; };
+		9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2121C861B1B00313AB7 /* ExploreLayout.swift */; };
+		9238E2151C861B6100313AB7 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2141C861B6100313AB7 /* Photo.swift */; };
+		9238E2171C861DB800313AB7 /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9238E2161C861DB800313AB7 /* Photos.plist */; };
+		9238E2191C861DD900313AB7 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9238E2181C861DD900313AB7 /* Photos.xcassets */; };
 		9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */; };
 		9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC61C7E86FE007B4B95 /* ViewController.swift */; };
 		9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9295FBC81C7E86FE007B4B95 /* Main.storyboard */; };
@@ -39,6 +44,11 @@
 
 /* Begin PBXFileReference section */
 		9238E2061C84BEBF00313AB7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		9238E2101C861AA000313AB7 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		9238E2121C861B1B00313AB7 /* ExploreLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreLayout.swift; sourceTree = "<group>"; };
+		9238E2141C861B6100313AB7 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9238E2161C861DB800313AB7 /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
+		9238E2181C861DD900313AB7 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
 		9295FBC11C7E86FE007B4B95 /* Chacha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chacha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9295FBC61C7E86FE007B4B95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +131,8 @@
 				9295FBEF1C7E8BAD007B4B95 /* Main */,
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
 				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
+				9238E2161C861DB800313AB7 /* Photos.plist */,
+				9238E2181C861DD900313AB7 /* Photos.xcassets */,
 				92CE70271C83986E00E3A7B6 /* Models */,
 				9295FBFB1C838DFD007B4B95 /* Utils */,
 			);
@@ -184,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				92CE70251C83986000E3A7B6 /* User.swift */,
+				9238E2141C861B6100313AB7 /* Photo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -193,6 +206,8 @@
 			children = (
 				92CE70351C83FF4200E3A7B6 /* QuestionFeed.storyboard */,
 				92CE70391C8400A200E3A7B6 /* FeedViewController.swift */,
+				9238E2101C861AA000313AB7 /* ExploreViewController.swift */,
+				9238E2121C861B1B00313AB7 /* ExploreLayout.swift */,
 			);
 			name = "Question Feeds";
 			sourceTree = "<group>";
@@ -269,8 +284,10 @@
 			files = (
 				9295FBCF1C7E86FE007B4B95 /* LaunchScreen.storyboard in Resources */,
 				9295FBCC1C7E86FE007B4B95 /* Assets.xcassets in Resources */,
+				9238E2191C861DD900313AB7 /* Photos.xcassets in Resources */,
 				92CE70361C83FF4200E3A7B6 /* QuestionFeed.storyboard in Resources */,
 				9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */,
+				9238E2171C861DB800313AB7 /* Photos.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,11 +351,14 @@
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
+				9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */,
 				9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */,
 				9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */,
 				9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */,
+				9238E2151C861B6100313AB7 /* Photo.swift in Sources */,
 				92CE703A1C8400A200E3A7B6 /* FeedViewController.swift in Sources */,
 				9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */,
+				9238E2111C861AA000313AB7 /* ExploreViewController.swift in Sources */,
 				92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */,
 				92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */,
 			);
