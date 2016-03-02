@@ -11,7 +11,7 @@ import Foundation
 import Parse
 import SCLAlertView
 
-class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UITableViewController, UITextFieldDelegate {
     
     var datePicker:UIDatePicker!
     
@@ -352,22 +352,7 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
     }
    
     @IBAction func tapAvatar(sender: AnyObject) {
-        let imgPicker = UIImagePickerController()
-        imgPicker.delegate = self
-        imgPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-        imgPicker.allowsEditing = true
-        self.presentViewController(imgPicker, animated: true, completion: nil)
-    }
-    
-    //MARK:- UIImagePickerControllerDelegate
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
-    {
-        if image != nil {
-            let img = image.resizeImage(CGSize(width:256,height:256))
-            theAvatarImage.image = img
-        }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let imagePicker = ImagePicker(viewController: self, image: theAvatarImage)
     }
     
     func isValidEmail(email:String) -> Bool {

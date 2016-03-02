@@ -32,7 +32,7 @@
         <!--Ask A Question-->
         <scene sceneID="pxg-oZ-hEo">
             <objects>
-                <viewController id="gnx-Or-nIL" sceneMemberID="viewController">
+                <viewController id="gnx-Or-nIL" customClass="AskAQuestionViewController" customModule="Chacha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u9L-7J-J2k"/>
                         <viewControllerLayoutGuide type="bottom" id="fSy-ux-CZy"/>
@@ -82,6 +82,9 @@ IMAGE?</string>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addQuestionImage:" destination="gnx-Or-nIL" eventType="touchUpInside" id="ubb-in-KQx"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.93333333330000001" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -141,6 +144,9 @@ IMAGE?</string>
                                 <state key="normal" title="Ask">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="askQuestion:" destination="gnx-Or-nIL" eventType="touchUpInside" id="HpK-KP-YrD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,6 +170,10 @@ IMAGE?</string>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Ask A Question" id="0RC-3r-fRv"/>
+                    <connections>
+                        <outlet property="questionDescriptionTextBox" destination="2Ru-nK-O9C" id="hmX-d4-J2v"/>
+                        <outlet property="questionTextBox" destination="fH3-oj-yeD" id="6db-0F-XZ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLo-Ho-YpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

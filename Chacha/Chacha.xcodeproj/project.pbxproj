@@ -17,6 +17,8 @@
 		9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21D1C8625E300313AB7 /* AnnotatedPhotoCell.swift */; };
 		9238E2201C875E6500313AB7 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21F1C875E6500313AB7 /* Question.swift */; };
 		9238E2271C8769F300313AB7 /* AskQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9238E2261C8769F300313AB7 /* AskQuestion.storyboard */; };
+		9238E2291C877E7000313AB7 /* AskAQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2281C877E7000313AB7 /* AskAQuestionViewController.swift */; };
+		9238E22B1C87805000313AB7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E22A1C87805000313AB7 /* ImagePicker.swift */; };
 		9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */; };
 		9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC61C7E86FE007B4B95 /* ViewController.swift */; };
 		9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9295FBC81C7E86FE007B4B95 /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		9238E21D1C8625E300313AB7 /* AnnotatedPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedPhotoCell.swift; sourceTree = "<group>"; };
 		9238E21F1C875E6500313AB7 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		9238E2261C8769F300313AB7 /* AskQuestion.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AskQuestion.storyboard; sourceTree = "<group>"; };
+		9238E2281C877E7000313AB7 /* AskAQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskAQuestionViewController.swift; sourceTree = "<group>"; };
+		9238E22A1C87805000313AB7 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		9295FBC11C7E86FE007B4B95 /* Chacha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chacha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9295FBC61C7E86FE007B4B95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				9238E2261C8769F300313AB7 /* AskQuestion.storyboard */,
+				9238E2281C877E7000313AB7 /* AskAQuestionViewController.swift */,
 			);
 			name = "Ask Question Page";
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				92CE70281C839C0000E3A7B6 /* DateExtensions.swift */,
 				92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */,
 				9238E2061C84BEBF00313AB7 /* Alert.swift */,
+				9238E22A1C87805000313AB7 /* ImagePicker.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -372,12 +378,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9238E2291C877E7000313AB7 /* AskAQuestionViewController.swift in Sources */,
 				92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */,
 				9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */,
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9238E2201C875E6500313AB7 /* Question.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
+				9238E22B1C87805000313AB7 /* ImagePicker.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
 				9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */,
 				9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */,

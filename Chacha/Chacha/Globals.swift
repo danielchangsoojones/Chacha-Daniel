@@ -40,6 +40,9 @@ func applyBorder(view:UIView) {
     view.layer.borderWidth = 0.5
 }
 
+//methods
+
+
 //Alert
 //func iLikeyAlert(vc:UIViewController, title:String, message:String?, completion: (() -> Void)?) {
 //    UIAlertController.showAlertInViewController(vc, withTitle:title, message: message, cancelButtonTitle: "OK", destructiveButtonTitle: nil, otherButtonTitles: nil) { (controller, action, buttonIndex) in
