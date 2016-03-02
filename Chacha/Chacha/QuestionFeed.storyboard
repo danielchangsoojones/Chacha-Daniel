@@ -32,9 +32,13 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Okh-1N-T6r">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Okh-1N-T6r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.2666666667" green="0.68627450980000004" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -50,16 +54,16 @@
             <objects>
                 <collectionViewController id="Wfm-R0-MaW" customClass="ExploreViewController" customModule="Chacha" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VpG-ND-nvR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="wak-rG-ju9" customClass="ExploreLayout" customModule="Chacha" customModuleProvider="target"/>
                         <view key="backgroundView" contentMode="scaleToFill" id="2jR-rl-gI0">
-                            <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="s44-mt-eba" customClass="AnnotatedPhotoCell" customModule="Chacha" customModuleProvider="target">
-                                <rect key="frame" x="88" y="64" width="200" height="315"/>
+                                <rect key="frame" x="87.5" y="0.0" width="200" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
@@ -121,47 +125,47 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m45-Fe-crS">
-                                                    <rect key="frame" x="4" y="254" width="192" height="22"/>
+                                                    <rect key="frame" x="4" y="254" width="192" height="15"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Q7-US-zOc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="22"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Q7-US-zOc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="15"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5l3-RJ-8oV">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="15"/>
                                                                     <state key="normal" image="vibe-off"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySM-Ei-ZIp">
-                                                                    <rect key="frame" x="16" y="5" width="18" height="12"/>
+                                                                    <rect key="frame" x="17" y="2" width="18" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DYx-dO-TG3">
-                                                            <rect key="frame" x="84" y="0.0" width="28" height="22"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DYx-dO-TG3">
+                                                            <rect key="frame" x="84" y="0.0" width="28" height="15"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNO-PM-ulb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="15"/>
                                                                     <state key="normal" image="bubble-off"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjV-ge-mfj">
-                                                                    <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                                    <rect key="frame" x="16" y="2" width="12" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bIZ-kI-jDL">
-                                                            <rect key="frame" x="164" y="0.0" width="28" height="22"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bIZ-kI-jDL">
+                                                            <rect key="frame" x="165" y="0.0" width="28" height="15"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwV-MT-yGd">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="15"/>
                                                                     <state key="normal" image="clock-off"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpL-Xl-8kI">
-                                                                    <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                                    <rect key="frame" x="16" y="2" width="12" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -169,6 +173,9 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="w16-ZE-sj8"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

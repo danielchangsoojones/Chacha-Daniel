@@ -13,10 +13,6 @@ class ExploreViewController: UICollectionViewController {
 
     var photos = Photo.allPhotos()
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,8 +63,10 @@ extension ExploreViewController: ExploreLayoutDelegate {
         let photo = photos[indexPath.item]
         let font = UIFont(name: "HelveticaNeue", size: 10)!
         let commentHeight = photo.heightForQuestion(font, width: width)
+        let activityBarHeight: CGFloat = 15
         let profileViewHeight : CGFloat = 34
-        let height = 4 + profileViewHeight + 4 + commentHeight + 4
+        let padding: CGFloat = 4
+        let height = profileViewHeight + padding + commentHeight + padding + activityBarHeight + padding
         return height
     }
     
