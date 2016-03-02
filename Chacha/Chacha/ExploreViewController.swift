@@ -38,6 +38,8 @@ class ExploreViewController: UICollectionViewController {
     
 }
 
+
+
 extension ExploreViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,7 +64,12 @@ extension ExploreViewController: ExploreLayoutDelegate {
     }
     
     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        return 60
+        let photo = photos[indexPath.item]
+        let font = UIFont(name: "HelveticaNeue", size: 10)!
+        let commentHeight = photo.heightForQuestion(font, width: width)
+        let profileViewHeight : CGFloat = 34
+        let height = 4 + profileViewHeight + 4 + commentHeight + 4
+        return height
     }
     
 }

@@ -12,13 +12,19 @@ class AnnotatedPhotoCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var questionText: UILabel!
     
     var photo: Photo? {
         didSet {
             if let photo = photo {
                 imageView.image = photo.image
-                captionLabel.text = photo.caption
+                profileImage.image = photo.profileImage
+                fullName.text = photo.fullName
+                username.text = photo.username
+                questionText.text = photo.question
             }
         }
     }
