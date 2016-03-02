@@ -71,12 +71,24 @@
                                                         <constraint firstAttribute="height" constant="200" id="DN6-xy-Bre"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjf-3R-IVn">
+                                                    <rect key="frame" x="4" y="204" width="192" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="GAL-DW-MeR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="hB7-FI-9ej" firstAttribute="top" secondItem="K7x-z5-UXi" secondAttribute="top" id="2Rm-S4-nWh"/>
+                                                <constraint firstAttribute="trailing" secondItem="qjf-3R-IVn" secondAttribute="trailing" constant="4" id="Bqv-o6-5EX"/>
                                                 <constraint firstAttribute="trailing" secondItem="hB7-FI-9ej" secondAttribute="trailing" id="Clz-e3-irj"/>
                                                 <constraint firstItem="hB7-FI-9ej" firstAttribute="leading" secondItem="K7x-z5-UXi" secondAttribute="leading" id="LVX-xR-psC"/>
+                                                <constraint firstItem="qjf-3R-IVn" firstAttribute="top" secondItem="hB7-FI-9ej" secondAttribute="bottom" constant="4" id="Q2o-PW-Lv4"/>
+                                                <constraint firstItem="qjf-3R-IVn" firstAttribute="leading" secondItem="K7x-z5-UXi" secondAttribute="leading" constant="4" id="cz3-AD-vNs"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -95,6 +107,7 @@
                                 </constraints>
                                 <size key="customSize" width="200" height="260"/>
                                 <connections>
+                                    <outlet property="captionLabel" destination="qjf-3R-IVn" id="VJn-L5-tqy"/>
                                     <outlet property="imageView" destination="hB7-FI-9ej" id="JDx-7t-hP1"/>
                                     <outlet property="imageViewHeightLayoutConstraint" destination="DN6-xy-Bre" id="Hnn-TL-zMj"/>
                                 </connections>

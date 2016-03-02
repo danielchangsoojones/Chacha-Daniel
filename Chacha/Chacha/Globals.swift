@@ -11,6 +11,7 @@ import UIKit
 
 //Custom colors
 let ChachaTeal = UIColor(rgba: "#5ABBB6")
+let ChachaGrayBackground = UIColor(rgba: "#E6E6E6")
 let iLikeyPink =  UIColor(rgba: "#E91E63")
 let iLikeyPinkLight = UIColor(rgba: "#FA6FEB")
 let iLikeyPinkDark =  UIColor(rgba: "#cc0066")

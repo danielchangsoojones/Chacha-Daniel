@@ -12,11 +12,13 @@ class AnnotatedPhotoCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var captionLabel: UILabel!
     
     var photo: Photo? {
         didSet {
             if let photo = photo {
                 imageView.image = photo.image
+                captionLabel.text = photo.caption
             }
         }
     }
