@@ -112,7 +112,7 @@ IMAGE?</string>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ask your question..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fH3-oj-yeD">
                                         <rect key="frame" x="93" y="0.0" width="262" height="95"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -127,7 +127,7 @@ IMAGE?</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="5gf-KD-eAq"/>
                                 </constraints>
-                                <color key="textColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -172,6 +172,7 @@ IMAGE?</string>
                     <navigationItem key="navigationItem" title="Ask A Question" id="0RC-3r-fRv"/>
                     <connections>
                         <outlet property="questionDescriptionTextBox" destination="2Ru-nK-O9C" id="hmX-d4-J2v"/>
+                        <outlet property="questionImage" destination="jB2-fJ-qXk" id="1fI-TL-7mH"/>
                         <outlet property="questionTextBox" destination="fH3-oj-yeD" id="6db-0F-XZ0"/>
                     </connections>
                 </viewController>

@@ -352,7 +352,11 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
     }
    
     @IBAction func tapAvatar(sender: AnyObject) {
-        let imagePicker = ImagePicker(viewController: self, image: theAvatarImage)
+        let imgPicker = UIImagePickerController()
+        imgPicker.delegate = self
+        imgPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+        imgPicker.allowsEditing = true
+        self.presentViewController(imgPicker, animated: true, completion: nil)
     }
     
     func isValidEmail(email:String) -> Bool {
@@ -361,4 +365,15 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
         return emailTest.evaluateWithObject(email)
     }
     
+}
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
+    {
+        if image != nil {
+            let img = image.resizeImage(CGSize(width:256,height:256))
+            self.theAvatarImage.image = img
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

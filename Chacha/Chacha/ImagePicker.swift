@@ -29,7 +29,7 @@ class ImagePicker : NSObject, UIImagePickerControllerDelegate, UINavigationContr
         viewController.presentViewController(imgPicker, animated: true, completion: nil)
     }
     
-    //Mark: 
+    //Mark: UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         if image != nil {

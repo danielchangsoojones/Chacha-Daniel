@@ -19,7 +19,7 @@ class Question: PFObject, PFSubclassing {
     @NSManaged var answerCount: Int
     @NSManaged var likeCount: Int
     @NSManaged var question: String
-    @NSManaged var optionalQuestionDescription: String
+    @NSManaged var questionDescription: String
     
     override init() {
         super.init()
