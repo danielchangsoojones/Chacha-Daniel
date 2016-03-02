@@ -15,6 +15,7 @@
 		9238E2191C861DD900313AB7 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9238E2181C861DD900313AB7 /* Photos.xcassets */; };
 		9238E21C1C86243600313AB7 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21B1C86243600313AB7 /* RoundedCornersView.swift */; };
 		9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21D1C8625E300313AB7 /* AnnotatedPhotoCell.swift */; };
+		9238E2201C875E6500313AB7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21F1C875E6500313AB7 /* Post.swift */; };
 		9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */; };
 		9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC61C7E86FE007B4B95 /* ViewController.swift */; };
 		9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9295FBC81C7E86FE007B4B95 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		9238E2181C861DD900313AB7 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
 		9238E21B1C86243600313AB7 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		9238E21D1C8625E300313AB7 /* AnnotatedPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedPhotoCell.swift; sourceTree = "<group>"; };
+		9238E21F1C875E6500313AB7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9295FBC11C7E86FE007B4B95 /* Chacha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chacha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9295FBC61C7E86FE007B4B95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				92CE70251C83986000E3A7B6 /* User.swift */,
 				9238E2141C861B6100313AB7 /* Photo.swift */,
+				9238E21F1C875E6500313AB7 /* Post.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */,
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
+				9238E2201C875E6500313AB7 /* Post.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
 				9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */,

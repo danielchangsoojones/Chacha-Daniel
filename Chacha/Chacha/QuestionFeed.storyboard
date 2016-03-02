@@ -63,7 +63,7 @@
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="s44-mt-eba" customClass="AnnotatedPhotoCell" customModule="Chacha" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="315"/>
+                                <rect key="frame" x="88" y="0.0" width="200" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
