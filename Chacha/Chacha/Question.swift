@@ -9,13 +9,13 @@
 import Foundation
 import Parse
 
-class Post: PFObject, PFSubclassing {
+class Question: PFObject, PFSubclassing {
     class func parseClassName() -> String {
-        return "Post"
+        return "Question"
     }
     
     @NSManaged var createdBy: User?
-    @NSManaged var postImage: PFFile?
+    @NSManaged var questionImage: PFFile?
     @NSManaged var answerCount: Int
     @NSManaged var likeCount: Int
     @NSManaged var question: String

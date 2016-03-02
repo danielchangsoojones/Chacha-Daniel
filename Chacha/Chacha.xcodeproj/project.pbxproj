@@ -15,7 +15,8 @@
 		9238E2191C861DD900313AB7 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9238E2181C861DD900313AB7 /* Photos.xcassets */; };
 		9238E21C1C86243600313AB7 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21B1C86243600313AB7 /* RoundedCornersView.swift */; };
 		9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21D1C8625E300313AB7 /* AnnotatedPhotoCell.swift */; };
-		9238E2201C875E6500313AB7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21F1C875E6500313AB7 /* Post.swift */; };
+		9238E2201C875E6500313AB7 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21F1C875E6500313AB7 /* Question.swift */; };
+		9238E2271C8769F300313AB7 /* AskQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9238E2261C8769F300313AB7 /* AskQuestion.storyboard */; };
 		9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */; };
 		9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBC61C7E86FE007B4B95 /* ViewController.swift */; };
 		9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9295FBC81C7E86FE007B4B95 /* Main.storyboard */; };
@@ -53,7 +54,8 @@
 		9238E2181C861DD900313AB7 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
 		9238E21B1C86243600313AB7 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		9238E21D1C8625E300313AB7 /* AnnotatedPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedPhotoCell.swift; sourceTree = "<group>"; };
-		9238E21F1C875E6500313AB7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		9238E21F1C875E6500313AB7 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		9238E2261C8769F300313AB7 /* AskQuestion.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AskQuestion.storyboard; sourceTree = "<group>"; };
 		9295FBC11C7E86FE007B4B95 /* Chacha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chacha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9295FBC41C7E86FE007B4B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9295FBC61C7E86FE007B4B95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		9238E2211C8767F400313AB7 /* Ask Question Page */ = {
+			isa = PBXGroup;
+			children = (
+				9238E2261C8769F300313AB7 /* AskQuestion.storyboard */,
+			);
+			name = "Ask Question Page";
+			sourceTree = "<group>";
+		};
 		9295FBB81C7E86FD007B4B95 = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				9295FBF01C7E9783007B4B95 /* LogIn */,
-				92CE70341C83FED800E3A7B6 /* Question Feeds */,
+				9238E2211C8767F400313AB7 /* Ask Question Page */,
+				92CE70341C83FED800E3A7B6 /* Explore Feed */,
 				9295FBEF1C7E8BAD007B4B95 /* Main */,
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
 				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
@@ -209,12 +220,12 @@
 			children = (
 				92CE70251C83986000E3A7B6 /* User.swift */,
 				9238E2141C861B6100313AB7 /* Photo.swift */,
-				9238E21F1C875E6500313AB7 /* Post.swift */,
+				9238E21F1C875E6500313AB7 /* Question.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		92CE70341C83FED800E3A7B6 /* Question Feeds */ = {
+		92CE70341C83FED800E3A7B6 /* Explore Feed */ = {
 			isa = PBXGroup;
 			children = (
 				92CE70351C83FF4200E3A7B6 /* QuestionFeed.storyboard */,
@@ -223,7 +234,7 @@
 				9238E21D1C8625E300313AB7 /* AnnotatedPhotoCell.swift */,
 				9238E21A1C86240400313AB7 /* Views */,
 			);
-			name = "Question Feeds";
+			name = "Explore Feed";
 			sourceTree = "<group>";
 		};
 		B4F17A1938F131CF1B4255DB /* Pods */ = {
@@ -302,6 +313,7 @@
 				92CE70361C83FF4200E3A7B6 /* QuestionFeed.storyboard in Resources */,
 				9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */,
 				9238E2171C861DB800313AB7 /* Photos.plist in Resources */,
+				9238E2271C8769F300313AB7 /* AskQuestion.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +376,7 @@
 				9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */,
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
-				9238E2201C875E6500313AB7 /* Post.swift in Sources */,
+				9238E2201C875E6500313AB7 /* Question.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
 				9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */,
