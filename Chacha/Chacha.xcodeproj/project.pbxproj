@@ -155,7 +155,7 @@
 			children = (
 				9295FBF01C7E9783007B4B95 /* LogIn */,
 				9238E2211C8767F400313AB7 /* Ask Question Page */,
-				92CE70341C83FED800E3A7B6 /* Explore Feed */,
+				92CE70341C83FED800E3A7B6 /* Explore Feed And Tab Bar */,
 				9295FBEF1C7E8BAD007B4B95 /* Main */,
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
 				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
@@ -231,7 +231,7 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		92CE70341C83FED800E3A7B6 /* Explore Feed */ = {
+		92CE70341C83FED800E3A7B6 /* Explore Feed And Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
 				92CE70351C83FF4200E3A7B6 /* QuestionFeed.storyboard */,
@@ -240,7 +240,7 @@
 				9238E21D1C8625E300313AB7 /* AnnotatedPhotoCell.swift */,
 				9238E21A1C86240400313AB7 /* Views */,
 			);
-			name = "Explore Feed";
+			name = "Explore Feed And Tab Bar";
 			sourceTree = "<group>";
 		};
 		B4F17A1938F131CF1B4255DB /* Pods */ = {

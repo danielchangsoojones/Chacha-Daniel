@@ -14,7 +14,7 @@ class Question: PFObject, PFSubclassing {
         return "Question"
     }
     
-    @NSManaged var createdBy: User?
+    @NSManaged var createdBy: PFUser?
     @NSManaged var questionImage: PFFile?
     @NSManaged var answerCount: Int
     @NSManaged var likeCount: Int
@@ -23,6 +23,8 @@ class Question: PFObject, PFSubclassing {
     
     override init() {
         super.init()
+        answerCount = 0
+        likeCount = 0
     }
     
     func updateLikeCount() {

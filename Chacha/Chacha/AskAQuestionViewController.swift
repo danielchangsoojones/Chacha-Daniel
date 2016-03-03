@@ -31,6 +31,7 @@ class AskAQuestionViewController: UIViewController {
         let newQuestion = Question()
         newQuestion.question = questionTextBox.text
         newQuestion.questionDescription = questionDescriptionTextBox.text
+        newQuestion.createdBy = PFUser.currentUser()
         if let image = questionImage.image {
             let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
             newQuestion.questionImage = file
