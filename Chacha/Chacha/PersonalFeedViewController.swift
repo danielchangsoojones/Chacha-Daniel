@@ -31,7 +31,7 @@ class PersonalFeedViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCell")! as! QuestionNoPictureTableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
         
         return cell
     }
