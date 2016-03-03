@@ -17,6 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="ogl-Pm-Qxf" kind="relationship" relationship="viewControllers" id="Ylh-xe-PTD"/>
+                        <segue destination="ujl-ka-SeF" kind="relationship" relationship="viewControllers" id="Jjk-dx-78G"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLx-10-Cro" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="289.5" y="319.5"/>
         </scene>
-        <!--Explore-->
+        <!--Title-->
         <scene sceneID="1cn-YZ-l1k">
             <objects>
                 <collectionViewController id="Wfm-R0-MaW" customClass="ExploreViewController" customModule="Chacha" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,7 +64,7 @@
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="s44-mt-eba" customClass="AnnotatedPhotoCell" customModule="Chacha" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="315"/>
+                                <rect key="frame" x="88" y="0.0" width="200" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
@@ -232,11 +233,38 @@
                             <outlet property="delegate" destination="Wfm-R0-MaW" id="Rx5-4t-keV"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Explore" id="LNG-oZ-U0u"/>
+                    <navigationItem key="navigationItem" title="Title" id="Y3b-eg-GgG">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="l6Y-rZ-KPy">
+                            <connections>
+                                <action selector="logOut:" destination="Wfm-R0-MaW" id="PIY-eC-SD8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="8Yd-Sc-CGd" kind="presentation" identifier="LogOutSegue" id="pNy-Ae-YAe"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0H0-Li-JfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="792.5" y="319.5"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="R01-KT-04d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="8Yd-Sc-CGd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKO-yw-Fp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1194" y="0.0"/>
+        </scene>
+        <!--AskQuestion-->
+        <scene sceneID="fun-RP-bh7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AskQuestion" id="ujl-ka-SeF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Yrw-eS-yFA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YiH-XU-Oif" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-241" y="789"/>
         </scene>
     </scenes>
     <resources>

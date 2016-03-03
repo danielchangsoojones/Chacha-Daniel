@@ -11,7 +11,7 @@ import Foundation
 import Parse
 import SCLAlertView
 
-class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UITableViewController, UITextFieldDelegate {
     
     var datePicker:UIDatePicker!
     
@@ -359,21 +359,21 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate, UIImageP
         self.presentViewController(imgPicker, animated: true, completion: nil)
     }
     
-    //MARK:- UIImagePickerControllerDelegate
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
-    {
-        if image != nil {
-            let img = image.resizeImage(CGSize(width:256,height:256))
-            theAvatarImage.image = img
-        }
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     func isValidEmail(email:String) -> Bool {
         let emailRegex = "[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z0-9._%+-]{1,100}";
         let emailTest = NSPredicate(format: "SELF MATCHES[c] %@", emailRegex)
         return emailTest.evaluateWithObject(email)
     }
     
+}
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
+    {
+        if image != nil {
+            let img = image.resizeImage(CGSize(width:256,height:256))
+            self.theAvatarImage.image = img
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

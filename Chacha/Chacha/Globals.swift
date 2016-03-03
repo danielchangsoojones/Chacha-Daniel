@@ -40,6 +40,28 @@ func applyBorder(view:UIView) {
     view.layer.borderWidth = 0.5
 }
 
+//Text View methods
+func editingBeginsTextView(textView: UITextView) {
+    if textView.textColor == UIColor.lightGrayColor() {
+        textView.text = nil
+        textView.textColor = UIColor.blackColor()
+    }
+}
+
+func editingEndedTextView(textView: UITextView, placeHolderText: String) {
+    if textView.text.isEmpty {
+        textView.text = placeHolderText
+        textView.textColor = UIColor.lightGrayColor()
+    }
+}
+
+func resetTextView(textView: UITextView, placeHolderText: String) {
+    textView.text = placeHolderText
+    textView.textColor = UIColor.lightGrayColor()
+}
+
+
+
 //Alert
 //func iLikeyAlert(vc:UIViewController, title:String, message:String?, completion: (() -> Void)?) {
 //    UIAlertController.showAlertInViewController(vc, withTitle:title, message: message, cancelButtonTitle: "OK", destructiveButtonTitle: nil, otherButtonTitles: nil) { (controller, action, buttonIndex) in

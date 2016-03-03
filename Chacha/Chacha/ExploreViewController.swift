@@ -8,8 +8,15 @@
 
 import UIKit
 import AVFoundation
+import Parse
 
 class ExploreViewController: UICollectionViewController {
+    
+    @IBAction func logOut(sender: AnyObject) {
+        PFUser.logOut()
+        performSegueWithIdentifier("LogOutSegue", sender: self)
+    }
+    
 
     var photos = Photo.allPhotos()
     
