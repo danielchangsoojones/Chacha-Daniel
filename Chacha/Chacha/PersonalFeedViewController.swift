@@ -12,10 +12,13 @@ class PersonalFeedViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //for making cells grow and shrink with cell size content
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,9 +31,7 @@ class PersonalFeedViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCell")! as UITableViewCell
-        
-        cell.textLabel?.text = "test"
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCell")! as! QuestionNoPictureTableViewCell
         
         return cell
     }
