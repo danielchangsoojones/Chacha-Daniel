@@ -61,13 +61,13 @@
                                                     <state key="normal" image="logo-chacha"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCB-Fr-BD4">
-                                                    <rect key="frame" x="56" y="7" width="61" height="14.5"/>
+                                                    <rect key="frame" x="56" y="7" width="61" height="15"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asked: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlD-xC-IgE">
-                                                    <rect key="frame" x="118" y="7" width="40.5" height="14.5"/>
+                                                    <rect key="frame" x="118" y="7" width="41" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -87,10 +87,10 @@
                                                     </variation>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-dx-95m" userLabel="Like/Comment Stack View">
-                                                    <rect key="frame" x="56" y="39" width="98" height="22"/>
+                                                    <rect key="frame" x="56" y="39" width="98" height="23"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TUE-Ol-5cO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="22"/>
+                                                            <rect key="frame" x="0.0" y="1" width="35" height="22"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhY-Fp-g3M">
                                                                     <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
@@ -105,7 +105,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="frh-B3-fG7">
-                                                            <rect key="frame" x="70" y="0.0" width="28" height="22"/>
+                                                            <rect key="frame" x="70" y="1" width="28" height="22"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUj-Fl-Lj3">
                                                                     <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
@@ -200,11 +200,11 @@
                                             <outlet property="questionText" destination="ZBm-YG-hQv" id="rtQ-N3-c0k"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCellWithPicture" rowHeight="191" id="5VZ-hB-KZH" customClass="QuestionNoPictureTableViewCell" customModule="Chacha" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="197" width="375" height="191"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCellWithPicture" rowHeight="218" id="5VZ-hB-KZH" customClass="QuestionWithPictureTableViewCell" customModule="Chacha" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="197" width="375" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5VZ-hB-KZH" id="Z49-x7-3ll">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="190.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJR-8Z-OKt">
@@ -216,13 +216,13 @@
                                                     <state key="normal" image="logo-chacha"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-nM-6d8">
-                                                    <rect key="frame" x="56" y="7" width="61" height="14.5"/>
+                                                    <rect key="frame" x="56" y="7" width="61" height="15"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asked: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsv-3T-bxw">
-                                                    <rect key="frame" x="118" y="7" width="40.5" height="14.5"/>
+                                                    <rect key="frame" x="118" y="7" width="41" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -249,7 +249,7 @@
                                                             <state key="normal" image="clock-off"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3E-Bj-TSm">
-                                                            <rect key="frame" x="16" y="5" width="11.5" height="12"/>
+                                                            <rect key="frame" x="16" y="5" width="12" height="12"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -260,12 +260,60 @@
                                                         <constraint firstAttribute="height" constant="22" id="kFI-Q1-Juq"/>
                                                     </constraints>
                                                 </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ioL-wh-M0C">
-                                                    <rect key="frame" x="56" y="42.5" width="306" height="106"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="07" translatesAutoresizingMaskIntoConstraints="NO" id="ioL-wh-M0C">
+                                                    <rect key="frame" x="56" y="42" width="306" height="106"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="106" id="tkS-gg-xir"/>
                                                     </constraints>
                                                 </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ArN-lq-7z7" userLabel="Like/Comment Stack View">
+                                                    <rect key="frame" x="56" y="151" width="98" height="22"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="jIE-nF-h5X">
+                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="22"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxB-TN-FEZ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                                                    <state key="normal" image="vibe-off"/>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvZ-e1-MIZ">
+                                                                    <rect key="frame" x="17" y="5" width="18" height="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iFo-GC-22u">
+                                                            <rect key="frame" x="70" y="0.0" width="28" height="22"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-0D-2mV">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                                                    <state key="normal" image="bubble-off"/>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovK-C7-cyK">
+                                                                    <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="gee-TG-hoc"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="gee-TG-hoc"/>
+                                                        </mask>
+                                                    </variation>
+                                                </stackView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Do You Know The Answer?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oKg-J0-iN3">
+                                                    <rect key="frame" x="56" y="182" width="306" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rfL-k6-Z5a" firstAttribute="top" secondItem="1k5-nM-6d8" secondAttribute="top" id="17g-Xa-i6q"/>
@@ -275,29 +323,38 @@
                                                 <constraint firstItem="1k5-nM-6d8" firstAttribute="leading" secondItem="WJR-8Z-OKt" secondAttribute="trailing" constant="8" id="HGA-DF-9nU"/>
                                                 <constraint firstItem="ioL-wh-M0C" firstAttribute="top" secondItem="hP5-Tj-hZk" secondAttribute="bottom" constant="8" id="I5i-WJ-xy0"/>
                                                 <constraint firstItem="1k5-nM-6d8" firstAttribute="top" secondItem="WJR-8Z-OKt" secondAttribute="top" constant="5" id="Q4j-4b-WSj"/>
+                                                <constraint firstItem="ArN-lq-7z7" firstAttribute="top" secondItem="ioL-wh-M0C" secondAttribute="bottom" constant="3" id="Qa0-Je-NDP"/>
+                                                <constraint firstItem="oKg-J0-iN3" firstAttribute="top" secondItem="ArN-lq-7z7" secondAttribute="bottom" constant="8" id="R4k-CS-GQP"/>
                                                 <constraint firstItem="WJR-8Z-OKt" firstAttribute="top" secondItem="Z49-x7-3ll" secondAttribute="top" constant="2" id="T9g-ee-8qH"/>
                                                 <constraint firstAttribute="trailing" secondItem="rfL-k6-Z5a" secondAttribute="trailing" constant="13" id="Vao-bY-tgl"/>
                                                 <constraint firstItem="Gsv-3T-bxw" firstAttribute="baseline" secondItem="1k5-nM-6d8" secondAttribute="baseline" id="Vge-Rj-mwP"/>
                                                 <constraint firstItem="hP5-Tj-hZk" firstAttribute="leading" secondItem="1k5-nM-6d8" secondAttribute="leading" id="axE-sq-5hN"/>
                                                 <constraint firstItem="hP5-Tj-hZk" firstAttribute="top" secondItem="1k5-nM-6d8" secondAttribute="bottom" id="b2b-YP-cAF"/>
                                                 <constraint firstItem="Gsv-3T-bxw" firstAttribute="centerY" secondItem="1k5-nM-6d8" secondAttribute="centerY" id="cLI-wO-hbx"/>
+                                                <constraint firstItem="oKg-J0-iN3" firstAttribute="leading" secondItem="1k5-nM-6d8" secondAttribute="leading" id="e6M-Cl-dsE"/>
                                                 <constraint firstItem="Gsv-3T-bxw" firstAttribute="baseline" secondItem="1k5-nM-6d8" secondAttribute="baseline" id="iS4-MD-lzx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="oKg-J0-iN3" secondAttribute="bottom" constant="-2" id="oxD-ad-sJH"/>
                                                 <constraint firstItem="Gsv-3T-bxw" firstAttribute="leading" secondItem="1k5-nM-6d8" secondAttribute="trailing" constant="1" id="q4J-Zv-VJH"/>
+                                                <constraint firstItem="ArN-lq-7z7" firstAttribute="leading" secondItem="ioL-wh-M0C" secondAttribute="leading" id="r46-gf-vdW"/>
                                                 <constraint firstItem="ioL-wh-M0C" firstAttribute="trailing" secondItem="rfL-k6-Z5a" secondAttribute="trailing" id="tfx-1F-zdw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="oKg-J0-iN3" secondAttribute="bottom" constant="-2" id="tpp-Fg-h04"/>
+                                                <constraint firstItem="oKg-J0-iN3" firstAttribute="trailing" secondItem="rfL-k6-Z5a" secondAttribute="trailing" id="uQO-qz-NuU"/>
                                                 <constraint firstItem="rfL-k6-Z5a" firstAttribute="top" secondItem="Z49-x7-3ll" secondAttribute="top" constant="1" id="zd7-Qu-KWK"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Vge-Rj-mwP"/>
                                                     <exclude reference="cLI-wO-hbx"/>
+                                                    <exclude reference="oxD-ad-sJH"/>
                                                     <exclude reference="17g-Xa-i6q"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="askedOrAnsweredText" destination="Gsv-3T-bxw" id="11j-Ua-VkW"/>
-                                            <outlet property="fullNameText" destination="1k5-nM-6d8" id="wkG-Fb-UpX"/>
-                                            <outlet property="questionText" destination="hP5-Tj-hZk" id="4mL-V6-reI"/>
+                                            <outlet property="askedOrAnswerText" destination="Gsv-3T-bxw" id="UB7-u7-p9r"/>
+                                            <outlet property="fullName" destination="1k5-nM-6d8" id="oRQ-Ft-lWg"/>
+                                            <outlet property="questionImage" destination="ioL-wh-M0C" id="183-l3-RUC"/>
+                                            <outlet property="questionText" destination="hP5-Tj-hZk" id="qng-5r-kL7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -338,6 +395,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="07" width="320" height="213"/>
         <image name="bubble-off" width="16" height="16"/>
         <image name="clock-off" width="16" height="16"/>
         <image name="logo-chacha" width="118" height="46"/>

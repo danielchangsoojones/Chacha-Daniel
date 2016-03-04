@@ -41,6 +41,7 @@
 		92A361B01C88B4210075831B /* PersonalFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A361AF1C88B4210075831B /* PersonalFeed.storyboard */; };
 		92A361B31C88B4DC0075831B /* PersonalFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */; };
 		92A361B51C88CD270075831B /* QuestionNoPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */; };
+		92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */; };
 		92CE70261C83986000E3A7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70251C83986000E3A7B6 /* User.swift */; };
 		92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70281C839C0000E3A7B6 /* DateExtensions.swift */; };
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
@@ -87,6 +88,7 @@
 		92A361AF1C88B4210075831B /* PersonalFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonalFeed.storyboard; sourceTree = "<group>"; };
 		92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeedViewController.swift; sourceTree = "<group>"; };
 		92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionNoPictureTableViewCell.swift; sourceTree = "<group>"; };
+		92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionWithPictureTableViewCell.swift; sourceTree = "<group>"; };
 		92CE70251C83986000E3A7B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		92CE70281C839C0000E3A7B6 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = ../DateExtensions.swift; sourceTree = "<group>"; };
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				92A361AF1C88B4210075831B /* PersonalFeed.storyboard */,
 				92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */,
 				92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */,
+				92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */,
 			);
 			name = "Personal Feed";
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9238E2201C875E6500313AB7 /* Question.swift in Sources */,
+				92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				9238E22B1C87805000313AB7 /* ImagePicker.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
