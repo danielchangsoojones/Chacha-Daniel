@@ -8,10 +8,11 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class QuestionWithPictureTableViewCell: QuestionNoPictureTableViewCell {
     
-    @IBOutlet weak var questionImage: UIImageView!
+    @IBOutlet weak var questionImage: PFImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

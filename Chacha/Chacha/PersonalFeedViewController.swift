@@ -40,9 +40,10 @@ class PersonalFeedViewController: UIViewController, UITableViewDelegate, UITable
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
         
-        if withPicture {
+        if let questionImage = currentQuestion.questionImage {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellWithPicture")! as! QuestionWithPictureTableViewCell
-            cell.questionImage.image = nil
+            cell.questionImage.file = questionImage
+            cell.questionImage.loadInBackground()
             return cell
         } else {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
