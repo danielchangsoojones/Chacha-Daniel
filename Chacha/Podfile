@@ -4,6 +4,7 @@ use_frameworks!
 target 'Chacha' do
 
 pod 'SCLAlertView'
+pod 'ParseUI'
 
 end
 

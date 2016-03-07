@@ -84,8 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Chacha/Bolts.framework"
+  install_framework "Pods-Chacha/Parse.framework"
+  install_framework "Pods-Chacha/ParseUI.framework"
   install_framework "Pods-Chacha/SCLAlertView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Chacha/Bolts.framework"
+  install_framework "Pods-Chacha/Parse.framework"
+  install_framework "Pods-Chacha/ParseUI.framework"
   install_framework "Pods-Chacha/SCLAlertView.framework"
 fi

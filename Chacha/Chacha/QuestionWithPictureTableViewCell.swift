@@ -7,15 +7,12 @@
 //
 
 import UIKit
+import Parse
 
-class QuestionWithPictureTableViewCell: UITableViewCell {
+class QuestionWithPictureTableViewCell: QuestionNoPictureTableViewCell {
     
-    @IBOutlet weak var fullName: UILabel!
-    @IBOutlet weak var askedOrAnswerText: UILabel!
-    @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var questionImage: UIImageView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

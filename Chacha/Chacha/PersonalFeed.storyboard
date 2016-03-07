@@ -49,7 +49,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8yh-hM-Zde" id="Yq9-Of-IcL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtY-Ak-HGU">
@@ -195,9 +195,9 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="askedOrAnsweredText" destination="AlD-xC-IgE" id="L91-I8-1qr"/>
-                                            <outlet property="fullNameText" destination="NCB-Fr-BD4" id="8ze-km-Vtu"/>
-                                            <outlet property="questionText" destination="ZBm-YG-hQv" id="rtQ-N3-c0k"/>
+                                            <outlet property="askedOrAnsweredText" destination="AlD-xC-IgE" id="Kao-Zk-DYK"/>
+                                            <outlet property="fullNameText" destination="NCB-Fr-BD4" id="OQG-Dd-0DY"/>
+                                            <outlet property="questionText" destination="ZBm-YG-hQv" id="0iM-aV-KRz"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCellWithPicture" rowHeight="218" id="5VZ-hB-KZH" customClass="QuestionWithPictureTableViewCell" customModule="Chacha" customModuleProvider="target">
@@ -351,10 +351,10 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="askedOrAnswerText" destination="Gsv-3T-bxw" id="UB7-u7-p9r"/>
-                                            <outlet property="fullName" destination="1k5-nM-6d8" id="oRQ-Ft-lWg"/>
+                                            <outlet property="askedOrAnsweredText" destination="Gsv-3T-bxw" id="gsF-ZY-a9o"/>
+                                            <outlet property="fullNameText" destination="1k5-nM-6d8" id="7sb-6I-Zv9"/>
                                             <outlet property="questionImage" destination="ioL-wh-M0C" id="183-l3-RUC"/>
-                                            <outlet property="questionText" destination="hP5-Tj-hZk" id="qng-5r-kL7"/>
+                                            <outlet property="questionText" destination="hP5-Tj-hZk" id="RW3-QH-P0G"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
