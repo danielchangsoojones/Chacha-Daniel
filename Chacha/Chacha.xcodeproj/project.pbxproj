@@ -38,6 +38,10 @@
 		9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBF51C7E9FF7007B4B95 /* SignUpViewController.swift */; };
 		9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBF71C7EA4FC007B4B95 /* Globals.swift */; };
 		9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBF91C838DE3007B4B95 /* UIColorExtension.swift */; };
+		92A361B01C88B4210075831B /* PersonalFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A361AF1C88B4210075831B /* PersonalFeed.storyboard */; };
+		92A361B31C88B4DC0075831B /* PersonalFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */; };
+		92A361B51C88CD270075831B /* QuestionNoPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */; };
+		92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */; };
 		92CE70261C83986000E3A7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70251C83986000E3A7B6 /* User.swift */; };
 		92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70281C839C0000E3A7B6 /* DateExtensions.swift */; };
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
@@ -81,6 +85,10 @@
 		9295FBF51C7E9FF7007B4B95 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9295FBF71C7EA4FC007B4B95 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		9295FBF91C838DE3007B4B95 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		92A361AF1C88B4210075831B /* PersonalFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonalFeed.storyboard; sourceTree = "<group>"; };
+		92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeedViewController.swift; sourceTree = "<group>"; };
+		92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionNoPictureTableViewCell.swift; sourceTree = "<group>"; };
+		92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionWithPictureTableViewCell.swift; sourceTree = "<group>"; };
 		92CE70251C83986000E3A7B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		92CE70281C839C0000E3A7B6 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = ../DateExtensions.swift; sourceTree = "<group>"; };
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 			children = (
 				9295FBF01C7E9783007B4B95 /* LogIn */,
 				9238E2211C8767F400313AB7 /* Ask Question Page */,
+				92A361B11C88B4260075831B /* Personal Feed */,
 				92CE70341C83FED800E3A7B6 /* Explore Feed And Tab Bar */,
 				9295FBEF1C7E8BAD007B4B95 /* Main */,
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
@@ -219,6 +228,17 @@
 				9238E22A1C87805000313AB7 /* ImagePicker.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		92A361B11C88B4260075831B /* Personal Feed */ = {
+			isa = PBXGroup;
+			children = (
+				92A361AF1C88B4210075831B /* PersonalFeed.storyboard */,
+				92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */,
+				92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */,
+				92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */,
+			);
+			name = "Personal Feed";
 			sourceTree = "<group>";
 		};
 		92CE70271C83986E00E3A7B6 /* Models */ = {
@@ -320,6 +340,7 @@
 				92CE70361C83FF4200E3A7B6 /* QuestionFeed.storyboard in Resources */,
 				9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */,
 				9238E2171C861DB800313AB7 /* Photos.plist in Resources */,
+				92A361B01C88B4210075831B /* PersonalFeed.storyboard in Resources */,
 				9238E2271C8769F300313AB7 /* AskQuestion.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,12 +400,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A361B31C88B4DC0075831B /* PersonalFeedViewController.swift in Sources */,
+				92A361B51C88CD270075831B /* QuestionNoPictureTableViewCell.swift in Sources */,
 				9238E2291C877E7000313AB7 /* AskAQuestionViewController.swift in Sources */,
 				92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */,
 				9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */,
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9238E2201C875E6500313AB7 /* Question.swift in Sources */,
+				92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				9238E22B1C87805000313AB7 /* ImagePicker.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
@@ -516,7 +540,7 @@
 				);
 				INFOPLIST_FILE = Chacha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dcj.Chong500Productions.Chacha;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Chacha.ChachaDaniel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -533,7 +557,7 @@
 				);
 				INFOPLIST_FILE = Chacha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dcj.Chong500Productions.Chacha;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Chacha.ChachaDaniel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

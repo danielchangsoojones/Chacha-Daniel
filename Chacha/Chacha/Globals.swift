@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Parse
 
 //Custom colors
 let ChachaTeal = UIColor(rgba: "#5ABBB6")
@@ -60,12 +61,27 @@ func resetTextView(textView: UITextView, placeHolderText: String) {
     textView.textColor = UIColor.lightGrayColor()
 }
 
-
-
-//Alert
-//func iLikeyAlert(vc:UIViewController, title:String, message:String?, completion: (() -> Void)?) {
-//    UIAlertController.showAlertInViewController(vc, withTitle:title, message: message, cancelButtonTitle: "OK", destructiveButtonTitle: nil, otherButtonTitles: nil) { (controller, action, buttonIndex) in
-//        completion?()
-//    }
+//queries
+func populateQuestionArray(withPicture: Bool, var questionArray: [Question], tableView: UITableView) {
+    let query = Question.query()
+    query?.orderByAscending("createdAt")
+    //query?.includeKey("answerCount")
+    query?.includeKey("createdBy")
+    //query?.includeKey("likeCount")
+    //query?.includeKey("question")
+    //query?.includeKey("questionDescription")
+    query?.includeKey("createdAt")
+    if withPicture {
+        query?.includeKey("questionImage")
+    }
+    query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+        if let objects = objects as? [Question] {
+            for question in objects {
+                questionArray.append(question)
+            }
+            tableView.reloadData()
+        }
+    })
+}
 
 
