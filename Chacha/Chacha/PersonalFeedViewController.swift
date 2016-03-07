@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PersonalFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,32 +30,6 @@ class PersonalFeedViewController: UIViewController, UITableViewDelegate, UITable
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let currentRow = indexPath.row
-        let currentQuestion = questions[currentRow]
-        
-        if let questionImage = currentQuestion.questionImage {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellWithPicture")! as! QuestionWithPictureTableViewCell
-            cell.questionImage.file = questionImage
-            cell.questionImage.loadInBackground()
-            return cell
-        } else {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
-            cell.fullNameText.text = currentQuestion.createdBy?.fullName
-            cell.questionText.text = currentQuestion.question
-            return cell
-        }
-        
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
 
 }
@@ -80,5 +54,36 @@ extension PersonalFeedViewController {
                         self.tableView.reloadData()
                     }
                 })
+    }
+}
+
+//tableView Delegate Methods
+extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return questions.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let currentRow = indexPath.row
+        let currentQuestion = questions[currentRow]
+        
+        if let questionImage = currentQuestion.questionImage {
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellWithPicture")! as! QuestionWithPictureTableViewCell
+            cell.questionImage.file = questionImage
+            cell.questionImage.loadInBackground()
+            cell.fullNameText.text = currentQuestion.createdBy?.fullName
+            cell.questionText.text = currentQuestion.question
+            return cell
+        } else {
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
+            cell.fullNameText.text = currentQuestion.createdBy?.fullName
+            cell.questionText.text = currentQuestion.question
+            return cell
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
 }
