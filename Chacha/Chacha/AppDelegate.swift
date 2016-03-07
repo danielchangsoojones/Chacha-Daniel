@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //register Parse Subclasses
         User.registerSubclass()
         Question.registerSubclass()
+        Answer.registerSubclass()
         
         return true
     }

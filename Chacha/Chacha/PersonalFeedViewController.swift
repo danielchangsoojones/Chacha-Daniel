@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Parse
 
 class PersonalFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var rowTapped : Int?
     
     var withPicture: Bool = false
     var questions = [Question]()
@@ -30,6 +32,18 @@ class PersonalFeedViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "answerPageSegue" {
+            let destinationVC = segue.destinationViewController as! AnswerViewController
+            if let rowTapped = rowTapped {
+                let question = questions[rowTapped]
+                destinationVC.question = question.question
+                destinationVC.createdBy = question.createdBy
+                destinationVC.questionObject = question
+            }
+        }
     }
 
 }
@@ -84,6 +98,7 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        rowTapped = indexPath.row
+        performSegueWithIdentifier("answerPageSegue", sender: self)
     }
 }

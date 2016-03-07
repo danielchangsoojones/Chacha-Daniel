@@ -42,6 +42,9 @@
 		92A361B31C88B4DC0075831B /* PersonalFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */; };
 		92A361B51C88CD270075831B /* QuestionNoPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */; };
 		92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */; };
+		92A361BA1C8E12540075831B /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B91C8E12540075831B /* AnswerViewController.swift */; };
+		92A361BC1C8E13440075831B /* AnswerNoPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361BB1C8E13440075831B /* AnswerNoPictureTableViewCell.swift */; };
+		92A361BE1C8E26BD0075831B /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361BD1C8E26BD0075831B /* Answer.swift */; };
 		92CE70261C83986000E3A7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70251C83986000E3A7B6 /* User.swift */; };
 		92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70281C839C0000E3A7B6 /* DateExtensions.swift */; };
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
@@ -89,6 +92,9 @@
 		92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeedViewController.swift; sourceTree = "<group>"; };
 		92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionNoPictureTableViewCell.swift; sourceTree = "<group>"; };
 		92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionWithPictureTableViewCell.swift; sourceTree = "<group>"; };
+		92A361B91C8E12540075831B /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		92A361BB1C8E13440075831B /* AnswerNoPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerNoPictureTableViewCell.swift; sourceTree = "<group>"; };
+		92A361BD1C8E26BD0075831B /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		92CE70251C83986000E3A7B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		92CE70281C839C0000E3A7B6 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = ../DateExtensions.swift; sourceTree = "<group>"; };
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -162,16 +168,17 @@
 			isa = PBXGroup;
 			children = (
 				9295FBF01C7E9783007B4B95 /* LogIn */,
+				92A361B81C8E122F0075831B /* Answer Page */,
 				9238E2211C8767F400313AB7 /* Ask Question Page */,
 				92A361B11C88B4260075831B /* Personal Feed */,
 				92CE70341C83FED800E3A7B6 /* Explore Feed And Tab Bar */,
+				92CE70271C83986E00E3A7B6 /* Models */,
+				9295FBFB1C838DFD007B4B95 /* Utils */,
 				9295FBEF1C7E8BAD007B4B95 /* Main */,
 				9295FBD01C7E86FE007B4B95 /* Info.plist */,
 				9295FBCB1C7E86FE007B4B95 /* Assets.xcassets */,
 				9238E2161C861DB800313AB7 /* Photos.plist */,
 				9238E2181C861DD900313AB7 /* Photos.xcassets */,
-				92CE70271C83986E00E3A7B6 /* Models */,
-				9295FBFB1C838DFD007B4B95 /* Utils */,
 			);
 			path = Chacha;
 			sourceTree = "<group>";
@@ -241,12 +248,22 @@
 			name = "Personal Feed";
 			sourceTree = "<group>";
 		};
+		92A361B81C8E122F0075831B /* Answer Page */ = {
+			isa = PBXGroup;
+			children = (
+				92A361B91C8E12540075831B /* AnswerViewController.swift */,
+				92A361BB1C8E13440075831B /* AnswerNoPictureTableViewCell.swift */,
+			);
+			name = "Answer Page";
+			sourceTree = "<group>";
+		};
 		92CE70271C83986E00E3A7B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				92CE70251C83986000E3A7B6 /* User.swift */,
 				9238E2141C861B6100313AB7 /* Photo.swift */,
 				9238E21F1C875E6500313AB7 /* Question.swift */,
+				92A361BD1C8E26BD0075831B /* Answer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -404,14 +421,17 @@
 				92A361B51C88CD270075831B /* QuestionNoPictureTableViewCell.swift in Sources */,
 				9238E2291C877E7000313AB7 /* AskAQuestionViewController.swift in Sources */,
 				92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */,
+				92A361BA1C8E12540075831B /* AnswerViewController.swift in Sources */,
 				9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */,
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,
+				92A361BE1C8E26BD0075831B /* Answer.swift in Sources */,
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9238E2201C875E6500313AB7 /* Question.swift in Sources */,
 				92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				9238E22B1C87805000313AB7 /* ImagePicker.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
+				92A361BC1C8E13440075831B /* AnswerNoPictureTableViewCell.swift in Sources */,
 				9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */,
 				9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */,
 				9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */,
