@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '44726578AB0D5867DF6367BD'
+               BlueprintIdentifier = '93E418D89171D77BEBB0D8E6'
                BlueprintName = 'Pods-Chacha'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Chacha.framework'>

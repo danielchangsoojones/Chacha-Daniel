@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFDateHelper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>EFTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,10 +44,40 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8237AE0D0EA4516A81E5D80E700AD1BE</key>
+		<key>19E4FCAE7EE3E81A5D32A507B3C9E202</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>395970F09DFE5EFCDA4AFA3D5EBE78C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>56170867254AF3082A1840024F458BD3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6BDB4D035FCCA69D44E073675F8E7668</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A538A72C95D53F8F29871C662B2EC5D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C3C0CFDEC573636C24C1025BCC8291EE</key>
+		<key>E1F78B1C5F8F2CCD0E68552EAF2B9B52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1F78B1C5F8F2CCD0E68552EAF2B9B52</key>
+		<key>F65B5FC465EEAE8D06DA022115DFDF17</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDCBED7B344D29900EE17E3B8C96B7ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
