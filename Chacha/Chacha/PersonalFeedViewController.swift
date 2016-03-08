@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import EFTools
 
 class PersonalFeedViewController: UIViewController {
 
@@ -35,7 +36,8 @@ class PersonalFeedViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "answerPageSegue" {
+        switch segueIdentifierForSegue(segue) {
+        case .answerPageSegue:
             let destinationVC = segue.destinationViewController as! AnswerViewController
             if let rowTapped = rowTapped {
                 let question = questions[rowTapped]
@@ -142,7 +144,7 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         rowTapped = indexPath.row
-        performSegueWithIdentifier("answerPageSegue", sender: self)
+        performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
 }
 
@@ -163,5 +165,12 @@ extension PersonalFeedViewController: QuestionNoPictureTableViewCellDelegate {
     
     func updateAnswerCount() {
         
+    }
+}
+
+extension PersonalFeedViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
+        case answerPageSegue
     }
 }

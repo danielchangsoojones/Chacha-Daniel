@@ -8,6 +8,7 @@
 
 import UIKit
 import ParseUI
+import EFTools
 
 class AnswerViewController: UIViewController {
 
