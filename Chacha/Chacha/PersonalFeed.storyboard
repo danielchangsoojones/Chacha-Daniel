@@ -107,7 +107,7 @@
                                                                             <state key="normal" image="bubble-off"/>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5y-nf-f1R">
-                                                                            <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                                            <rect key="frame" x="16" y="5" width="11.5" height="12"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -210,7 +210,7 @@
                                         <rect key="frame" x="0.0" y="197" width="375" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5VZ-hB-KZH" id="Z49-x7-3ll">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="217.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJR-8Z-OKt">
@@ -222,13 +222,13 @@
                                                     <state key="normal" image="logo-chacha"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-nM-6d8">
-                                                    <rect key="frame" x="56" y="7" width="61" height="15"/>
+                                                    <rect key="frame" x="56" y="7" width="61" height="14.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asked: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsv-3T-bxw">
-                                                    <rect key="frame" x="118" y="7" width="41" height="15"/>
+                                                    <rect key="frame" x="118" y="7" width="40.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -255,7 +255,7 @@
                                                             <state key="normal" image="clock-off"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3E-Bj-TSm">
-                                                            <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                            <rect key="frame" x="16" y="5" width="11.5" height="12"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -273,7 +273,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ArN-lq-7z7" userLabel="Like/Comment Stack View">
-                                                    <rect key="frame" x="56" y="152" width="103" height="23"/>
+                                                    <rect key="frame" x="56" y="151.5" width="102.5" height="22.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="jIE-nF-h5X">
                                                             <rect key="frame" x="0.0" y="0.0" width="35" height="22"/>
@@ -291,14 +291,14 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iFo-GC-22u">
-                                                            <rect key="frame" x="75" y="0.0" width="28" height="22"/>
+                                                            <rect key="frame" x="75" y="0.0" width="27.5" height="22"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-0D-2mV">
                                                                     <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
                                                                     <state key="normal" image="bubble-off"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovK-C7-cyK">
-                                                                    <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                                    <rect key="frame" x="16" y="5" width="11.5" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -421,26 +421,26 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ge1-NA-D3c" id="Qsr-qY-SDM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y14-SY-t9E">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="137.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bq0-q9-0pG">
-                                                            <rect key="frame" x="58" y="10" width="61" height="15"/>
+                                                            <rect key="frame" x="58" y="10" width="61" height="14.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asked: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRc-Jr-a4m">
-                                                            <rect key="frame" x="120" y="10" width="41" height="15"/>
+                                                            <rect key="frame" x="120" y="10" width="40.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the meaning of life? " lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbw-Te-0QA">
-                                                            <rect key="frame" x="58" y="24" width="307" height="13"/>
+                                                            <rect key="frame" x="58" y="23.5" width="307" height="13"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="htZ-0t-iHn"/>
                                                             </constraints>
@@ -454,13 +454,13 @@
                                                             </variation>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="GPP-J5-4BV" userLabel="Like/Comment Stack View">
-                                                            <rect key="frame" x="58" y="41" width="103" height="22"/>
+                                                            <rect key="frame" x="58" y="40.5" width="102.5" height="21.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="kbr-d5-6qH">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="35" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="35" height="21.5"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLt-j1-nxn">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="21.5"/>
                                                                             <state key="normal" image="vibe-off"/>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Z-ao-iei">
@@ -472,14 +472,14 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-TM-EP5">
-                                                                    <rect key="frame" x="75" y="0.0" width="28" height="22"/>
+                                                                    <rect key="frame" x="75" y="0.0" width="27.5" height="21.5"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoF-wh-Ykh">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="21.5"/>
                                                                             <state key="normal" image="bubble-off"/>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TK9-ke-KTt">
-                                                                            <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                                            <rect key="frame" x="16" y="5" width="11.5" height="12"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -504,7 +504,7 @@
                                                                     <state key="normal" image="clock-off"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSc-xp-Kcn">
-                                                                    <rect key="frame" x="17" y="5" width="12" height="12"/>
+                                                                    <rect key="frame" x="16.5" y="5" width="11.5" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -587,6 +587,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="answerTextField" destination="mI0-Tb-oin" id="yi6-tx-tOZ"/>
                                             <outlet property="askedOrAnsweredText" destination="NRc-Jr-a4m" id="Tg1-yF-GAW"/>
                                             <outlet property="fullNameText" destination="bq0-q9-0pG" id="nST-Mc-bDs"/>
                                             <outlet property="questionText" destination="bbw-Te-0QA" id="AYV-mq-Vxc"/>
@@ -603,7 +604,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13h-rY-D5s">
-                                                            <rect key="frame" x="120" y="10" width="67" height="15"/>
+                                                            <rect key="frame" x="120" y="10" width="67" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -623,7 +624,7 @@
                                                             </variation>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="yRZ-Wb-3ek" userLabel="Like/Comment Stack View">
-                                                            <rect key="frame" x="58" y="40" width="129" height="23"/>
+                                                            <rect key="frame" x="58" y="40" width="129" height="22.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yk6-mx-Td1">
                                                                     <rect key="frame" x="0.0" y="0.0" width="35" height="22"/>
@@ -641,14 +642,14 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Roa-N8-hyU">
-                                                                    <rect key="frame" x="101" y="0.0" width="28" height="22"/>
+                                                                    <rect key="frame" x="101" y="0.0" width="27.5" height="22"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjs-3n-i3F">
                                                                             <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
                                                                             <state key="normal" image="bubble-off"/>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqX-FA-oFg">
-                                                                            <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                                            <rect key="frame" x="16" y="5" width="11.5" height="12"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -675,7 +676,7 @@
                                                                     <state key="normal" image="clock-off"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op4-Ll-gbW">
-                                                                    <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                                                    <rect key="frame" x="16" y="5" width="11.5" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -695,7 +696,7 @@
                                                             <state key="normal" image="logo-chacha"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enh-pr-T9Y">
-                                                            <rect key="frame" x="58" y="10" width="61" height="15"/>
+                                                            <rect key="frame" x="58" y="10" width="61" height="14.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>

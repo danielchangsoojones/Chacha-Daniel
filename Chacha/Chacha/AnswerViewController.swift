@@ -93,6 +93,7 @@ extension AnswerViewController: QuestionNoPictureTableViewCellDelegate {
         //query?.includeKey("questionDescription")
         query?.includeKey("createdAt")
         //query?.includeKey("questionImage")
+        query?.whereKey("questionParent", equalTo: questionObject!)
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let objects = objects as? [Answer] {
                 for answer in objects {
@@ -113,7 +114,13 @@ extension AnswerViewController: QuestionNoPictureTableViewCellDelegate {
 //            newQuestion.questionImage = file
 //        }
         newAnswer.saveInBackgroundWithBlock { (success, error) -> Void in
-            let _ = Alert(title: "QAnswer Created!", subtitle: "You answered a question!", closeButtonTitle: "Awesome!", type: .Success)
+            if success {
+                self.answers.append(newAnswer)
+                self.tableView.reloadData()
+                let _ = Alert(title: "Answer Created!", subtitle: "You answered a question!", closeButtonTitle: "Awesome!", type: .Success)
+            } else {
+                print(error)
+            }
         }
     }
 }

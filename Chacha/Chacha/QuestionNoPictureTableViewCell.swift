@@ -19,7 +19,7 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     
     @IBAction func submit(sender: AnyObject) {
         if let delegate = delegate {
-             delegate.createAnswer("we did it")
+             delegate.createAnswer(answerTextField.text!)
         }
     }
     
