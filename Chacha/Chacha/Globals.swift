@@ -62,26 +62,13 @@ func resetTextView(textView: UITextView, placeHolderText: String) {
 }
 
 //queries
-func populateQuestionArray(withPicture: Bool, var questionArray: [Question], tableView: UITableView) {
+func populateQuestionArray() -> PFQuery {
     let query = Question.query()
     query?.orderByAscending("createdAt")
-    //query?.includeKey("answerCount")
     query?.includeKey("createdBy")
-    //query?.includeKey("likeCount")
-    //query?.includeKey("question")
-    //query?.includeKey("questionDescription")
     query?.includeKey("createdAt")
-    if withPicture {
-        query?.includeKey("questionImage")
-    }
-    query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-        if let objects = objects as? [Question] {
-            for question in objects {
-                questionArray.append(question)
-            }
-            tableView.reloadData()
-        }
-    })
+    query?.includeKey("questionImage")
+    return query!
 }
 
 

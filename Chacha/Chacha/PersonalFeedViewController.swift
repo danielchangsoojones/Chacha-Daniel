@@ -53,24 +53,12 @@ class PersonalFeedViewController: UIViewController {
 //queries
 extension PersonalFeedViewController {
     func createQuestionArray() {
-                let query = Question.query()
-                query?.orderByAscending("createdAt")
-                //query?.includeKey("answerCount")
-                query?.includeKey("createdBy")
-                //query?.includeKey("likeCount")
-                //query?.includeKey("question")
-                //query?.includeKey("questionDescription")
-                query?.includeKey("createdAt")
-                //query?.includeKey("questionImage")
-                query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                    if let objects = objects as? [Question] {
-                        for question in objects {
-                            self.questions.append(question)
-                            self.alreadyLikedDictionary[question] = false
-                        }
-                        self.likedAlready()
-                    }
-                })
+        populateQuestionArray().findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if let objects = objects as? [Question] {
+                self.questions = objects
+                self.tableView.reloadData()
+            }
+        })
     }
     
     func likedAlready() {

@@ -30,13 +30,15 @@ class ImagePicker : NSObject, UIImagePickerControllerDelegate, UINavigationContr
     }
     
     //Mark: UIImagePickerControllerDelegate
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imageView.image = info["UIImagePickerControllerOriginalImage"] as? UIImage
+        
+        viewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
-        if image != nil {
-            let img = image.resizeImage(CGSize(width:256,height:256))
-            self.imageView.image = img
-        }
-        viewController.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
 }

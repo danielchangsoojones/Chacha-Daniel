@@ -62,7 +62,7 @@ class User: PFUser {
     //MARK: - PFSubclassing methods
     
     override class func currentUser() -> User? {
-        let user = PFUser.currentUser() as! User?
+        let user = User.currentUser()
         return user
     }
     
