@@ -45,6 +45,7 @@
 		92A361BA1C8E12540075831B /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B91C8E12540075831B /* AnswerViewController.swift */; };
 		92A361BC1C8E13440075831B /* AnswerNoPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361BB1C8E13440075831B /* AnswerNoPictureTableViewCell.swift */; };
 		92A361BE1C8E26BD0075831B /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361BD1C8E26BD0075831B /* Answer.swift */; };
+		92A361C01C8E78F20075831B /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361BF1C8E78F20075831B /* Like.swift */; };
 		92CE70261C83986000E3A7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70251C83986000E3A7B6 /* User.swift */; };
 		92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70281C839C0000E3A7B6 /* DateExtensions.swift */; };
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
@@ -95,6 +96,7 @@
 		92A361B91C8E12540075831B /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		92A361BB1C8E13440075831B /* AnswerNoPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerNoPictureTableViewCell.swift; sourceTree = "<group>"; };
 		92A361BD1C8E26BD0075831B /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		92A361BF1C8E78F20075831B /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		92CE70251C83986000E3A7B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		92CE70281C839C0000E3A7B6 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = ../DateExtensions.swift; sourceTree = "<group>"; };
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				9238E2141C861B6100313AB7 /* Photo.swift */,
 				9238E21F1C875E6500313AB7 /* Question.swift */,
 				92A361BD1C8E26BD0075831B /* Answer.swift */,
+				92A361BF1C8E78F20075831B /* Like.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				92A361B51C88CD270075831B /* QuestionNoPictureTableViewCell.swift in Sources */,
 				9238E2291C877E7000313AB7 /* AskAQuestionViewController.swift in Sources */,
 				92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */,
+				92A361C01C8E78F20075831B /* Like.swift in Sources */,
 				92A361BA1C8E12540075831B /* AnswerViewController.swift in Sources */,
 				9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */,
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,

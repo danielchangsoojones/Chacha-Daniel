@@ -22,7 +22,7 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     var passedLikeCount = 0
     var passedAnswerCount = 0
     
-    var alreadyLiked = 0
+    var alreadyLiked = false
     
     var delegate: QuestionNoPictureTableViewCellDelegate?
     
@@ -34,10 +34,14 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     }
     
     @IBAction func likePressed(sender: AnyObject) {
-        passedLikeCount += 1
+        if alreadyLiked {
+            passedLikeCount -= 1
+        } else {
+            passedLikeCount += 1
+        }
         likeCount.text = "\(passedLikeCount)"
         if let delegate = delegate {
-            delegate.updateLikeCount(likeCount.tag)
+            delegate.updateLikeCount(likeCount.tag, alreadyLiked: alreadyLiked)
         }
     }
     
