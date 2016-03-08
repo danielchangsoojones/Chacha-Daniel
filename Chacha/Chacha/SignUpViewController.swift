@@ -353,6 +353,13 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
     }
    
     @IBAction func tapAvatar(sender: AnyObject) {
+        setImagePickerDelegate()
+    }
+    
+}
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func setImagePickerDelegate() {
         let imgPicker = UIImagePickerController()
         imgPicker.delegate = self
         imgPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
@@ -360,9 +367,6 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
         self.presentViewController(imgPicker, animated: true, completion: nil)
     }
     
-}
-
-extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         if image != nil {

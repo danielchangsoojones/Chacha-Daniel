@@ -67,7 +67,6 @@ func populateQuestionArray() -> PFQuery {
     query?.orderByAscending("createdAt")
     query?.includeKey("createdBy")
     query?.includeKey("createdAt")
-    query?.includeKey("questionImage")
     return query!
 }
 

@@ -19,11 +19,7 @@ class AskAQuestionViewController: UIViewController {
     let questionPlaceHolderText = "Ask Your Question..."
     
     @IBAction func addQuestionImage(sender: AnyObject) {
-        let imgPicker = UIImagePickerController()
-        imgPicker.delegate = self
-        imgPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-        imgPicker.allowsEditing = true
-        self.presentViewController(imgPicker, animated: true, completion: nil)
+        setImagePickerDelegate()
     }
     
     //Backend Swap
@@ -61,6 +57,14 @@ class AskAQuestionViewController: UIViewController {
 }
 
 extension AskAQuestionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func setImagePickerDelegate() {
+        let imgPicker = UIImagePickerController()
+        imgPicker.delegate = self
+        imgPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+        imgPicker.allowsEditing = true
+        self.presentViewController(imgPicker, animated: true, completion: nil)
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         if image != nil {
