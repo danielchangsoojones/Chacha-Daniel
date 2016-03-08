@@ -24,7 +24,7 @@ class AskAQuestionViewController: UIViewController {
     
     //Backend Swap
     @IBAction func askQuestion(sender: AnyObject) {
-        let newQuestion = Question()
+        let newQuestion = Question(likeCount: 0, answerCount: 0)
         newQuestion.question = questionTextBox.text
         newQuestion.questionDescription = questionDescriptionTextBox.text
         newQuestion.createdBy = User.currentUser()
