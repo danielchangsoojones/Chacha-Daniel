@@ -92,6 +92,10 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
             let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
             cell.fullNameText.text = currentQuestion.createdBy?.fullName
             cell.questionText.text = currentQuestion.question
+            cell.passedLikeCount = currentQuestion.likeCount
+            cell.passedAnswerCount = currentQuestion.answerCount
+            cell.likeCount.tag = currentRow
+            cell.delegate = self
             return cell
         }
         
@@ -100,5 +104,19 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         rowTapped = indexPath.row
         performSegueWithIdentifier("answerPageSegue", sender: self)
+    }
+}
+
+extension PersonalFeedViewController: QuestionNoPictureTableViewCellDelegate {
+    func createAnswer(answer: String) {
+        
+    }
+    
+    func updateLikeCount(row: Int) {
+        questions[row].updateLikeCount()
+    }
+    
+    func updateAnswerCount() {
+        
     }
 }

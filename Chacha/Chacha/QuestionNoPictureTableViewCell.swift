@@ -14,15 +14,32 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     @IBOutlet weak var askedOrAnsweredText: UILabel!
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
+    @IBOutlet weak var likeStackView: UIStackView!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var likeCount: UILabel!
+    @IBOutlet weak var questionCount: UILabel!
+    
+    var passedLikeCount = 0
+    var passedAnswerCount = 0
+    
+    var alreadyLiked = 0
     
     var delegate: QuestionNoPictureTableViewCellDelegate?
     
     @IBAction func submit(sender: AnyObject) {
+        passedAnswerCount += 1
         if let delegate = delegate {
              delegate.createAnswer(answerTextField.text!)
         }
     }
     
+    @IBAction func likePressed(sender: AnyObject) {
+        passedLikeCount += 1
+        likeCount.text = "\(passedLikeCount)"
+        if let delegate = delegate {
+            delegate.updateLikeCount(likeCount.tag)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
