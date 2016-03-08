@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         User.registerSubclass()
         Question.registerSubclass()
         Answer.registerSubclass()
+        Like.registerSubclass()
         
         return true
     }

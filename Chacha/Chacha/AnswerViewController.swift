@@ -79,6 +79,8 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
 
 protocol QuestionNoPictureTableViewCellDelegate {
     func createAnswer(answer: String)
+    func updateLikeCount(row: Int, alreadyLiked: Bool)
+    func updateAnswerCount()
 }
 
 //queries
@@ -122,6 +124,19 @@ extension AnswerViewController: QuestionNoPictureTableViewCellDelegate {
                 print(error)
             }
         }
+    }
+    
+    func updateLikeCount(row: Int, alreadyLiked: Bool) {
+        if alreadyLiked {
+            questionObject?.decrementLikeCount()
+        } else {
+            questionObject?.incrementLikeCount()
+        }
+        
+    }
+    
+    func updateAnswerCount() {
+        questionObject?.updateAnswerCount()
     }
 }
 
