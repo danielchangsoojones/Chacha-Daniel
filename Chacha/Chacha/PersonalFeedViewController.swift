@@ -43,6 +43,29 @@ extension PersonalFeedViewController {
             if let objects = objects as? [Question] {
                 self.questions = objects
                 self.tableView.reloadData()
+                self.fillAlreadyLikedDictionary()
+            }
+        })
+    }
+    
+    func fillAlreadyLikedDictionary() {
+        let query = Like.query()
+        query?.whereKey("createdBy", equalTo: User.currentUser()!).includeKey("questionParent")
+        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if error == nil {
+                if let objects = objects as! [Like]? {
+                    //sets every question alreadyLiked in dictionary to false
+                    for question in self.questions {
+                        self.alreadyLikedDictionary[question] = false
+                    }
+                    //sets the ones that actually have likes to true
+                    for like in objects {
+                        if let questionParent = like.questionParent {
+                         self.alreadyLikedDictionary[questionParent] = true
+                        }
+                    }
+                    self.tableView.reloadData()
+                }
             }
         })
     }
