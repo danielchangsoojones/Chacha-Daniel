@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import EFTools
 
 class LogInViewController: UIViewController {
     
@@ -129,7 +130,7 @@ class LogInViewController: UIViewController {
             }
             
             if user != nil {
-                self.performSegueWithIdentifier("LogInSuccessSegue", sender: self)
+                self.performSegueWithIdentifier(.LogInSuccessSegue, sender: self)
                 let installation = PFInstallation.currentInstallation()
                 installation["user"] = PFUser.currentUser()
                 installation.saveEventually(nil)
@@ -138,4 +139,11 @@ class LogInViewController: UIViewController {
     }
     
 
+}
+
+extension LogInViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
+        case LogInSuccessSegue
+    }
 }

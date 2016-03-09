@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import EFTools
 
 class PersonalFeedViewController: UIViewController {
 
@@ -26,24 +27,11 @@ class PersonalFeedViewController: UIViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         createQuestionArray()
-        //         populateQuestionArray(withPicture, questionArray: questions, tableView: tableView)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "answerPageSegue" {
-            let destinationVC = segue.destinationViewController as! AnswerViewController
-            if let rowTapped = rowTapped {
-                let question = questions[rowTapped]
-                destinationVC.question = question.question
-                destinationVC.createdBy = question.createdBy
-                destinationVC.questionObject = question
-            }
-        }
     }
 
 }
@@ -51,57 +39,32 @@ class PersonalFeedViewController: UIViewController {
 //queries
 extension PersonalFeedViewController {
     func createQuestionArray() {
-                let query = Question.query()
-                query?.orderByAscending("createdAt")
-                //query?.includeKey("answerCount")
-                query?.includeKey("createdBy")
-                //query?.includeKey("likeCount")
-                //query?.includeKey("question")
-                //query?.includeKey("questionDescription")
-                query?.includeKey("createdAt")
-                //query?.includeKey("questionImage")
-                query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                    if let objects = objects as? [Question] {
-                        for question in objects {
-                            self.questions.append(question)
-                            self.alreadyLikedDictionary[question] = false
-                        }
-                        self.likedAlready()
-                    }
-                })
-    }
-    
-    func likedAlready() {
-        let query = Like.query()
-        query?.whereKey("questionParent", containedIn: questions)
-        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            if let objects = objects as! [Like]? {
-                for like in objects {
-                    print(like)
-                   self.alreadyLikedDictionary[like.questionParent!] = true
-                }
+        populateQuestionArray().findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if let objects = objects as? [Question] {
+                self.questions = objects
                 self.tableView.reloadData()
+                self.fillAlreadyLikedDictionary()
             }
         })
     }
     
-    func createLike(questionParent : Question) {
-        let like = Like()
-        like.questionParent = questionParent
-        like.createdBy = User.currentUser()
-        like.saveInBackground()
-    }
-    
-    func deleteLike(questionParent : Question) {
+    func fillAlreadyLikedDictionary() {
         let query = Like.query()
-        query?.whereKey("questionParent", equalTo: questionParent)
-        query?.whereKey("createdBy", equalTo: User.currentUser()!)
+        query?.whereKey("createdBy", equalTo: User.currentUser()!).includeKey("questionParent")
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil {
                 if let objects = objects as! [Like]? {
-                    for like in objects {
-                        like.deleteInBackground()
+                    //sets every question alreadyLiked in dictionary to false
+                    for question in self.questions {
+                        self.alreadyLikedDictionary[question] = false
                     }
+                    //sets the ones that actually have likes to true
+                    for like in objects {
+                        if let questionParent = like.questionParent {
+                         self.alreadyLikedDictionary[questionParent] = true
+                        }
+                    }
+                    self.tableView.reloadData()
                 }
             }
         })
@@ -133,7 +96,7 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
             cell.passedLikeCount = currentQuestion.likeCount
             cell.passedAnswerCount = currentQuestion.answerCount
             cell.likeCount.tag = currentRow
-            cell.alreadyLiked = alreadyLikedDictionary[currentQuestion]!
+            //cell.alreadyLiked = alreadyLikedDictionary[currentQuestion]!
             cell.delegate = self
             return cell
         }
@@ -142,7 +105,7 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         rowTapped = indexPath.row
-        performSegueWithIdentifier("answerPageSegue", sender: self)
+        performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
 }
 
@@ -150,18 +113,24 @@ extension PersonalFeedViewController: QuestionNoPictureTableViewCellDelegate {
     func createAnswer(answer: String) {
         
     }
-    
-    func updateLikeCount(row: Int, alreadyLiked: Bool) {
-        if alreadyLiked {
-            questions[row].decrementLikeCount()
-            deleteLike(questions[row])
-        } else {
-            questions[row].incrementLikeCount()
-            createLike(questions[row])
-        }
+}
+
+extension PersonalFeedViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
+        case answerPageSegue
     }
     
-    func updateAnswerCount() {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segueIdentifierForSegue(segue) {
+        case .answerPageSegue:
+            let destinationVC = segue.destinationViewController as! AnswerViewController
+            if let rowTapped = rowTapped {
+                let question = questions[rowTapped]
+                destinationVC.question = question.question
+                destinationVC.createdBy = question.createdBy
+                destinationVC.questionObject = question
+            }
+        }
     }
 }

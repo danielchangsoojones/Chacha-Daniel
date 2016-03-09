@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Parse
 import SCLAlertView
+import EFTools
 
 class SignUpViewController: UITableViewController, UITextFieldDelegate {
     
@@ -60,7 +61,7 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
         self.navigationController?.navigationBarHidden = true
         if let _ = PFUser.currentUser() {
             //user is already logged in, so we should send them right into the app
-            performSegueWithIdentifier("SignUpSuccessSegue", sender: self)
+            self.performSegueWithIdentifier(.SignUpSuccessSegue, sender: self)
         }
     }
     
@@ -103,7 +104,7 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
             self.view.userInteractionEnabled = true
             self.theSpinner.stopAnimating()
             if success {
-                self.performSegueWithIdentifier("SignUpSuccessSegue", sender: self)
+                self.performSegueWithIdentifier(.SignUpSuccessSegue, sender: self)
                 let installation = PFInstallation.currentInstallation()
                 installation["user"] = PFUser.currentUser()
                 installation.saveInBackground()
@@ -217,7 +218,7 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
             alert.createAlert("Email is Required", subtitle: "Please enter an email address.", closeButtonTitle: "", type: .Error)
             return false
         }
-        else if isValidEmail(theEmail.text!) == false {let alert = Alert()
+        else if EFUtils.isValidEmail(theEmail.text!) == false {let alert = Alert()
             alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
                 alert.closeAlert()
                 self.theEmail.becomeFirstResponder()
@@ -352,6 +353,13 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
     }
    
     @IBAction func tapAvatar(sender: AnyObject) {
+        setImagePickerDelegate()
+    }
+    
+}
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func setImagePickerDelegate() {
         let imgPicker = UIImagePickerController()
         imgPicker.delegate = self
         imgPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
@@ -359,15 +367,6 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
         self.presentViewController(imgPicker, animated: true, completion: nil)
     }
     
-    func isValidEmail(email:String) -> Bool {
-        let emailRegex = "[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z0-9._%+-]{1,100}";
-        let emailTest = NSPredicate(format: "SELF MATCHES[c] %@", emailRegex)
-        return emailTest.evaluateWithObject(email)
-    }
-    
-}
-
-extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         if image != nil {
@@ -375,5 +374,12 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
             self.theAvatarImage.image = img
         }
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension SignUpViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
+        case SignUpSuccessSegue
     }
 }

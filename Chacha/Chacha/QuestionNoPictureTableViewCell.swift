@@ -27,22 +27,13 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     var delegate: QuestionNoPictureTableViewCellDelegate?
     
     @IBAction func submit(sender: AnyObject) {
-        passedAnswerCount += 1
         if let delegate = delegate {
              delegate.createAnswer(answerTextField.text!)
         }
     }
     
     @IBAction func likePressed(sender: AnyObject) {
-        if alreadyLiked {
-            passedLikeCount -= 1
-        } else {
-            passedLikeCount += 1
-        }
-        likeCount.text = "\(passedLikeCount)"
-        if let delegate = delegate {
-            delegate.updateLikeCount(likeCount.tag, alreadyLiked: alreadyLiked)
-        }
+        
     }
     
     override func awakeFromNib() {

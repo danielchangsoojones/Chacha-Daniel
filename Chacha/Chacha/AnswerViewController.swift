@@ -8,6 +8,7 @@
 
 import UIKit
 import ParseUI
+import EFTools
 
 class AnswerViewController: UIViewController {
 
@@ -79,8 +80,6 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
 
 protocol QuestionNoPictureTableViewCellDelegate {
     func createAnswer(answer: String)
-    func updateLikeCount(row: Int, alreadyLiked: Bool)
-    func updateAnswerCount()
 }
 
 //queries
@@ -88,13 +87,8 @@ extension AnswerViewController: QuestionNoPictureTableViewCellDelegate {
     func createAnswerArray() {
         let query = Answer.query()
         query?.orderByAscending("createdAt")
-        //query?.includeKey("answerCount")
         query?.includeKey("createdBy")
-        //query?.includeKey("likeCount")
-        //query?.includeKey("question")
-        //query?.includeKey("questionDescription")
         query?.includeKey("createdAt")
-        //query?.includeKey("questionImage")
         query?.whereKey("questionParent", equalTo: questionObject!)
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let objects = objects as? [Answer] {
@@ -124,19 +118,6 @@ extension AnswerViewController: QuestionNoPictureTableViewCellDelegate {
                 print(error)
             }
         }
-    }
-    
-    func updateLikeCount(row: Int, alreadyLiked: Bool) {
-        if alreadyLiked {
-            questionObject?.decrementLikeCount()
-        } else {
-            questionObject?.incrementLikeCount()
-        }
-        
-    }
-    
-    func updateAnswerCount() {
-        questionObject?.updateAnswerCount()
     }
 }
 

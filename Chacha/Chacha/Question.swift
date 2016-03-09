@@ -25,6 +25,12 @@ class Question: PFObject, PFSubclassing {
         super.init()
     }
     
+    init(likeCount: Int, answerCount: Int) {
+        super.init()
+        self.likeCount = 0
+        self.answerCount = 0
+    }
+    
     func incrementLikeCount() {
         likeCount += 1
         self.saveInBackground()
