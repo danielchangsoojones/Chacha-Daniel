@@ -128,8 +128,8 @@ extension PersonalFeedViewController: QuestionNoPictureTableViewCellDelegate {
         if let currentLike = currentLike {
             //delete the like
             currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
-                currentQuestion.decrementLikeCount()
                 self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
+                currentQuestion.decrementLikeCount()
             })
         } else {
             //create the like
