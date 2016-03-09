@@ -115,6 +115,21 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         rowTapped = indexPath.row
         performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
+        cell.likeCount.text = "\(cell.passedLikeCount)"
+        if let _ = cell.alreadyLiked {
+            //delete like
+            cell.likeButton.imageView!.image = UIImage(named: "vibe-off")
+            cell.alreadyLiked = nil
+        } else {
+            //create like
+            cell.likeButton.imageView!.image = UIImage(named: "vibe-on")
+            cell.alreadyLiked = Like()
+        }
+    }
+    
 }
 
 extension PersonalFeedViewController: QuestionNoPictureTableViewCellDelegate {

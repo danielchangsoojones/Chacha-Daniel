@@ -34,11 +34,18 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     
     @IBAction func likePressed(sender: AnyObject) {
         delegate?.updateLike(likeCount.tag)
-        if let alreadyLiked = alreadyLiked {
+        if let _ = alreadyLiked {
             //delete like
+            likeButton.imageView!.image = UIImage(named: "vibe-off")
+            alreadyLiked = nil
+            passedLikeCount -= 1
         } else {
             //create like
+            likeButton.imageView!.image = UIImage(named: "vibe-on")
+            alreadyLiked = Like()
+            passedLikeCount += 1
         }
+        likeCount.text = "\(passedLikeCount)"
     }
     
     override func awakeFromNib() {
@@ -51,5 +58,7 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
     
 }
