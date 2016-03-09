@@ -80,6 +80,7 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
 
 protocol QuestionNoPictureTableViewCellDelegate {
     func createAnswer(answer: String)
+    func updateLike(likeCountTag: Int)
 }
 
 //queries
@@ -118,6 +119,10 @@ extension AnswerViewController: QuestionNoPictureTableViewCellDelegate {
                 print(error)
             }
         }
+    }
+    
+    func updateLike(likeCountTag: Int) {
+       
     }
 }
 

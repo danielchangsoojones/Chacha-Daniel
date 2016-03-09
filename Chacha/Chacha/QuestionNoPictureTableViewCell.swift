@@ -22,7 +22,7 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     var passedLikeCount = 0
     var passedAnswerCount = 0
     
-    var alreadyLiked = false
+    var alreadyLiked : Like?
     
     var delegate: QuestionNoPictureTableViewCellDelegate?
     
@@ -33,7 +33,12 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     }
     
     @IBAction func likePressed(sender: AnyObject) {
-        
+        delegate?.updateLike(likeCount.tag)
+        if let alreadyLiked = alreadyLiked {
+            //delete like
+        } else {
+            //create like
+        }
     }
     
     override func awakeFromNib() {

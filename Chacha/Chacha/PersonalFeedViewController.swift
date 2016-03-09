@@ -17,7 +17,7 @@ class PersonalFeedViewController: UIViewController {
     
     var withPicture: Bool = false
     var questions = [Question]()
-    var alreadyLikedDictionary: [Question : Bool] = [:]
+    var alreadyLikedDictionary: [String : Like] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,24 +50,30 @@ extension PersonalFeedViewController {
     
     func fillAlreadyLikedDictionary() {
         let query = Like.query()
-        query?.whereKey("createdBy", equalTo: User.currentUser()!).includeKey("questionParent")
+        query?.whereKey("createdBy", equalTo: User.currentUser()!)
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil {
                 if let objects = objects as! [Like]? {
-                    //sets every question alreadyLiked in dictionary to false
-                    for question in self.questions {
-                        self.alreadyLikedDictionary[question] = false
-                    }
                     //sets the ones that actually have likes to true
                     for like in objects {
-                        if let questionParent = like.questionParent {
-                         self.alreadyLikedDictionary[questionParent] = true
+                        if let questionParentObjectId = like.questionParent!.objectId {
+                         self.alreadyLikedDictionary.updateValue(like, forKey: questionParentObjectId)
                         }
                     }
                     self.tableView.reloadData()
                 }
             }
         })
+    }
+    
+    func createLike(questionParent: Question) {
+        let like = Like()
+        like.questionParent = questionParent
+        like.createdBy = User.currentUser()
+        like.saveInBackgroundWithBlock { (success, error) -> Void in
+            questionParent.incrementLikeCount()
+            self.alreadyLikedDictionary.updateValue(like, forKey: (like.questionParent?.objectId)!)
+        }
     }
     
 }
@@ -96,7 +102,9 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
             cell.passedLikeCount = currentQuestion.likeCount
             cell.passedAnswerCount = currentQuestion.answerCount
             cell.likeCount.tag = currentRow
-            //cell.alreadyLiked = alreadyLikedDictionary[currentQuestion]!
+            if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+                cell.alreadyLiked = alreadyLiked
+            }
             cell.delegate = self
             return cell
         }
@@ -112,6 +120,21 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
 extension PersonalFeedViewController: QuestionNoPictureTableViewCellDelegate {
     func createAnswer(answer: String) {
         
+    }
+    
+    func updateLike(likeCountTag: Int) {
+        let currentQuestion = questions[likeCountTag]
+        let currentLike = alreadyLikedDictionary[currentQuestion.objectId!]
+        if let currentLike = currentLike {
+            //delete the like
+            currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                currentQuestion.decrementLikeCount()
+                self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
+            })
+        } else {
+            //create the like
+            createLike(currentQuestion)
+        }
     }
 }
 
