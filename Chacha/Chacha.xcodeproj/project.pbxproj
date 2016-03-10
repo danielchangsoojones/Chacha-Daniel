@@ -48,6 +48,7 @@
 		92A361C21C9106A80075831B /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A361C11C9106A80075831B /* QuestionCell.xib */; };
 		92A361C51C910D7C0075831B /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361C41C910D7C0075831B /* ActivityTableViewCell.swift */; };
 		92A361C71C9117D90075831B /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361C61C9117D90075831B /* QuestionTableViewCell.swift */; };
+		92A361C91C911D720075831B /* CellDelegateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361C81C911D720075831B /* CellDelegateProtocols.swift */; };
 		92CE70261C83986000E3A7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70251C83986000E3A7B6 /* User.swift */; };
 		92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70281C839C0000E3A7B6 /* DateExtensions.swift */; };
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
@@ -101,6 +102,7 @@
 		92A361C11C9106A80075831B /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		92A361C41C910D7C0075831B /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		92A361C61C9117D90075831B /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		92A361C81C911D720075831B /* CellDelegateProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDelegateProtocols.swift; sourceTree = "<group>"; };
 		92CE70251C83986000E3A7B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		92CE70281C839C0000E3A7B6 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = ../DateExtensions.swift; sourceTree = "<group>"; };
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				92A361C41C910D7C0075831B /* ActivityTableViewCell.swift */,
 				92A361C61C9117D90075831B /* QuestionTableViewCell.swift */,
 				92A361C11C9106A80075831B /* QuestionCell.xib */,
+				92A361C81C911D720075831B /* CellDelegateProtocols.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */,
 				92A361C01C8E78F20075831B /* Like.swift in Sources */,
 				92A361BA1C8E12540075831B /* AnswerViewController.swift in Sources */,
+				92A361C91C911D720075831B /* CellDelegateProtocols.swift in Sources */,
 				9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */,
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,
 				92A361BE1C8E26BD0075831B /* Answer.swift in Sources */,

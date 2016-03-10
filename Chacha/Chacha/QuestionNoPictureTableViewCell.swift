@@ -24,16 +24,16 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     
     var alreadyLiked : Like?
     
-    var delegate: ActivityTableViewCellDelegate?
+    var activityDelegate: ActivityTableViewCellDelegate?
     
     @IBAction func submit(sender: AnyObject) {
-        if let delegate = delegate {
-             delegate.createAnswer(answerTextField.text!)
-        }
+//        if let delegate = activityDelegate {
+//             delegate.createAnswer(answerTextField.text!)
+//        }
     }
     
     @IBAction func likePressed(sender: AnyObject) {
-        delegate?.updateLike(likeCount.tag)
+        activityDelegate?.updateLike(likeCount.tag)
         if let _ = alreadyLiked {
             //delete like
             likeButton.imageView!.image = UIImage(named: "vibe-off")

@@ -29,6 +29,8 @@ class AnswerViewController: UIViewController {
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
+        
         createAnswerArray()
     }
 
@@ -50,20 +52,17 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
         let currentRow = indexPath.row
         
         if currentRow == 0 {
-            if let questionImage = questionImage {
-                let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellWithPicture")! as! QuestionWithPictureTableViewCell
-                cell.questionImage.file = questionImage
-                cell.questionImage.loadInBackground()
+                let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
+                cell.activityDelegate = self
+                cell.questionDelegate = self
                 cell.fullNameText.text = createdBy?.fullName
                 cell.questionText.text = question
+                if let questionImage = questionImage {
+                    cell.questionImageHidden = false
+                    cell.questionImage.file = questionImage
+                    cell.questionImage.loadInBackground()
+                }
                 return cell
-            } else {
-                let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
-                cell.delegate = self
-                cell.fullNameText.text = createdBy?.fullName
-                cell.questionText.text = question
-                return cell
-            }
         } else {
             let currentAnswer = answers[currentRow - 1]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("AnswerCellNoPicture")! as! AnswerNoPictureTableViewCell
@@ -78,13 +77,8 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-protocol ActivityTableViewCellDelegate {
-    func createAnswer(answer: String)
-    func updateLike(likeCountTag: Int)
-}
-
 //queries
-extension AnswerViewController: ActivityTableViewCellDelegate {
+extension AnswerViewController {
     func createAnswerArray() {
         let query = Answer.query()
         query?.orderByAscending("createdAt")
@@ -100,16 +94,24 @@ extension AnswerViewController: ActivityTableViewCellDelegate {
             }
         })
     }
-    
+}
+
+extension AnswerViewController: ActivityTableViewCellDelegate {
+    func updateLike(likeCountTag: Int) {
+       
+    }
+}
+
+extension AnswerViewController: QuestionTableViewCellDelegate {
     func createAnswer(answer: String) {
         let newAnswer = Answer()
         newAnswer.answer = answer
         newAnswer.createdBy = User.currentUser()
         newAnswer.questionParent = questionObject
-//        if let image = questionImage.image {
-//            let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
-//            newQuestion.questionImage = file
-//        }
+        //        if let image = questionImage.image {
+        //            let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
+        //            newQuestion.questionImage = file
+        //        }
         newAnswer.saveInBackgroundWithBlock { (success, error) -> Void in
             if success {
                 self.answers.append(newAnswer)
@@ -119,10 +121,6 @@ extension AnswerViewController: ActivityTableViewCellDelegate {
                 print(error)
             }
         }
-    }
-    
-    func updateLike(likeCountTag: Int) {
-       
     }
 }
 

@@ -23,8 +23,9 @@ class PersonalFeedViewController: UIViewController {
         super.viewDidLoad()
         
         //for making cells grow and shrink with cell size content
-        self.tableView.estimatedRowHeight = 80
+        self.tableView.estimatedRowHeight = 278
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
         tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         
         createQuestionArray()
@@ -89,15 +90,19 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
         
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! ActivityTableViewCell
-            //cell.questionImage.file = questionImage
-            //cell.questionImage.loadInBackground()
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
             cell.fullNameText.text = currentQuestion.createdBy?.fullName
             cell.questionText.text = currentQuestion.question
+            if let questionImage = currentQuestion.questionImage {
+                cell.questionImageHidden = false
+                cell.questionImage.file = questionImage
+                cell.questionImage.loadInBackground()
+            }
             if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
                 cell.alreadyLiked = alreadyLiked
             }
-            cell.delegate = self
+            cell.activityDelegate = self
+            cell.questionDelegate = self
             return cell
         
     }
@@ -107,27 +112,23 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
-        cell.likeCount.text = "\(cell.passedLikeCount)"
-        if let _ = cell.alreadyLiked {
-            //delete like
-            cell.likeButton.imageView!.image = UIImage(named: "vibe-off")
-            cell.alreadyLiked = nil
-        } else {
-            //create like
-            cell.likeButton.imageView!.image = UIImage(named: "vibe-on")
-            cell.alreadyLiked = Like()
-        }
-    }
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
+//        cell.likeCount.text = "\(cell.passedLikeCount)"
+//        if let _ = cell.alreadyLiked {
+//            //delete like
+//            cell.likeButton.imageView!.image = UIImage(named: "vibe-off")
+//            cell.alreadyLiked = nil
+//        } else {
+//            //create like
+//            cell.likeButton.imageView!.image = UIImage(named: "vibe-on")
+//            cell.alreadyLiked = Like()
+//        }
+//    }
     
 }
 
 extension PersonalFeedViewController: ActivityTableViewCellDelegate {
-    func createAnswer(answer: String) {
-        
-    }
-    
     func updateLike(likeCountTag: Int) {
         let currentQuestion = questions[likeCountTag]
         let currentLike = alreadyLikedDictionary[currentQuestion.objectId!]
@@ -141,6 +142,12 @@ extension PersonalFeedViewController: ActivityTableViewCellDelegate {
             //create the like
             createLike(currentQuestion)
         }
+    }
+}
+
+extension PersonalFeedViewController: QuestionTableViewCellDelegate {
+    func createAnswer(answer: String) {
+        
     }
 }
 
