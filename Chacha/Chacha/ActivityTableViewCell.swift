@@ -18,7 +18,6 @@ class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var likeButtonImage: UIButton!
     @IBOutlet weak var answerCountLabel: UILabel!
-    @IBOutlet weak var answerTextField: UITextField!
     
     var likeCount = 0
     var answerCount = 0

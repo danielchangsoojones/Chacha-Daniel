@@ -7,15 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="231" id="l1q-wU-gaT" customClass="ActivityTableViewCell" customModule="Chacha" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="267" id="l1q-wU-gaT" customClass="QuestionTableViewCell" customModule="Chacha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="254"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1q-wU-gaT" id="Oao-K9-jnz">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                <rect key="frame" x="0.0" y="0.0" width="373" height="253.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W44-xg-u8I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="254"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQg-77-7FW">
                                 <rect key="frame" x="10" y="10" width="40" height="40"/>
@@ -26,19 +26,19 @@
                                 <state key="normal" image="logo-chacha"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HC-6r-hSb">
-                                <rect key="frame" x="58" y="10" width="61" height="15"/>
+                                <rect key="frame" x="58" y="10" width="61" height="23"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="asked: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wio-zn-Mrr">
-                                <rect key="frame" x="120" y="10" width="41" height="15"/>
+                                <rect key="frame" x="120" y="18" width="41" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4CV-XQ-cdx" userLabel="Time Stamp Stack View">
-                                <rect key="frame" x="342" y="10" width="28" height="22"/>
+                                <rect key="frame" x="340" y="10" width="28" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz6-Oc-TQd">
                                         <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
@@ -57,7 +57,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="L71-Qo-en5" userLabel="Like/Comment Stack View">
-                                <rect key="frame" x="58" y="153" width="81" height="22"/>
+                                <rect key="frame" x="58" y="162" width="81" height="22"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="L9u-GS-Ole">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="22"/>
@@ -67,7 +67,7 @@
                                                 <state key="normal" image="vibe-off"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNb-If-cIv">
-                                                <rect key="frame" x="17" y="5" width="7" height="12"/>
+                                                <rect key="frame" x="17" y="5" width="6.5" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                                 <state key="normal" image="bubble-off"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGD-O1-gEG">
-                                                <rect key="frame" x="16" y="5" width="7" height="12"/>
+                                                <rect key="frame" x="16" y="5" width="6.5" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -101,19 +101,14 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Do You Know The Answer?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="woG-gc-HEw">
-                                <rect key="frame" x="58" y="184" width="312" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="07" translatesAutoresizingMaskIntoConstraints="NO" id="yHn-oy-tF0" customClass="PFImageView">
-                                <rect key="frame" x="58" y="44" width="312" height="106"/>
+                                <rect key="frame" x="58" y="53" width="310" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="Ybo-ip-xZe"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the meaning of life? " lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Q8-ke-lVI">
-                                <rect key="frame" x="58" y="23" width="140" height="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="What is the meaning of life? " lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Q8-ke-lVI">
+                                <rect key="frame" x="58" y="32" width="310" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="i2x-XM-Rxc"/>
                                 </constraints>
@@ -127,20 +122,39 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On9-to-0H8" userLabel="LikeOverlayButton">
-                                <rect key="frame" x="58" y="153" width="24" height="22"/>
+                                <rect key="frame" x="58" y="162" width="24" height="22"/>
                                 <connections>
                                     <action selector="likeButtonPressed:" destination="l1q-wU-gaT" eventType="touchUpInside" id="vew-61-Qp9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeh-Bl-veW">
+                                <rect key="frame" x="319" y="226" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8fG-71-fHN"/>
+                                    <constraint firstAttribute="width" constant="49" id="9OD-d4-d1N"/>
+                                </constraints>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Do You Know The Answer?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="woG-gc-HEw">
+                                <rect key="frame" x="58" y="193" width="310" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rGV-lV-p5N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0Q8-ke-lVI" firstAttribute="trailing" secondItem="4CV-XQ-cdx" secondAttribute="trailing" id="0NC-qx-hrG"/>
                             <constraint firstItem="woG-gc-HEw" firstAttribute="trailing" secondItem="4CV-XQ-cdx" secondAttribute="trailing" id="0df-qC-qP9"/>
                             <constraint firstItem="3HC-6r-hSb" firstAttribute="leading" secondItem="dQg-77-7FW" secondAttribute="trailing" constant="8" id="2g0-Iq-XtE"/>
                             <constraint firstItem="woG-gc-HEw" firstAttribute="leading" secondItem="3HC-6r-hSb" secondAttribute="leading" id="3a9-Be-HIE"/>
                             <constraint firstItem="On9-to-0H8" firstAttribute="bottom" secondItem="L9u-GS-Ole" secondAttribute="bottom" id="68O-PP-LB4"/>
                             <constraint firstItem="wio-zn-Mrr" firstAttribute="baseline" secondItem="3HC-6r-hSb" secondAttribute="baseline" id="8cu-un-5ac"/>
+                            <constraint firstItem="oeh-Bl-veW" firstAttribute="top" secondItem="woG-gc-HEw" secondAttribute="bottom" constant="3" id="95d-UI-cgn"/>
                             <constraint firstItem="0Q8-ke-lVI" firstAttribute="leading" secondItem="3HC-6r-hSb" secondAttribute="leading" id="AfH-zh-Kez"/>
+                            <constraint firstItem="oeh-Bl-veW" firstAttribute="trailing" secondItem="4CV-XQ-cdx" secondAttribute="trailing" id="Fdl-Sd-4eH"/>
                             <constraint firstItem="dQg-77-7FW" firstAttribute="top" secondItem="W44-xg-u8I" secondAttribute="top" constant="10" id="GWs-ID-rLF"/>
                             <constraint firstItem="yHn-oy-tF0" firstAttribute="trailing" secondItem="4CV-XQ-cdx" secondAttribute="trailing" id="GZl-bi-aEC"/>
                             <constraint firstAttribute="trailing" secondItem="4CV-XQ-cdx" secondAttribute="trailing" constant="5" id="Hc4-tG-KRn"/>
@@ -152,6 +166,7 @@
                             <constraint firstAttribute="bottom" secondItem="woG-gc-HEw" secondAttribute="bottom" constant="3" id="RjA-tI-1hA"/>
                             <constraint firstItem="0Q8-ke-lVI" firstAttribute="top" secondItem="3HC-6r-hSb" secondAttribute="bottom" constant="-1" id="Uhz-rH-jDd"/>
                             <constraint firstItem="dQg-77-7FW" firstAttribute="leading" secondItem="W44-xg-u8I" secondAttribute="leading" constant="10" id="XOd-jg-Qjy"/>
+                            <constraint firstAttribute="bottom" secondItem="oeh-Bl-veW" secondAttribute="bottom" constant="-2" id="ZTs-Du-HSs"/>
                             <constraint firstItem="L71-Qo-en5" firstAttribute="top" secondItem="yHn-oy-tF0" secondAttribute="bottom" constant="3" id="Zx7-uU-V2A"/>
                             <constraint firstItem="4CV-XQ-cdx" firstAttribute="top" secondItem="W44-xg-u8I" secondAttribute="top" constant="10" id="aMb-zk-uOY"/>
                             <constraint firstItem="On9-to-0H8" firstAttribute="leading" secondItem="L9u-GS-Ole" secondAttribute="leading" id="fDb-j2-P3e"/>
@@ -159,6 +174,11 @@
                             <constraint firstItem="3HC-6r-hSb" firstAttribute="top" secondItem="dQg-77-7FW" secondAttribute="top" id="p0N-Fy-JrL"/>
                             <constraint firstItem="On9-to-0H8" firstAttribute="trailing" secondItem="L9u-GS-Ole" secondAttribute="trailing" id="rec-e9-n9U"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RjA-tI-1hA"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <constraints>
@@ -171,16 +191,17 @@
             <connections>
                 <outlet property="LikeCountLabel" destination="tNb-If-cIv" id="8Nq-kf-K2s"/>
                 <outlet property="answerCountLabel" destination="TGD-O1-gEG" id="QX0-9i-Ehh"/>
-                <outlet property="answerTextField" destination="woG-gc-HEw" id="3wp-Ie-QR6"/>
                 <outlet property="askedOrUsernameText" destination="wio-zn-Mrr" id="KRM-6S-7tm"/>
                 <outlet property="fullNameText" destination="3HC-6r-hSb" id="csc-72-GWQ"/>
                 <outlet property="likeButtonImage" destination="AEo-wK-lLC" id="KRJ-sE-Z3L"/>
                 <outlet property="likeCountLabel" destination="tNb-If-cIv" id="n0u-OY-FK1"/>
                 <outlet property="profileImage" destination="dQg-77-7FW" id="bft-SU-aHO"/>
+                <outlet property="questionImage" destination="yHn-oy-tF0" id="ufz-Ij-nBm"/>
+                <outlet property="questionImageHeight" destination="Ybo-ip-xZe" id="JwG-yZ-bUk"/>
                 <outlet property="questionText" destination="0Q8-ke-lVI" id="DK9-HO-XQt"/>
                 <outlet property="timestampCount" destination="wHN-oS-5ri" id="iZZ-mc-PX8"/>
             </connections>
-            <point key="canvasLocation" x="903.5" y="545"/>
+            <point key="canvasLocation" x="902.5" y="563"/>
         </tableViewCell>
     </objects>
     <resources>
