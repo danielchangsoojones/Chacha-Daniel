@@ -78,13 +78,13 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-protocol QuestionNoPictureTableViewCellDelegate {
+protocol ActivityTableViewCellDelegate {
     func createAnswer(answer: String)
     func updateLike(likeCountTag: Int)
 }
 
 //queries
-extension AnswerViewController: QuestionNoPictureTableViewCellDelegate {
+extension AnswerViewController: ActivityTableViewCellDelegate {
     func createAnswerArray() {
         let query = Answer.query()
         query?.orderByAscending("createdAt")

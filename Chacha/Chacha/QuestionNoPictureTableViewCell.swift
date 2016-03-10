@@ -24,7 +24,7 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     
     var alreadyLiked : Like?
     
-    var delegate: QuestionNoPictureTableViewCellDelegate?
+    var delegate: ActivityTableViewCellDelegate?
     
     @IBAction func submit(sender: AnyObject) {
         if let delegate = delegate {

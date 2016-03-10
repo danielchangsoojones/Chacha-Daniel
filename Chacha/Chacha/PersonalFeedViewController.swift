@@ -25,6 +25,7 @@ class PersonalFeedViewController: UIViewController {
         //for making cells grow and shrink with cell size content
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         
         createQuestionArray()
     }
@@ -88,26 +89,16 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
         
-        if let questionImage = currentQuestion.questionImage {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellWithPicture")! as! QuestionWithPictureTableViewCell
-            cell.questionImage.file = questionImage
-            cell.questionImage.loadInBackground()
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! ActivityTableViewCell
+            //cell.questionImage.file = questionImage
+            //cell.questionImage.loadInBackground()
             cell.fullNameText.text = currentQuestion.createdBy?.fullName
             cell.questionText.text = currentQuestion.question
-            return cell
-        } else {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
-            cell.fullNameText.text = currentQuestion.createdBy?.fullName
-            cell.questionText.text = currentQuestion.question
-            cell.passedLikeCount = currentQuestion.likeCount
-            cell.passedAnswerCount = currentQuestion.answerCount
-            cell.likeCount.tag = currentRow
             if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
                 cell.alreadyLiked = alreadyLiked
             }
             cell.delegate = self
             return cell
-        }
         
     }
     
@@ -132,7 +123,7 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
     
 }
 
-extension PersonalFeedViewController: QuestionNoPictureTableViewCellDelegate {
+extension PersonalFeedViewController: ActivityTableViewCellDelegate {
     func createAnswer(answer: String) {
         
     }
