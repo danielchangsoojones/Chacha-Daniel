@@ -37,7 +37,7 @@ class Question: PFObject, PFSubclassing {
     }
     
     func decrementLikeCount() {
-        likeCount += 1
+        likeCount -= 1
         self.saveInBackground()
     }
     

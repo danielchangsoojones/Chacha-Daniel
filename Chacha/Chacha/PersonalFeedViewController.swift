@@ -17,14 +17,16 @@ class PersonalFeedViewController: UIViewController {
     
     var withPicture: Bool = false
     var questions = [Question]()
-    var alreadyLikedDictionary: [Question : Bool] = [:]
+    var alreadyLikedDictionary: [String : Like] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //for making cells grow and shrink with cell size content
-        self.tableView.estimatedRowHeight = 80
+        self.tableView.estimatedRowHeight = 278
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         
         createQuestionArray()
     }
@@ -50,24 +52,30 @@ extension PersonalFeedViewController {
     
     func fillAlreadyLikedDictionary() {
         let query = Like.query()
-        query?.whereKey("createdBy", equalTo: User.currentUser()!).includeKey("questionParent")
+        query?.whereKey("createdBy", equalTo: User.currentUser()!)
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil {
                 if let objects = objects as! [Like]? {
-                    //sets every question alreadyLiked in dictionary to false
-                    for question in self.questions {
-                        self.alreadyLikedDictionary[question] = false
-                    }
                     //sets the ones that actually have likes to true
                     for like in objects {
-                        if let questionParent = like.questionParent {
-                         self.alreadyLikedDictionary[questionParent] = true
+                        if let questionParentObjectId = like.questionParent!.objectId {
+                         self.alreadyLikedDictionary.updateValue(like, forKey: questionParentObjectId)
                         }
                     }
                     self.tableView.reloadData()
                 }
             }
         })
+    }
+    
+    func createLike(questionParent: Question) {
+        let like = Like()
+        like.questionParent = questionParent
+        like.createdBy = User.currentUser()
+        like.saveInBackgroundWithBlock { (success, error) -> Void in
+            questionParent.incrementLikeCount()
+            self.alreadyLikedDictionary.updateValue(like, forKey: (like.questionParent?.objectId)!)
+        }
     }
     
 }
@@ -82,24 +90,20 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
         
-        if let questionImage = currentQuestion.questionImage {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellWithPicture")! as! QuestionWithPictureTableViewCell
-            cell.questionImage.file = questionImage
-            cell.questionImage.loadInBackground()
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
             cell.fullNameText.text = currentQuestion.createdBy?.fullName
             cell.questionText.text = currentQuestion.question
+            if let questionImage = currentQuestion.questionImage {
+                cell.questionImageHidden = false
+                cell.questionImage.file = questionImage
+                cell.questionImage.loadInBackground()
+            }
+            if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+                cell.alreadyLiked = alreadyLiked
+            }
+            cell.activityDelegate = self
+            cell.questionDelegate = self
             return cell
-        } else {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
-            cell.fullNameText.text = currentQuestion.createdBy?.fullName
-            cell.questionText.text = currentQuestion.question
-            cell.passedLikeCount = currentQuestion.likeCount
-            cell.passedAnswerCount = currentQuestion.answerCount
-            cell.likeCount.tag = currentRow
-            //cell.alreadyLiked = alreadyLikedDictionary[currentQuestion]!
-            cell.delegate = self
-            return cell
-        }
         
     }
     
@@ -107,9 +111,41 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         rowTapped = indexPath.row
         performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
+    
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
+//        cell.likeCount.text = "\(cell.passedLikeCount)"
+//        if let _ = cell.alreadyLiked {
+//            //delete like
+//            cell.likeButton.imageView!.image = UIImage(named: "vibe-off")
+//            cell.alreadyLiked = nil
+//        } else {
+//            //create like
+//            cell.likeButton.imageView!.image = UIImage(named: "vibe-on")
+//            cell.alreadyLiked = Like()
+//        }
+//    }
+    
 }
 
-extension PersonalFeedViewController: QuestionNoPictureTableViewCellDelegate {
+extension PersonalFeedViewController: ActivityTableViewCellDelegate {
+    func updateLike(likeCountTag: Int) {
+        let currentQuestion = questions[likeCountTag]
+        let currentLike = alreadyLikedDictionary[currentQuestion.objectId!]
+        if let currentLike = currentLike {
+            //delete the like
+            currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
+                currentQuestion.decrementLikeCount()
+            })
+        } else {
+            //create the like
+            createLike(currentQuestion)
+        }
+    }
+}
+
+extension PersonalFeedViewController: QuestionTableViewCellDelegate {
     func createAnswer(answer: String) {
         
     }

@@ -22,18 +22,30 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
     var passedLikeCount = 0
     var passedAnswerCount = 0
     
-    var alreadyLiked = false
+    var alreadyLiked : Like?
     
-    var delegate: QuestionNoPictureTableViewCellDelegate?
+    var activityDelegate: ActivityTableViewCellDelegate?
     
     @IBAction func submit(sender: AnyObject) {
-        if let delegate = delegate {
-             delegate.createAnswer(answerTextField.text!)
-        }
+//        if let delegate = activityDelegate {
+//             delegate.createAnswer(answerTextField.text!)
+//        }
     }
     
     @IBAction func likePressed(sender: AnyObject) {
-        
+        activityDelegate?.updateLike(likeCount.tag)
+        if let _ = alreadyLiked {
+            //delete like
+            likeButton.imageView!.image = UIImage(named: "vibe-off")
+            alreadyLiked = nil
+            passedLikeCount -= 1
+        } else {
+            //create like
+            likeButton.imageView!.image = UIImage(named: "vibe-on")
+            alreadyLiked = Like()
+            passedLikeCount += 1
+        }
+        likeCount.text = "\(passedLikeCount)"
     }
     
     override func awakeFromNib() {
@@ -46,5 +58,7 @@ class QuestionNoPictureTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
     
 }
