@@ -30,6 +30,7 @@ class AnswerViewController: UIViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
+        tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
         
         createAnswerArray()
     }
@@ -65,9 +66,9 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
                 return cell
         } else {
             let currentAnswer = answers[currentRow - 1]
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("AnswerCellNoPicture")! as! AnswerNoPictureTableViewCell
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("answerCell")! as! ActivityTableViewCell
             cell.fullNameText.text = currentAnswer.createdBy?.fullName
-            cell.answerText.text = currentAnswer.answer
+            cell.questionText.text = currentAnswer.answer
             return cell
         }
     }

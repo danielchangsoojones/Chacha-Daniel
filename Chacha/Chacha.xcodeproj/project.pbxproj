@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920CF2781C93C15200D29C2A /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920CF2771C93C15200D29C2A /* AnswerCell.xib */; };
 		9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2061C84BEBF00313AB7 /* Alert.swift */; };
 		9238E2111C861AA000313AB7 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2101C861AA000313AB7 /* ExploreViewController.swift */; };
 		9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2121C861B1B00313AB7 /* ExploreLayout.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		920CF2771C93C15200D29C2A /* AnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
 		9238E2061C84BEBF00313AB7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		9238E2101C861AA000313AB7 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		9238E2121C861B1B00313AB7 /* ExploreLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreLayout.swift; sourceTree = "<group>"; };
@@ -270,8 +272,9 @@
 			children = (
 				92A361C41C910D7C0075831B /* ActivityTableViewCell.swift */,
 				92A361C61C9117D90075831B /* QuestionTableViewCell.swift */,
-				92A361C11C9106A80075831B /* QuestionCell.xib */,
 				92A361C81C911D720075831B /* CellDelegateProtocols.swift */,
+				92A361C11C9106A80075831B /* QuestionCell.xib */,
+				920CF2771C93C15200D29C2A /* AnswerCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				92A361C21C9106A80075831B /* QuestionCell.xib in Resources */,
 				9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */,
 				9238E2171C861DB800313AB7 /* Photos.plist in Resources */,
+				920CF2781C93C15200D29C2A /* AnswerCell.xib in Resources */,
 				92A361B01C88B4210075831B /* PersonalFeed.storyboard in Resources */,
 				9238E2271C8769F300313AB7 /* AskQuestion.storyboard in Resources */,
 			);
