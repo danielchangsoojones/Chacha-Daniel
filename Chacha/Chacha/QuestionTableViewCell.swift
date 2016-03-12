@@ -41,7 +41,7 @@ class QuestionTableViewCell: ActivityTableViewCell {
     
     override func layoutSubviews() {
         if questionImageHidden {
-            questionImageHeight.constant = 0
+            //questionImageHeight.constant = 0
         }
         if submitButtonHidden {
             submitButtonHeight.constant = 0
