@@ -105,7 +105,7 @@ extension AnswerViewController: ActivityTableViewCellDelegate {
 
 extension AnswerViewController: QuestionTableViewCellDelegate {
     func createAnswer(answer: String) {
-        let newAnswer = Answer()
+        let newAnswer = Answer(likeCount: 0, answerCount: 0)
         newAnswer.answer = answer
         newAnswer.createdBy = User.currentUser()
         newAnswer.questionParent = questionObject

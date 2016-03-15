@@ -70,4 +70,11 @@ func populateQuestionArray() -> PFQuery {
     return query!
 }
 
+func likeHelper(postParent: PFObject) -> Like {
+    let like = Like()
+    like.postParent = postParent
+    like.createdBy = User.currentUser()
+    return like
+}
+
 
