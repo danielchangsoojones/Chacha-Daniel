@@ -81,12 +81,9 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
 //queries
 extension AnswerViewController {
     func createAnswerArray() {
-        let query = Answer.query()
-        query?.orderByAscending("createdAt")
-        query?.includeKey("createdBy")
-        query?.includeKey("createdAt")
-        query?.whereKey("questionParent", equalTo: questionObject!)
-        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+        let query = populateAnswerArray()
+        query.whereKey("questionParent", equalTo: questionObject!)
+        query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let objects = objects as? [Answer] {
                 for answer in objects {
                     self.answers.append(answer)

@@ -77,4 +77,12 @@ func likeHelper(postParent: PFObject) -> Like {
     return like
 }
 
+func populateAnswerArray() -> PFQuery {
+    let query = Answer.query()
+    query?.orderByAscending("createdAt")
+    query?.includeKey("createdBy")
+    query?.includeKey("createdAt")
+    return query!
+}
+
 

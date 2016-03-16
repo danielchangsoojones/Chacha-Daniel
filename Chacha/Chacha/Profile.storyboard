@@ -32,10 +32,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDE-E0-bkg">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="30"/>
                                         <state key="normal" title="Questions"/>
+                                        <connections>
+                                            <action selector="questionStatePressed:" destination="eUu-6s-hIF" eventType="touchUpInside" id="HGS-Lr-7yM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFG-mR-diC">
                                         <rect key="frame" x="94" y="0.0" width="94" height="30"/>
                                         <state key="normal" title="Answers"/>
+                                        <connections>
+                                            <action selector="answerStatePressed:" destination="eUu-6s-hIF" eventType="touchUpInside" id="VCB-zr-bth"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7w-wL-r2l">
                                         <rect key="frame" x="188" y="0.0" width="94" height="30"/>

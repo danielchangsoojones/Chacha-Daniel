@@ -26,13 +26,25 @@ class ProfileViewController: UIViewController {
     }
     var state = tableState.question
     
+    @IBAction func questionStatePressed(sender: AnyObject) {
+        state = tableState.question
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func answerStatePressed(sender: AnyObject) {
+        state = tableState.answer
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setProfile()
         createQuestionArray()
+        createAnswerArray(User.currentUser()!)
         
         tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
+        tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
         
         //for making cells grow and shrink with cell size content
         self.tableView.estimatedRowHeight = 278
@@ -63,9 +75,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let currentRow = indexPath.row
-        let currentQuestion = questions[currentRow]
         switch state {
         case .question:
+            let currentQuestion = questions[currentRow]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
             cell.fullNameText.text = currentQuestion.createdBy?.fullName
             cell.questionText.text = currentQuestion.question
@@ -82,7 +94,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             cell.questionDelegate = self
             return cell
         case .answer:
-            return UITableViewCell()
+            let currentAnswer = answers[currentRow]
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("answerCell")! as! ActivityTableViewCell
+            cell.fullNameText.text = currentAnswer.createdBy?.fullName
+            cell.questionText.text = currentAnswer.answer
+            return cell
         case .follower:
             return UITableViewCell()
         case .following:
@@ -136,6 +152,18 @@ extension ProfileViewController {
         })
     }
     
+    func createAnswerArray(user: User) {
+        let query = populateAnswerArray()
+        query.whereKey("createdBy", equalTo: user)
+        query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if let objects = objects as? [Answer] {
+                for answer in objects {
+                    self.answers.append(answer)
+                }
+                self.tableView.reloadData()
+            }
+        })
+    }
 }
 
 extension ProfileViewController: ActivityTableViewCellDelegate, QuestionTableViewCellDelegate {
