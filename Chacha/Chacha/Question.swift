@@ -41,7 +41,7 @@ class Question: PFObject, PFSubclassing {
         self.saveInBackground()
     }
     
-    func updateAnswerCount() {
+    func incrementAnswerCount() {
         answerCount += 1
         self.saveInBackground()
     }

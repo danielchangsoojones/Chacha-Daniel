@@ -58,8 +58,8 @@ extension PersonalFeedViewController {
                 if let objects = objects as! [Like]? {
                     //sets the ones that actually have likes to true
                     for like in objects {
-                        if let questionParentObjectId = like.questionParent!.objectId {
-                         self.alreadyLikedDictionary.updateValue(like, forKey: questionParentObjectId)
+                        if let parentObjectId = like.postParent!.objectId {
+                         self.alreadyLikedDictionary[parentObjectId] = like
                         }
                     }
                     self.tableView.reloadData()
@@ -68,16 +68,20 @@ extension PersonalFeedViewController {
         })
     }
     
-    func createLike(questionParent: Question) {
-        let like = Like()
-        like.questionParent = questionParent
-        like.createdBy = User.currentUser()
+    func createLike(postParent: PFObject) {
+        let like = likeHelper(postParent)
         like.saveInBackgroundWithBlock { (success, error) -> Void in
-            questionParent.incrementLikeCount()
-            self.alreadyLikedDictionary.updateValue(like, forKey: (like.questionParent?.objectId)!)
+            if let questionParent = postParent as? Question {
+                // post is a question
+                questionParent.incrementLikeCount()
+            }
+            else if let answerParent = postParent as? Answer {
+                // post is an answer
+                answerParent.incrementLikeCount()
+            }
+            self.alreadyLikedDictionary.updateValue(like, forKey: (postParent.objectId)!)
         }
     }
-    
 }
 
 //tableView Delegate Methods
@@ -98,13 +102,17 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
                 cell.questionImage.file = questionImage
                 cell.questionImage.loadInBackground()
             }
+            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
             if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
                 cell.alreadyLiked = alreadyLiked
+                cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
             }
+            cell.likeCountLabel.tag = currentRow
+            cell.likeCount = currentQuestion.likeCount
+            cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
             cell.activityDelegate = self
             cell.questionDelegate = self
             return cell
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -112,27 +120,12 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
     
-//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
-//        cell.likeCount.text = "\(cell.passedLikeCount)"
-//        if let _ = cell.alreadyLiked {
-//            //delete like
-//            cell.likeButton.imageView!.image = UIImage(named: "vibe-off")
-//            cell.alreadyLiked = nil
-//        } else {
-//            //create like
-//            cell.likeButton.imageView!.image = UIImage(named: "vibe-on")
-//            cell.alreadyLiked = Like()
-//        }
-//    }
-    
 }
 
 extension PersonalFeedViewController: ActivityTableViewCellDelegate {
     func updateLike(likeCountTag: Int) {
         let currentQuestion = questions[likeCountTag]
-        let currentLike = alreadyLikedDictionary[currentQuestion.objectId!]
-        if let currentLike = currentLike {
+        if let currentLike = alreadyLikedDictionary[currentQuestion.objectId!] {
             //delete the like
             currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
                 self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)

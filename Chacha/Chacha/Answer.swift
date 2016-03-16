@@ -25,12 +25,23 @@ class Answer: PFObject, PFSubclassing {
         super.init()
     }
     
-    func updateLikeCount() {
+    init(likeCount: Int, answerCount: Int) {
+        super.init()
+        self.likeCount = 0
+        self.answerCount = 0
+    }
+    
+    func incrementLikeCount() {
         likeCount += 1
         self.saveInBackground()
     }
     
-    func updateAnswerCount() {
+    func decrementLikeCount() {
+        likeCount -= 1
+        self.saveInBackground()
+    }
+    
+    func incrementAnswerCount() {
         answerCount += 1
         self.saveInBackground()
     }

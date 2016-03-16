@@ -10,6 +10,8 @@ import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
     
+    var alreadyLiked : Like?
+    
     @IBOutlet weak var fullNameText: UILabel!
     @IBOutlet weak var profileImage: UIButton!
     @IBOutlet weak var askedOrUsernameText: UILabel!
@@ -21,8 +23,6 @@ class ActivityTableViewCell: UITableViewCell {
     
     var likeCount = 0
     var answerCount = 0
-    
-    var alreadyLiked : Like?
     
     var activityDelegate: ActivityTableViewCellDelegate?
     
