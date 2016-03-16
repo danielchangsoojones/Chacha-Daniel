@@ -102,6 +102,7 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
                 cell.questionImage.file = questionImage
                 cell.questionImage.loadInBackground()
             }
+            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
             if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
                 cell.alreadyLiked = alreadyLiked
                 cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
