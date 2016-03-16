@@ -59,7 +59,7 @@ extension PersonalFeedViewController {
                     //sets the ones that actually have likes to true
                     for like in objects {
                         if let parentObjectId = like.postParent!.objectId {
-                         self.alreadyLikedDictionary.updateValue(like, forKey: parentObjectId)
+                         self.alreadyLikedDictionary[parentObjectId] = like
                         }
                     }
                     self.tableView.reloadData()
@@ -104,8 +104,11 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
             }
             if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
                 cell.alreadyLiked = alreadyLiked
+                cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
             }
             cell.likeCountLabel.tag = currentRow
+            cell.likeCount = currentQuestion.likeCount
+            cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
             cell.activityDelegate = self
             cell.questionDelegate = self
             return cell
@@ -115,20 +118,6 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         rowTapped = indexPath.row
         performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
-    
-//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        let cell = self.tableView.dequeueReusableCellWithIdentifier("QuestionCellNoPicture")! as! QuestionNoPictureTableViewCell
-//        cell.likeCount.text = "\(cell.passedLikeCount)"
-//        if let _ = cell.alreadyLiked {
-//            //delete like
-//            cell.likeButton.imageView!.image = UIImage(named: "vibe-off")
-//            cell.alreadyLiked = nil
-//        } else {
-//            //create like
-//            cell.likeButton.imageView!.image = UIImage(named: "vibe-on")
-//            cell.alreadyLiked = Like()
-//        }
-//    }
     
 }
 

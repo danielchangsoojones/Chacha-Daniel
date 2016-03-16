@@ -127,7 +127,7 @@ extension ProfileViewController {
                     //sets the ones that actually have likes to true
                     for like in objects {
                         if let parentObjectId = like.postParent!.objectId {
-                            self.alreadyLikedDictionary.updateValue(like, forKey: parentObjectId)
+                            self.alreadyLikedDictionary[parentObjectId] = like
                         }
                     }
                     self.tableView.reloadData()
