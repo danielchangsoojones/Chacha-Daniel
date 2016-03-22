@@ -95,7 +95,7 @@ extension AnswerViewController {
 }
 
 extension AnswerViewController: ActivityTableViewCellDelegate {
-    func updateLike(likeCountTag: Int) {
+    func updateLike(likeCountTag: Int, isQuestion: Bool) {
        
     }
 }

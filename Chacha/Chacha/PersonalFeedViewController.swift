@@ -130,21 +130,23 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
 }
 
 extension PersonalFeedViewController: ActivityTableViewCellDelegate {
-    func updateLike(likeCountTag: Int) {
-        let currentQuestion = questions[likeCountTag]
-        if let currentLike = alreadyLikedDictionary[currentQuestion.objectId!] {
-            //delete the like
-            currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
-                if success && error == nil {
-                    self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
-                    currentQuestion.decrementLikeCount()
+    func updateLike(likeCountTag: Int, isQuestion: Bool) {
+        if isQuestion {
+            let currentQuestion = questions[likeCountTag]
+            if let currentLike = alreadyLikedDictionary[currentQuestion.objectId!] {
+                //delete the like
+                currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                    if success && error == nil {
+                        self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
+                        currentQuestion.decrementLikeCount()
+                    }
+                })
+            } else {
+                //create the like
+                if !likeIsSaving {
+                    //not currently saving any likes
+                    createLike(currentQuestion)
                 }
-            })
-        } else {
-            //create the like
-            if !likeIsSaving {
-                //not currently saving any likes
-                createLike(currentQuestion)
             }
         }
     }

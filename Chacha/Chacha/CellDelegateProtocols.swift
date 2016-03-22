@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ActivityTableViewCellDelegate {
-    func updateLike(likeCountTag: Int)
+    func updateLike(likeCountTag: Int, isQuestion: Bool)
 }
 
 protocol QuestionTableViewCellDelegate {
