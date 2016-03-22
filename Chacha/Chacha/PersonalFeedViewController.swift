@@ -71,6 +71,7 @@ extension PersonalFeedViewController {
     
     func createLike(postParent: PFObject) {
         let like = likeHelper(postParent)
+        likeIsSaving = true
         like.saveInBackgroundWithBlock { (success, error) -> Void in
             self.likeIsSaving = false
             if error == nil {
@@ -134,7 +135,7 @@ extension PersonalFeedViewController: ActivityTableViewCellDelegate {
         if let currentLike = alreadyLikedDictionary[currentQuestion.objectId!] {
             //delete the like
             currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
-                if success {
+                if success && error == nil {
                     self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
                     currentQuestion.decrementLikeCount()
                 }
@@ -143,7 +144,6 @@ extension PersonalFeedViewController: ActivityTableViewCellDelegate {
             //create the like
             if !likeIsSaving {
                 //not currently saving any likes
-                likeIsSaving = true
                 createLike(currentQuestion)
             }
         }
