@@ -107,13 +107,12 @@ extension ExploreViewController {
 extension ExploreViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return questions.count
+        return photos.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
         cell.photo = photos[indexPath.item]
-        cell.questionText.text = questions[indexPath.row].question
         return cell
     }
     
