@@ -167,7 +167,7 @@ extension ProfileViewController {
 }
 
 extension ProfileViewController: ActivityTableViewCellDelegate, QuestionTableViewCellDelegate {
-    func updateLike(likeCountTag: Int) {
+    func updateLike(likeCountTag: Int, isQuestion: Bool) {
         
     }
     

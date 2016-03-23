@@ -12,6 +12,13 @@ import Parse
 
 class ExploreViewController: UICollectionViewController {
     
+    var rowTapped : Int?
+    
+    var withPicture: Bool = false
+    var questions = [Question]()
+    var alreadyLikedDictionary: [String : Like] = [:]
+    var likeIsSaving = false
+    
     @IBAction func logOut(sender: AnyObject) {
         PFUser.logOut()
         performSegueWithIdentifier("LogOutSegue", sender: self)
@@ -37,8 +44,62 @@ class ExploreViewController: UICollectionViewController {
         layout.delegate = self
         layout.cellPadding = 5
         layout.numberOfColumns = 2
+        
+        createQuestionArray()
     }
     
+}
+
+//creating arrays
+extension ExploreViewController {
+    func createQuestionArray() {
+        populateQuestionArray().findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if let objects = objects as? [Question] {
+                self.questions = objects
+                self.collectionView!.reloadData()
+                self.fillAlreadyLikedDictionary()
+            }
+        })
+    }
+    
+    func fillAlreadyLikedDictionary() {
+        let query = Like.query()
+        query?.whereKey("createdBy", equalTo: User.currentUser()!)
+        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if error == nil {
+                if let objects = objects as! [Like]? {
+                    //sets the ones that actually have likes to true
+                    for like in objects {
+                        if let parentObjectId = like.postParent!.objectId {
+                            self.alreadyLikedDictionary.updateValue(like, forKey: parentObjectId)
+                        }
+                    }
+                    self.collectionView!.reloadData()
+                }
+            }
+        })
+    }
+    
+    func createLike(postParent: PFObject) {
+        let like = likeHelper(postParent)
+        likeIsSaving = true
+        like.saveInBackgroundWithBlock { (success, error) -> Void in
+            self.likeIsSaving = false
+            if error == nil {
+                if let questionParent = postParent as? Question {
+                    // post is a question
+                    questionParent.incrementLikeCount()
+                }
+                else if let answerParent = postParent as? Answer {
+                    // post is an answer
+                    answerParent.incrementLikeCount()
+                }
+                self.alreadyLikedDictionary.updateValue(like, forKey: (postParent.objectId)!)
+            } else {
+                print(error)
+            }
+        }
+    }
 }
 
 
@@ -78,3 +139,4 @@ extension ExploreViewController: ExploreLayoutDelegate {
     }
     
 }
+
