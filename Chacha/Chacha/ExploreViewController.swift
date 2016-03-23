@@ -112,7 +112,26 @@ extension ExploreViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
-        cell.questionText.text = "hi"
+        
+        let currentRow = indexPath.row
+        let currentQuestion = questions[currentRow]
+    
+        cell.fullName.text = currentQuestion.createdBy?.fullName
+        cell.questionText.text = currentQuestion.question
+        if let questionImage = currentQuestion.questionImage {
+            cell.imageView.file = questionImage
+            cell.imageView.loadInBackground()
+        }
+//        cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
+//        if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+//            cell.alreadyLiked = alreadyLiked
+//            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
+//        }
+//        cell.likeCountLabel.tag = currentRow
+//        cell.likeCount = currentQuestion.likeCount
+//        cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
+//        cell.activityDelegate = self
+//        cell.questionDelegate = self
         return cell
     }
     
@@ -140,20 +159,14 @@ extension ExploreViewController: ExploreLayoutDelegate {
     }
     
     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        //let question = questions[indexPath.item]
+        let question = questions[indexPath.item]
         let font = UIFont(name: "HelveticaNeue", size: 10)!
-        let commentHeight = heightForQuestion(font, width: width)
+        let commentHeight = question.heightForQuestion(font, width: width)
         let activityBarHeight: CGFloat = 15
         let profileViewHeight : CGFloat = 34
         let padding: CGFloat = 4
         let height = profileViewHeight + padding + commentHeight + padding + activityBarHeight + padding
         return height
     }
-    
-    func heightForQuestion(font: UIFont, width: CGFloat) -> CGFloat {
-        let rect = NSString(string: "hallulah").boundingRectWithSize(CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
-        return ceil(rect.height)
-    }
-    
 }
 

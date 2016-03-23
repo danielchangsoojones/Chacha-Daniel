@@ -66,7 +66,7 @@
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="s44-mt-eba" customClass="AnnotatedPhotoCell" customModule="Chacha" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="315"/>
+                                <rect key="frame" x="88" y="0.0" width="200" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
@@ -75,7 +75,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7x-z5-UXi" customClass="RoundedCornersView" customModule="Chacha" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hB7-FI-9ej">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hB7-FI-9ej" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                     <color key="backgroundColor" red="0.28235294119999998" green="0.68627450980000004" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -222,7 +222,7 @@
                                 <size key="customSize" width="200" height="315"/>
                                 <connections>
                                     <outlet property="fullName" destination="juN-K8-KeT" id="rGQ-fK-RPZ"/>
-                                    <outlet property="imageView" destination="hB7-FI-9ej" id="JDx-7t-hP1"/>
+                                    <outlet property="imageView" destination="hB7-FI-9ej" id="BDe-Ic-goV"/>
                                     <outlet property="imageViewHeightLayoutConstraint" destination="DN6-xy-Bre" id="Hnn-TL-zMj"/>
                                     <outlet property="profileImage" destination="Tek-PU-u6M" id="O1G-f2-PsM"/>
                                     <outlet property="questionText" destination="O6e-iZ-U6X" id="LmV-HE-8S5"/>

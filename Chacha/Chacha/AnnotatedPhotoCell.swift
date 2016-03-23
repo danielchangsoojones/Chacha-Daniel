@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import ParseUI
 
 class AnnotatedPhotoCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
+   
+    @IBOutlet weak var imageView: PFImageView!
     @IBOutlet weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var fullName: UILabel!

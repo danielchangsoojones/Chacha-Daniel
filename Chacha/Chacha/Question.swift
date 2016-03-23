@@ -46,4 +46,9 @@ class Question: PFObject, PFSubclassing {
         self.saveInBackground()
     }
     
+    func heightForQuestion(font: UIFont, width: CGFloat) -> CGFloat {
+        let rect = NSString(string: question).boundingRectWithSize(CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return ceil(rect.height)
+    }
+    
 }
