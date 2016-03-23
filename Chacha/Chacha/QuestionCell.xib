@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1q-wU-gaT" id="Oao-K9-jnz">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="264.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W44-xg-u8I">
@@ -25,14 +25,14 @@
                                 </constraints>
                                 <state key="normal" image="logo-chacha"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HC-6r-hSb">
-                                <rect key="frame" x="58" y="10" width="61" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HC-6r-hSb">
+                                <rect key="frame" x="58" y="10" width="61" height="14.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="asked: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wio-zn-Mrr">
-                                <rect key="frame" x="120" y="9" width="41" height="15"/>
+                                <rect key="frame" x="120" y="9" width="40.5" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="7rB-dY-0F1"/>
                                 </constraints>
@@ -48,7 +48,7 @@
                                         <state key="normal" image="clock-off"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHN-oS-5ri">
-                                        <rect key="frame" x="17" y="5" width="12" height="12"/>
+                                        <rect key="frame" x="16.5" y="5" width="11.5" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -159,7 +159,7 @@
                                         <state key="normal" image="bubble-off"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-4b-bxF">
-                                        <rect key="frame" x="16" y="5" width="7" height="12"/>
+                                        <rect key="frame" x="16" y="5" width="6.5" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="41O-ML-iq9"/>
                                             <constraint firstAttribute="height" constant="12" id="J6e-hu-0Za"/>

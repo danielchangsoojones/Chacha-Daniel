@@ -122,15 +122,15 @@ extension ExploreViewController {
             cell.imageView.file = questionImage
             cell.imageView.loadInBackground()
         }
-//        cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
-//        if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
-//            cell.alreadyLiked = alreadyLiked
-//            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
-//        }
-//        cell.likeCountLabel.tag = currentRow
-//        cell.likeCount = currentQuestion.likeCount
-//        cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
-//        cell.activityDelegate = self
+        cell.likeImage.imageView!.image = UIImage(named: "vibe-off")
+        if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+            cell.alreadyLiked = alreadyLiked
+            cell.likeImage.imageView!.image = UIImage(named: "vibe-on")
+        }
+        cell.likeCountLabel.tag = currentRow
+        cell.likeCount = currentQuestion.likeCount
+        cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
+        cell.activityDelegate = self
 //        cell.questionDelegate = self
         return cell
     }
@@ -167,6 +167,29 @@ extension ExploreViewController: ExploreLayoutDelegate {
         let padding: CGFloat = 4
         let height = profileViewHeight + padding + commentHeight + padding + activityBarHeight + padding
         return height
+    }
+}
+
+extension ExploreViewController: ActivityTableViewCellDelegate {
+    func updateLike(likeCountTag: Int, isQuestion: Bool) {
+        if isQuestion {
+            let currentQuestion = questions[likeCountTag]
+            if let currentLike = alreadyLikedDictionary[currentQuestion.objectId!] {
+                //delete the like
+                currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                    if success && error == nil {
+                        self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
+                        currentQuestion.decrementLikeCount()
+                    }
+                })
+            } else {
+                //create the like
+                if !likeIsSaving {
+                    //not currently saving any likes
+                    createLike(currentQuestion)
+                }
+            }
+        }
     }
 }
 

@@ -11,6 +11,7 @@ import ParseUI
 
 class AnnotatedPhotoCell: UICollectionViewCell {
     
+    var alreadyLiked : Like?
    
     @IBOutlet weak var imageView: PFImageView!
     @IBOutlet weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
@@ -18,6 +19,15 @@ class AnnotatedPhotoCell: UICollectionViewCell {
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var questionText: UILabel!
+    @IBOutlet weak var likeImage: UIButton!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var answerCountLabel: UILabel!
+    @IBOutlet weak var timeStampLabel: UILabel!
+    
+    var likeCount = 0
+    var answerCount = 0
+    
+    var activityDelegate: ActivityTableViewCellDelegate?
     
 //    var photo: Photo? {
 //        didSet {
