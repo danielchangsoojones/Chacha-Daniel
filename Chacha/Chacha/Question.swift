@@ -20,6 +20,8 @@ class Question: PFObject, PFSubclassing {
     @NSManaged var likeCount: Int
     @NSManaged var question: String
     @NSManaged var questionDescription: String
+    @NSManaged var questionImageHeight: CGFloat
+    @NSManaged var questionImageWidth: CGFloat
     
     override init() {
         super.init()

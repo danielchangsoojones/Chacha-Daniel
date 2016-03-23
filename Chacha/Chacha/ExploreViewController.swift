@@ -140,22 +140,15 @@ extension ExploreViewController {
 extension ExploreViewController: ExploreLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        let question = questions[indexPath.item]
+        let currentQuestion = questions[indexPath.item]
         let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-//        if let questionImage = question.questionImage {
-//            questionImage.getDataInBackgroundWithBlock {
-//                (imageData: NSData?, error: NSError?) -> Void in
-//                if error == nil {
-//                    if let imageData = imageData {
-//                        let image = UIImage(data:imageData)
-//                        let rect = AVMakeRectWithAspectRatioInsideRect(image!.size, boundingRect)
-//                    }
-//                }
-//            }
-//        }
-        let image = UIImage(named: "popular-off")
-        let rect = AVMakeRectWithAspectRatioInsideRect(image!.size, boundingRect)
-        return rect.height
+        if currentQuestion.questionImageHeight > 0 && currentQuestion.questionImageWidth > 0 {
+            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: currentQuestion.questionImageHeight, height: currentQuestion.questionImageWidth), boundingRect)
+            return rect.height
+        } else {
+            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: 50 , height: 40), boundingRect)
+            return rect.height
+        }
     }
     
     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
