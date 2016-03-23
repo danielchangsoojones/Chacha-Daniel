@@ -20,6 +20,8 @@ class Question: PFObject, PFSubclassing {
     @NSManaged var likeCount: Int
     @NSManaged var question: String
     @NSManaged var questionDescription: String
+    @NSManaged var questionImageHeight: CGFloat
+    @NSManaged var questionImageWidth: CGFloat
     
     override init() {
         super.init()
@@ -44,6 +46,11 @@ class Question: PFObject, PFSubclassing {
     func incrementAnswerCount() {
         answerCount += 1
         self.saveInBackground()
+    }
+    
+    func heightForQuestion(font: UIFont, width: CGFloat) -> CGFloat {
+        let rect = NSString(string: question).boundingRectWithSize(CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return ceil(rect.height)
     }
     
 }

@@ -37,7 +37,7 @@ class ExploreViewController: UICollectionViewController {
         
         view.backgroundColor = ChachaGrayBackground
         
-        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        collectionView!.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 10, right: 5)
         collectionView!.backgroundColor = UIColor.clearColor()
         
         let layout = collectionViewLayout as! ExploreLayout
@@ -107,12 +107,31 @@ extension ExploreViewController {
 extension ExploreViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return questions.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
-        cell.photo = photos[indexPath.item]
+        
+        let currentRow = indexPath.row
+        let currentQuestion = questions[currentRow]
+    
+        cell.fullName.text = currentQuestion.createdBy?.fullName
+        cell.questionText.text = currentQuestion.question
+        if let questionImage = currentQuestion.questionImage {
+            cell.imageView.file = questionImage
+            cell.imageView.loadInBackground()
+        }
+        cell.likeImage.imageView!.image = UIImage(named: "vibe-off")
+        if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+            cell.alreadyLiked = alreadyLiked
+            cell.likeImage.imageView!.image = UIImage(named: "vibe-on")
+        }
+        cell.likeCountLabel.tag = currentRow
+        cell.likeCount = currentQuestion.likeCount
+        cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
+        cell.activityDelegate = self
+//        cell.questionDelegate = self
         return cell
     }
     
@@ -121,22 +140,49 @@ extension ExploreViewController {
 extension ExploreViewController: ExploreLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        let photo = photos[indexPath.item]
+        let currentQuestion = questions[indexPath.item]
         let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-        let rect = AVMakeRectWithAspectRatioInsideRect(photo.image.size, boundingRect)
-        return rect.height
+        if currentQuestion.questionImageHeight > 0 && currentQuestion.questionImageWidth > 0 {
+            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: currentQuestion.questionImageHeight, height: currentQuestion.questionImageWidth), boundingRect)
+            return rect.height
+        } else {
+            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: 50 , height: 40), boundingRect)
+            return rect.height
+        }
     }
     
     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        let photo = photos[indexPath.item]
+        let question = questions[indexPath.item]
         let font = UIFont(name: "HelveticaNeue", size: 10)!
-        let commentHeight = photo.heightForQuestion(font, width: width)
+        let commentHeight = question.heightForQuestion(font, width: width)
         let activityBarHeight: CGFloat = 15
         let profileViewHeight : CGFloat = 34
         let padding: CGFloat = 4
         let height = profileViewHeight + padding + commentHeight + padding + activityBarHeight + padding
         return height
     }
-    
+}
+
+extension ExploreViewController: ActivityTableViewCellDelegate {
+    func updateLike(likeCountTag: Int, isQuestion: Bool) {
+        if isQuestion {
+            let currentQuestion = questions[likeCountTag]
+            if let currentLike = alreadyLikedDictionary[currentQuestion.objectId!] {
+                //delete the like
+                currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                    if success && error == nil {
+                        self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
+                        currentQuestion.decrementLikeCount()
+                    }
+                })
+            } else {
+                //create the like
+                if !likeIsSaving {
+                    //not currently saving any likes
+                    createLike(currentQuestion)
+                }
+            }
+        }
+    }
 }
 

@@ -31,6 +31,11 @@ class AskAQuestionViewController: UIViewController {
         if let image = questionImage.image {
             let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
             newQuestion.questionImage = file
+            newQuestion.questionImageHeight = image.size.height
+            newQuestion.questionImageWidth = image.size.width
+        } else {
+            newQuestion.questionImageHeight = 0
+            newQuestion.questionImageWidth = 0
         }
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
             let _ = Alert(title: "Question Asked!", subtitle: "Your question is now being answered by the Chacha Universe", closeButtonTitle: "Awesome!", type: .Success)

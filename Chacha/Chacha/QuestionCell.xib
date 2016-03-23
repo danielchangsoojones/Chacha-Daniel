@@ -240,7 +240,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="LikeCountLabel" destination="tNb-If-cIv" id="8Nq-kf-K2s"/>
                 <outlet property="answerTextField" destination="woG-gc-HEw" id="wzp-yr-hxz"/>
                 <outlet property="askedOrUsernameText" destination="wio-zn-Mrr" id="KRM-6S-7tm"/>
                 <outlet property="fullNameText" destination="3HC-6r-hSb" id="csc-72-GWQ"/>
@@ -248,9 +247,7 @@
                 <outlet property="likeCountLabel" destination="tNb-If-cIv" id="n0u-OY-FK1"/>
                 <outlet property="profileImage" destination="dQg-77-7FW" id="bft-SU-aHO"/>
                 <outlet property="questionImage" destination="yHn-oy-tF0" id="ufz-Ij-nBm"/>
-                <outlet property="questionImageHeight" destination="EnX-kV-f2C" id="TD7-WL-UJA"/>
                 <outlet property="questionText" destination="0Q8-ke-lVI" id="DK9-HO-XQt"/>
-                <outlet property="submitButtonHeight" destination="rwb-zg-N9i" id="Kx6-XT-6ym"/>
                 <outlet property="timestampCount" destination="wHN-oS-5ri" id="iZZ-mc-PX8"/>
             </connections>
             <point key="canvasLocation" x="903.5" y="568.5"/>

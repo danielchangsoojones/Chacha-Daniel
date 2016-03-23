@@ -13,9 +13,7 @@ import ParseUI
 class QuestionTableViewCell: ActivityTableViewCell {
 
     @IBOutlet weak var questionImage: PFImageView!
-    @IBOutlet weak var questionImageHeight: NSLayoutConstraint!
     @IBOutlet weak var answerTextField: UITextField!
-    @IBOutlet weak var submitButtonHeight: NSLayoutConstraint!
     
     var questionImageHidden = true
     var submitButtonHidden = false
@@ -37,15 +35,6 @@ class QuestionTableViewCell: ActivityTableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    override func layoutSubviews() {
-        if questionImageHidden {
-            //questionImageHeight.constant = 0
-        }
-        if submitButtonHidden {
-            submitButtonHeight.constant = 0
-        }
     }
 
 }

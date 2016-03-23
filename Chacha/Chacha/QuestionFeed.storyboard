@@ -75,7 +75,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7x-z5-UXi" customClass="RoundedCornersView" customModule="Chacha" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hB7-FI-9ej">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hB7-FI-9ej" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                     <color key="backgroundColor" red="0.28235294119999998" green="0.68627450980000004" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -221,11 +221,15 @@
                                 </constraints>
                                 <size key="customSize" width="200" height="315"/>
                                 <connections>
+                                    <outlet property="answerCountLabel" destination="UjV-ge-mfj" id="F8m-TF-RL9"/>
                                     <outlet property="fullName" destination="juN-K8-KeT" id="rGQ-fK-RPZ"/>
-                                    <outlet property="imageView" destination="hB7-FI-9ej" id="JDx-7t-hP1"/>
+                                    <outlet property="imageView" destination="hB7-FI-9ej" id="BDe-Ic-goV"/>
                                     <outlet property="imageViewHeightLayoutConstraint" destination="DN6-xy-Bre" id="Hnn-TL-zMj"/>
+                                    <outlet property="likeCountLabel" destination="ySM-Ei-ZIp" id="geO-dB-GJn"/>
+                                    <outlet property="likeImage" destination="5l3-RJ-8oV" id="D3f-Eb-2AA"/>
                                     <outlet property="profileImage" destination="Tek-PU-u6M" id="O1G-f2-PsM"/>
                                     <outlet property="questionText" destination="O6e-iZ-U6X" id="LmV-HE-8S5"/>
+                                    <outlet property="timeStampLabel" destination="jpL-Xl-8kI" id="z5K-l5-nmc"/>
                                     <outlet property="username" destination="xE0-EQ-Nh2" id="Ebl-dm-EIT"/>
                                 </connections>
                             </collectionViewCell>
@@ -256,7 +260,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="8Yd-Sc-CGd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKO-yw-Fp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="0.0"/>
+            <point key="canvasLocation" x="1130" y="-55"/>
         </scene>
         <!--AskQuestion-->
         <scene sceneID="fun-RP-bh7">
