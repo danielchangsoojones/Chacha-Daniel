@@ -10,16 +10,10 @@ import UIKit
 import Parse
 import ParseUI
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: SuperViewController {
     
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var profileImage: PFImageView!
-    @IBOutlet weak var tableView: UITableView!
-    
-    let currentUser = User.currentUser()
-    var questions = [Question]()
-    var answers = [Answer]()
-    var alreadyLikedDictionary: [String : Like] = [:]
     
     enum tableState {
         case answer, question, follower, following
@@ -58,7 +52,7 @@ class ProfileViewController: UIViewController {
 
 }
 
-extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProfileViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch state {
@@ -134,24 +128,6 @@ extension ProfileViewController {
         })
     }
     
-    func fillAlreadyLikedDictionary() {
-        let query = Like.query()
-        query?.whereKey("createdBy", equalTo: User.currentUser()!)
-        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            if error == nil {
-                if let objects = objects as! [Like]? {
-                    //sets the ones that actually have likes to true
-                    for like in objects {
-                        if let parentObjectId = like.postParent!.objectId {
-                            self.alreadyLikedDictionary[parentObjectId] = like
-                        }
-                    }
-                    self.tableView.reloadData()
-                }
-            }
-        })
-    }
-    
     func createAnswerArray(user: User) {
         let query = populateAnswerArray()
         query.whereKey("createdBy", equalTo: user)
@@ -163,16 +139,6 @@ extension ProfileViewController {
                 self.tableView.reloadData()
             }
         })
-    }
-}
-
-extension ProfileViewController: ActivityTableViewCellDelegate, QuestionTableViewCellDelegate {
-    func updateLike(likeCountTag: Int, isQuestion: Bool) {
-        
-    }
-    
-    func createAnswer(answer: String) {
-        
     }
 }
 

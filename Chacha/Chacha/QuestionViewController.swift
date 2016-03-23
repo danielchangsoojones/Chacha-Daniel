@@ -10,8 +10,6 @@ import UIKit
 import EFTools
 
 class QuestionViewController: SuperViewController {
-    
-    var questions = [Question]()
     var rowTapped : Int?
 
     override func viewDidLoad() {
@@ -75,29 +73,6 @@ extension QuestionViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-}
-
-extension QuestionViewController: ActivityTableViewCellDelegate {
-    func updateLike(likeCountTag: Int, isQuestion: Bool) {
-        if isQuestion {
-            let currentQuestion = questions[likeCountTag]
-            if let currentLike = alreadyLikedDictionary[currentQuestion.objectId!] {
-                //delete the like
-                currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
-                    if success && error == nil {
-                        self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
-                        currentQuestion.decrementLikeCount()
-                    }
-                })
-            } else {
-                //create the like
-                if !likeIsSaving {
-                    //not currently saving any likes
-                    createLike(currentQuestion)
-                }
-            }
-        }
-    }
 }
 
 extension QuestionViewController: SegueHandlerType {

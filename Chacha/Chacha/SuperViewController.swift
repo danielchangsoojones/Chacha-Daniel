@@ -16,6 +16,11 @@ class SuperViewController: UIViewController {
     var withPicture: Bool = false
     var alreadyLikedDictionary: [String : Like] = [:]
     var likeIsSaving = false
+    let currentUser = User.currentUser()
+    
+    var questions = [Question]()
+    var answers = [Answer]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +40,7 @@ class SuperViewController: UIViewController {
 extension SuperViewController {
     func fillAlreadyLikedDictionary() {
         let query = Like.query()
-        query?.whereKey("createdBy", equalTo: User.currentUser()!)
+        query?.whereKey("createdBy", equalTo: currentUser!)
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil {
                 if let objects = objects as! [Like]? {
@@ -68,6 +73,29 @@ extension SuperViewController {
                 self.alreadyLikedDictionary.updateValue(like, forKey: (postParent.objectId)!)
             } else {
                 print(error)
+            }
+        }
+    }
+}
+
+extension SuperViewController: ActivityTableViewCellDelegate {
+    func updateLike(likeCountTag: Int, isQuestion: Bool) {
+        if isQuestion {
+            let currentQuestion = questions[likeCountTag]
+            if let currentLike = alreadyLikedDictionary[currentQuestion.objectId!] {
+                //delete the like
+                currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                    if success && error == nil {
+                        self.alreadyLikedDictionary.removeValueForKey(currentQuestion.objectId!)
+                        currentQuestion.decrementLikeCount()
+                    }
+                })
+            } else {
+                //create the like
+                if !likeIsSaving {
+                    //not currently saving any likes
+                    createLike(currentQuestion)
+                }
             }
         }
     }
