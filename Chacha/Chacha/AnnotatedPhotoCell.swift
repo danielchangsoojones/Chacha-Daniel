@@ -17,17 +17,17 @@ class AnnotatedPhotoCell: UICollectionViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var questionText: UILabel!
     
-    var photo: Photo? {
-        didSet {
-            if let photo = photo {
-                imageView.image = photo.image
-                profileImage.image = photo.profileImage
-                fullName.text = photo.fullName
-                username.text = photo.username
-                questionText.text = photo.question
-            }
-        }
-    }
+//    var photo: Photo? {
+//        didSet {
+//            if let photo = photo {
+//                imageView.image = photo.image
+//                profileImage.image = photo.profileImage
+//                fullName.text = photo.fullName
+//                username.text = photo.username
+//                questionText.text = photo.question
+//            }
+//        }
+//    }
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)

@@ -107,12 +107,12 @@ extension ExploreViewController {
 extension ExploreViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return questions.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
-        cell.photo = photos[indexPath.item]
+        cell.questionText.text = "hi"
         return cell
     }
     
@@ -121,21 +121,38 @@ extension ExploreViewController {
 extension ExploreViewController: ExploreLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        let photo = photos[indexPath.item]
+        let question = questions[indexPath.item]
         let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-        let rect = AVMakeRectWithAspectRatioInsideRect(photo.image.size, boundingRect)
+//        if let questionImage = question.questionImage {
+//            questionImage.getDataInBackgroundWithBlock {
+//                (imageData: NSData?, error: NSError?) -> Void in
+//                if error == nil {
+//                    if let imageData = imageData {
+//                        let image = UIImage(data:imageData)
+//                        let rect = AVMakeRectWithAspectRatioInsideRect(image!.size, boundingRect)
+//                    }
+//                }
+//            }
+//        }
+        let image = UIImage(named: "popular-off")
+        let rect = AVMakeRectWithAspectRatioInsideRect(image!.size, boundingRect)
         return rect.height
     }
     
     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        let photo = photos[indexPath.item]
+        //let question = questions[indexPath.item]
         let font = UIFont(name: "HelveticaNeue", size: 10)!
-        let commentHeight = photo.heightForQuestion(font, width: width)
+        let commentHeight = heightForQuestion(font, width: width)
         let activityBarHeight: CGFloat = 15
         let profileViewHeight : CGFloat = 34
         let padding: CGFloat = 4
         let height = profileViewHeight + padding + commentHeight + padding + activityBarHeight + padding
         return height
+    }
+    
+    func heightForQuestion(font: UIFont, width: CGFloat) -> CGFloat {
+        let rect = NSString(string: "hallulah").boundingRectWithSize(CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return ceil(rect.height)
     }
     
 }
