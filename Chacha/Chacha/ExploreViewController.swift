@@ -37,7 +37,7 @@ class ExploreViewController: UICollectionViewController {
         
         view.backgroundColor = ChachaGrayBackground
         
-        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        collectionView!.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 10, right: 5)
         collectionView!.backgroundColor = UIColor.clearColor()
         
         let layout = collectionViewLayout as! ExploreLayout
