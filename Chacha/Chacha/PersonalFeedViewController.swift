@@ -101,24 +101,24 @@ extension PersonalFeedViewController : UITableViewDelegate, UITableViewDataSourc
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
         
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
-            cell.fullNameText.text = currentQuestion.createdBy?.fullName
-            cell.questionText.text = currentQuestion.question
-            if let questionImage = currentQuestion.questionImage {
-                cell.questionImageHidden = false
-                cell.questionImage.file = questionImage
-                cell.questionImage.loadInBackground()
-            }
-            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
-            if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
-                cell.alreadyLiked = alreadyLiked
-                cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
-            }
-            cell.likeCountLabel.tag = currentRow
-            cell.likeCount = currentQuestion.likeCount
-            cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
-            cell.activityDelegate = self
-            cell.questionDelegate = self
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! ActivityTableViewCell
+           // cell.fullNameText.text = currentQuestion.createdBy?.fullName
+           cell.questionText.text = currentQuestion.question
+//            if let questionImage = currentQuestion.questionImage {
+//                cell.questionImageHidden = false
+//                cell.questionImage.file = questionImage
+//                cell.questionImage.loadInBackground()
+//            }
+//            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
+//            if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+//                cell.alreadyLiked = alreadyLiked
+//                cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
+//            }
+//            cell.likeCountLabel.tag = currentRow
+//            cell.likeCount = currentQuestion.likeCount
+//            cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
+//            cell.activityDelegate = self
+//            cell.questionDelegate = self
             return cell
     }
     
