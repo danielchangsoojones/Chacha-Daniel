@@ -64,7 +64,7 @@ func resetTextView(textView: UITextView, placeHolderText: String) {
 //queries
 func populateQuestionArray() -> PFQuery {
     let query = Question.query()
-    query?.orderByAscending("createdAt")
+    query?.orderByDescending("createdAt")
     query?.includeKey("createdBy")
     query?.includeKey("createdAt")
     return query!
@@ -72,14 +72,18 @@ func populateQuestionArray() -> PFQuery {
 
 func likeHelper(postParent: PFObject) -> Like {
     let like = Like()
-    like.postParent = postParent
+    if let questionParent = postParent as? Question {
+        like.questionParent = questionParent
+    } else if let answerParent = postParent as? Answer {
+        like.answerParent = answerParent
+    }
     like.createdBy = User.currentUser()
     return like
 }
 
 func populateAnswerArray() -> PFQuery {
     let query = Answer.query()
-    query?.orderByAscending("createdAt")
+    query?.orderByDescending("createdAt")
     query?.includeKey("createdBy")
     query?.includeKey("createdAt")
     return query!
@@ -90,6 +94,14 @@ func createUserConnection(leader: User) -> UserConnection {
     userConnection.follower = User.currentUser()
     userConnection.leader = leader
     return userConnection
+}
+
+func createNewAnswer(answer: String, questionObject: Question) -> Answer {
+    let newAnswer = Answer(likeCount: 0, answerCount: 0)
+    newAnswer.answer = answer
+    newAnswer.createdBy = User.currentUser()
+    newAnswer.questionParent = questionObject
+    return newAnswer
 }
 
 

@@ -67,7 +67,9 @@ extension ExploreViewController {
                 if let objects = objects as! [Like]? {
                     //sets the ones that actually have likes to true
                     for like in objects {
-                        if let parentObjectId = like.postParent!.objectId {
+                        if let parentObjectId = like.questionParent!.objectId {
+                            self.alreadyLikedDictionary.updateValue(like, forKey: parentObjectId)
+                        } else if let parentObjectId = like.answerParent!.objectId {
                             self.alreadyLikedDictionary.updateValue(like, forKey: parentObjectId)
                         }
                     }

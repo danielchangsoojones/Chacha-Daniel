@@ -18,6 +18,22 @@ class QuestionTableViewCell: ActivityTableViewCell {
     var questionImageHidden = true
     var submitButtonHidden = false
     
+    var question: Question? {
+        didSet {
+            if let question = question {
+                fullNameText.text = question.createdBy?.fullName
+                questionText.text = question.question
+                if let questionImage = question.questionImage {
+                    self.questionImage.file = questionImage
+                    self.questionImage.loadInBackground()
+                }
+                likeCount = question.likeCount
+                likeCountLabel.text = "\(question.likeCount)"
+                isQuestion = true
+            }
+        }
+    }
+    
     var questionDelegate : QuestionTableViewCellDelegate?
     
     @IBAction func submitAnswer(sender: AnyObject) {

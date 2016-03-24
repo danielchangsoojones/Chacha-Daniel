@@ -10,15 +10,9 @@ import UIKit
 import ParseUI
 import EFTools
 
-class AnswerViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
-    
-    var answers = [Answer]()
+class AnswerViewController: SuperViewController {
     
     var questionImage : PFFile?
-    var question : String?
-    var createdBy : User?
     var answerText: String?
     var questionObject: Question?
     
@@ -27,7 +21,6 @@ class AnswerViewController: UIViewController {
         
         //for making cells grow and shrink with cell size content
         self.tableView.estimatedRowHeight = 80
-        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
@@ -56,8 +49,8 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
                 let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
                 cell.activityDelegate = self
                 cell.questionDelegate = self
-                cell.fullNameText.text = createdBy?.fullName
-                cell.questionText.text = question
+                cell.fullNameText.text = questionObject?.createdBy?.fullName
+                cell.questionText.text = questionObject?.question
                 if let questionImage = questionImage {
                     cell.questionImageHidden = false
                     cell.questionImage.file = questionImage
@@ -67,14 +60,11 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
         } else {
             let currentAnswer = answers[currentRow - 1]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("answerCell")! as! ActivityTableViewCell
+            cell.activityDelegate = self
             cell.fullNameText.text = currentAnswer.createdBy?.fullName
             cell.questionText.text = currentAnswer.answer
             return cell
         }
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
 }
 
@@ -94,31 +84,14 @@ extension AnswerViewController {
     }
 }
 
-extension AnswerViewController: ActivityTableViewCellDelegate {
-    func updateLike(likeCountTag: Int, isQuestion: Bool) {
-       
-    }
-    
-    func segueToProfile(row: Int) {
-        
-    }
-}
-
-extension AnswerViewController: QuestionTableViewCellDelegate {
-    func createAnswer(answer: String) {
-        let newAnswer = Answer(likeCount: 0, answerCount: 0)
-        newAnswer.answer = answer
-        newAnswer.createdBy = User.currentUser()
-        newAnswer.questionParent = questionObject
-        //        if let image = questionImage.image {
-        //            let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
-        //            newQuestion.questionImage = file
-        //        }
+extension AnswerViewController {
+    override func createAnswer(answer: String) {
+        let newAnswer = createNewAnswer(answer, questionObject: questionObject!)
         newAnswer.saveInBackgroundWithBlock { (success, error) -> Void in
             if success {
                 self.answers.append(newAnswer)
                 self.tableView.reloadData()
-                let _ = Alert(title: "Answer Created!", subtitle: "You answered a question!", closeButtonTitle: "Awesome!", type: .Success)
+//                let _ = Alert(title: "Answer Created!", subtitle: "You answered a question!", closeButtonTitle: "Awesome!", type: .Success)
             } else {
                 print(error)
             }

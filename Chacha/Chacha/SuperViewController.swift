@@ -49,8 +49,10 @@ extension SuperViewController {
                 if let objects = objects as! [Like]? {
                     //sets the ones that actually have likes to true
                     for like in objects {
-                        if let parentObjectId = like.postParent!.objectId {
-                            self.alreadyLikedDictionary.updateValue(like, forKey: parentObjectId)
+                        if let questionParent = like.questionParent {
+                            self.alreadyLikedDictionary.updateValue(like, forKey: questionParent.objectId!)
+                        } else if let answerParent = like.answerParent {
+                            self.alreadyLikedDictionary.updateValue(like, forKey: answerParent.objectId!)
                         }
                     }
                     self.tableView.reloadData()
@@ -105,6 +107,23 @@ extension SuperViewController: ActivityTableViewCellDelegate {
                     createLike(currentQuestion)
                 }
             }
+        } else {
+            let currentAnswer = answers[likeCountTag]
+            if let currentLike = alreadyLikedDictionary[currentAnswer.objectId!] {
+                //delete the like
+                currentLike.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                    if success && error == nil {
+                    self.alreadyLikedDictionary.removeValueForKey(currentAnswer.objectId!)
+                        currentAnswer.decrementLikeCount()
+                    }
+                })
+            } else {
+                //create the like
+                if !likeIsSaving {
+                    //not currently saving any likes
+                    createLike(currentAnswer)
+                }
+            }
         }
     }
     
@@ -132,8 +151,6 @@ extension SuperViewController: SegueHandlerType {
         switch segueIdentifierForSegue(segue) {
         case .answerPageSegue:
             let destinationVC = segue.destinationViewController as! AnswerViewController
-                destinationVC.question = question.question
-                destinationVC.createdBy = question.createdBy
                 destinationVC.questionObject = question
         case .profileSegue:
             let destinationVC = segue.destinationViewController as! ProfileViewController

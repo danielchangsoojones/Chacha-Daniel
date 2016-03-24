@@ -26,8 +26,10 @@ class ActivityTableViewCell: UITableViewCell {
     
     var activityDelegate: ActivityTableViewCellDelegate?
     
+    var isQuestion = false
+    
     @IBAction func likeButtonPressed(sender: AnyObject) {
-        activityDelegate?.updateLike(likeCountLabel.tag, isQuestion: true)
+        activityDelegate?.updateLike(likeCountLabel.tag, isQuestion: isQuestion)
         if let _ = alreadyLiked {
             //delete like
             likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
