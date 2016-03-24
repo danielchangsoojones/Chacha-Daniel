@@ -41,6 +41,23 @@ class AnnotatedPhotoCell: UICollectionViewCell {
 //        }
 //    }
     
+    @IBAction func likeButtonPressed(sender: AnyObject) {
+        activityDelegate?.updateLike(likeCountLabel.tag, isQuestion: true)
+        if let _ = alreadyLiked {
+            //delete like
+            likeImage.imageView!.image = UIImage(named: "vibe-off")
+            alreadyLiked = nil
+            likeCount -= 1
+        } else {
+            //create like
+            likeImage.imageView?.image = UIImage(named: "vibe-on")
+            alreadyLiked = Like()
+            likeCount += 1
+        }
+        likeCountLabel.text = "\(likeCount)"
+    }
+    
+    
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
         let attributes = layoutAttributes as! ExploreLayoutAttributes

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q3s-sh-hrv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q3s-sh-hrv">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -66,7 +66,7 @@
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="s44-mt-eba" customClass="AnnotatedPhotoCell" customModule="Chacha" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="315"/>
+                                <rect key="frame" x="88" y="0.0" width="200" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="315"/>
@@ -161,7 +161,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bIZ-kI-jDL">
-                                                            <rect key="frame" x="165" y="0.0" width="28" height="15"/>
+                                                            <rect key="frame" x="164" y="0.0" width="28" height="15"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwV-MT-yGd">
                                                                     <rect key="frame" x="0.0" y="0.0" width="16" height="15"/>
@@ -180,6 +180,12 @@
                                                         <constraint firstAttribute="height" constant="15" id="w16-ZE-sj8"/>
                                                     </constraints>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeN-yn-1PN">
+                                                    <rect key="frame" x="4" y="254" width="35" height="15"/>
+                                                    <connections>
+                                                        <action selector="likeButtonPressed:" destination="s44-mt-eba" eventType="touchUpInside" id="D9f-yp-4GZ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -190,13 +196,17 @@
                                                 <constraint firstAttribute="trailing" secondItem="hB7-FI-9ej" secondAttribute="trailing" id="Clz-e3-irj"/>
                                                 <constraint firstItem="hB7-FI-9ej" firstAttribute="leading" secondItem="K7x-z5-UXi" secondAttribute="leading" id="LVX-xR-psC"/>
                                                 <constraint firstItem="O6e-iZ-U6X" firstAttribute="top" secondItem="sZE-At-QIZ" secondAttribute="bottom" constant="4" id="PP5-j6-AuU"/>
+                                                <constraint firstItem="LeN-yn-1PN" firstAttribute="leading" secondItem="4Q7-US-zOc" secondAttribute="leading" id="X3I-hA-fIM"/>
                                                 <constraint firstItem="sZE-At-QIZ" firstAttribute="top" secondItem="K7x-z5-UXi" secondAttribute="top" constant="200" id="Y81-vH-9Yt"/>
                                                 <constraint firstItem="O6e-iZ-U6X" firstAttribute="leading" secondItem="Tek-PU-u6M" secondAttribute="leading" id="cns-3E-igW"/>
                                                 <constraint firstItem="sZE-At-QIZ" firstAttribute="top" secondItem="hB7-FI-9ej" secondAttribute="bottom" id="fCX-jO-gxs"/>
                                                 <constraint firstItem="m45-Fe-crS" firstAttribute="top" secondItem="O6e-iZ-U6X" secondAttribute="bottom" constant="4" id="gLo-mk-1Tv"/>
+                                                <constraint firstItem="LeN-yn-1PN" firstAttribute="trailing" secondItem="4Q7-US-zOc" secondAttribute="trailing" id="hBz-TA-ng3"/>
                                                 <constraint firstItem="sZE-At-QIZ" firstAttribute="leading" secondItem="K7x-z5-UXi" secondAttribute="leading" id="qEf-lr-Hd0"/>
                                                 <constraint firstAttribute="trailing" secondItem="O6e-iZ-U6X" secondAttribute="trailing" constant="4" id="uy4-ph-fjl"/>
                                                 <constraint firstItem="m45-Fe-crS" firstAttribute="trailing" secondItem="O6e-iZ-U6X" secondAttribute="trailing" id="vYn-t5-Hek"/>
+                                                <constraint firstItem="LeN-yn-1PN" firstAttribute="bottom" secondItem="4Q7-US-zOc" secondAttribute="bottom" id="xri-hd-xol"/>
+                                                <constraint firstItem="LeN-yn-1PN" firstAttribute="top" secondItem="4Q7-US-zOc" secondAttribute="top" id="zEy-AW-tRN"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
