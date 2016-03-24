@@ -39,6 +39,7 @@ class AskAQuestionViewController: UIViewController {
             newQuestion.questionImageWidth = 0
         }
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
+            self.questionTextBox.resignFirstResponder()
             let _ = Alert(title: "Question Asked!", subtitle: "Your question is now being answered by the Chacha Universe", closeButtonTitle: "Awesome!", type: .Success)
         }
     }
@@ -54,6 +55,7 @@ class AskAQuestionViewController: UIViewController {
         
         // Keyboard notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         
         //questionTextBox.becomeFirstResponder()
         
@@ -85,6 +87,14 @@ extension AskAQuestionViewController {
                 })
             }
         }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        guard let bottomConstraint = bottomComposeBarConstraint else { return }
+        bottomConstraint.constant = 0
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
     }
 }
 
