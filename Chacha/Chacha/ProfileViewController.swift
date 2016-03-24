@@ -54,6 +54,8 @@ class ProfileViewController: SuperViewController {
     }
     
     @IBAction func followingPressed(sender: AnyObject) {
+        state = tableState.following
+        self.tableView.reloadData()
     }
     
     
@@ -90,10 +92,9 @@ extension ProfileViewController {
         case .answer:
             return answers.count
         case .follower:
-            //return followers.count
-            return 3
+            return followers.count
         case .following:
-            return 3
+            return following.count
         }
     }
     
@@ -124,8 +125,7 @@ extension ProfileViewController {
             cell.questionText.text = currentAnswer.answer
             return cell
         case .follower:
-            //let currentFollower = followers[currentRow]
-            let currentFollower = currentUser!
+            let currentFollower = followers[currentRow]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("userCell")! as! UserTableViewCell
             cell.fullName.text = currentFollower.fullName
             cell.username.text = currentFollower.username
@@ -135,7 +135,15 @@ extension ProfileViewController {
             }
             return cell
         case .following:
-            return UITableViewCell()
+            let currentFollowing = following[currentRow]
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("userCell")! as! UserTableViewCell
+            cell.fullName.text = currentFollowing.fullName
+            cell.username.text = currentFollowing.username
+            if let userImage = currentFollowing.avatarImage {
+                cell.profileImage.file = userImage
+                cell.profileImage.loadInBackground()
+            }
+            return cell
         }
     }
     
@@ -194,8 +202,10 @@ extension ProfileViewController {
         query?.whereKey("leader", equalTo: user!)
         query!.includeKey("follower")
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            if let followers = objects as? [User] {
-                self.followers = followers
+            if let userConnections = objects as? [UserConnection] {
+                for userConnection in userConnections {
+                    self.followers.append(userConnection.follower!)
+                }
                 self.tableView.reloadData()
             }
         })
@@ -206,8 +216,11 @@ extension ProfileViewController {
         query?.whereKey("follower", equalTo: user!)
         query?.includeKey("leader")
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            if let leaders = objects as? [User] {
-                self.following = leaders
+            if let userConnections = objects as? [UserConnection] {
+                for userConnection in userConnections {
+                    self.following.append(userConnection.leader!)
+                }
+                self.tableView.reloadData()
             }
         })
     }
