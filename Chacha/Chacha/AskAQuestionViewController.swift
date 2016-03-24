@@ -40,6 +40,7 @@ class AskAQuestionViewController: UIViewController {
         }
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
             self.questionTextBox.resignFirstResponder()
+            self.questionTextBox.text = "Ask a question..."
             let _ = Alert(title: "Question Asked!", subtitle: "Your question is now being answered by the Chacha Universe", closeButtonTitle: "Awesome!", type: .Success)
         }
     }
