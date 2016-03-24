@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="9dv-2D-zuq">
             <objects>
                 <viewController storyboardIdentifier="profilePage" automaticallyAdjustsScrollViewInsets="NO" id="eUu-6s-hIF" customClass="ProfileViewController" customModule="Chacha" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,19 +156,26 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="c4g-HT-R04">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Profile" id="c4g-HT-R04"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="fullName" destination="H2w-4G-sPk" id="9KH-l6-R2z"/>
                         <outlet property="profileImage" destination="7XF-s3-B5K" id="PNZ-88-D4Z"/>
                         <outlet property="tableView" destination="JkY-Xz-T0i" id="N7O-LE-ouU"/>
+                        <segue destination="kW1-Ox-ugI" kind="show" identifier="answerPageSegue" id="bnu-oL-vdB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3P-6e-h0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1235.5" y="389.5"/>
+        </scene>
+        <!--AnswerFeed-->
+        <scene sceneID="O8S-Zs-soR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AnswerFeed" id="kW1-Ox-ugI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fLR-9m-O8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-807" y="323"/>
         </scene>
         <!--Profile-->
         <scene sceneID="zzE-76-iD3">

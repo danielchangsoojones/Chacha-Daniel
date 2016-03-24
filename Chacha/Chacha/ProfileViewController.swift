@@ -15,7 +15,7 @@ class ProfileViewController: SuperViewController {
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var profileImage: PFImageView!
     
-    var user : User?
+    var user = User.currentUser()
     
     @IBAction func followPressed(sender: AnyObject) {
         let userConnection = UserConnection(isRequesting: true)
@@ -44,14 +44,13 @@ class ProfileViewController: SuperViewController {
 
         setProfile()
         createQuestionArray()
-        createAnswerArray(User.currentUser()!)
+        createAnswerArray()
         
         tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
         
-        //for making cells grow and shrink with cell size content
         self.tableView.estimatedRowHeight = 278
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,8 +109,8 @@ extension ProfileViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        rowTapped = indexPath.row
-//        performSegueWithIdentifier(.answerPageSegue, sender: self)
+        rowTapped = indexPath.row
+        performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
 }
 
@@ -127,7 +126,7 @@ extension ProfileViewController {
     
     func createQuestionArray() {
         let query = populateQuestionArray()
-        query.whereKey("createdBy", equalTo: currentUser!)
+        query.whereKey("createdBy", equalTo: user!)
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let objects = objects as? [Question] {
                 self.questions = objects
@@ -137,9 +136,9 @@ extension ProfileViewController {
         })
     }
     
-    func createAnswerArray(user: User) {
+    func createAnswerArray() {
         let query = populateAnswerArray()
-        query.whereKey("createdBy", equalTo: user)
+        query.whereKey("createdBy", equalTo: user!)
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let objects = objects as? [Answer] {
                 for answer in objects {
