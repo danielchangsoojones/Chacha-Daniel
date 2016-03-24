@@ -14,6 +14,7 @@ class AskAQuestionViewController: UIViewController {
     @IBOutlet weak var questionTextBox: UITextView!
     @IBOutlet weak var questionDescriptionTextBox: UITextView!
     @IBOutlet weak var questionImage: UIImageView!
+    @IBOutlet weak var bottomComposeBarConstraint: NSLayoutConstraint!
     
     let descriptionPlaceHolderText = "Optional Description..."
     let questionPlaceHolderText = "Ask Your Question..."
@@ -26,7 +27,7 @@ class AskAQuestionViewController: UIViewController {
     @IBAction func askQuestion(sender: AnyObject) {
         let newQuestion = Question(likeCount: 0, answerCount: 0)
         newQuestion.question = questionTextBox.text
-        newQuestion.questionDescription = questionDescriptionTextBox.text
+        //newQuestion.questionDescription = questionDescriptionTextBox.text
         newQuestion.createdBy = User.currentUser()
         if let image = questionImage.image {
             let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
@@ -45,12 +46,21 @@ class AskAQuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        questionDescriptionTextBox.delegate = self
+        //questionDescriptionTextBox.delegate = self
         questionTextBox.delegate = self
         
         questionTextBox.textColor = UIColor.lightGrayColor()
-        questionDescriptionTextBox.textColor = UIColor.lightGrayColor()
+        //questionDescriptionTextBox.textColor = UIColor.lightGrayColor()
         
+        // Keyboard notifications
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        
+        //questionTextBox.becomeFirstResponder()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        questionTextBox.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +69,23 @@ class AskAQuestionViewController: UIViewController {
     }
     
 
+}
+
+//keyboard notification
+extension AskAQuestionViewController {
+    func keyboardWillShow(notification: NSNotification) {
+        guard let bottomConstraint = bottomComposeBarConstraint else { return }
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
+                //tab bar height is default by Apple at 49
+                let tabBarHeight = CGFloat(49)
+                bottomConstraint.constant = keyboardSize.height - tabBarHeight
+                UIView.animateWithDuration(0.35, animations: { () -> Void in
+                    self.view.layoutIfNeeded()
+                })
+            }
+        }
+    }
 }
 
 extension AskAQuestionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -86,11 +113,11 @@ extension AskAQuestionViewController: UITextViewDelegate {
     }
     
     func textViewDidEndEditing(textView: UITextView) {
-        if textView == questionDescriptionTextBox {
-            editingEndedTextView(textView, placeHolderText: descriptionPlaceHolderText)
-        } else if textView == questionTextBox {
+//        if textView == questionDescriptionTextBox {
+//            editingEndedTextView(textView, placeHolderText: descriptionPlaceHolderText)
+//        } else if textView == questionTextBox {
             editingEndedTextView(textView, placeHolderText: questionPlaceHolderText)
-        }
+        //}
         
     }
 }
