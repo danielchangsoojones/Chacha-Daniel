@@ -48,6 +48,15 @@ class ProfileViewController: SuperViewController {
         self.tableView.reloadData()
     }
     
+    @IBAction func followerPressed(sender: AnyObject) {
+        state = tableState.follower
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func followingPressed(sender: AnyObject) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,6 +68,7 @@ class ProfileViewController: SuperViewController {
         
         tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
+        tableView.registerNib(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "userCell")
         
         self.tableView.estimatedRowHeight = 278
         
@@ -80,6 +90,7 @@ extension ProfileViewController {
         case .answer:
             return answers.count
         case .follower:
+            //return followers.count
             return 3
         case .following:
             return 3
@@ -113,7 +124,16 @@ extension ProfileViewController {
             cell.questionText.text = currentAnswer.answer
             return cell
         case .follower:
-            return UITableViewCell()
+            //let currentFollower = followers[currentRow]
+            let currentFollower = currentUser!
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("userCell")! as! UserTableViewCell
+            cell.fullName.text = currentFollower.fullName
+            cell.username.text = currentFollower.username
+            if let userImage = currentFollower.avatarImage {
+                cell.profileImage.file = userImage
+                cell.profileImage.loadInBackground()
+            }
+            return cell
         case .following:
             return UITableViewCell()
         }
@@ -165,17 +185,20 @@ extension ProfileViewController {
     
     func createFollowerArray() {
         let query = UserConnection.query()
-        query?.whereKey("leader", equalTo: user!.objectId!)
+        query?.whereKey("leader", equalTo: user!)
+        query!.includeKey("follower")
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let followers = objects as? [User] {
                 self.followers = followers
+                self.tableView.reloadData()
             }
         })
     }
     
     func createFollowingArray() {
         let query = UserConnection.query()
-        query?.whereKey("follower", equalTo: user!.objectId!)
+        query?.whereKey("follower", equalTo: user!)
+        query?.includeKey("leader")
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let leaders = objects as? [User] {
                 self.following = leaders

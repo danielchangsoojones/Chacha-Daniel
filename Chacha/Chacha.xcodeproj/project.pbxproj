@@ -56,6 +56,8 @@
 		92A361C71C9117D90075831B /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361C61C9117D90075831B /* QuestionTableViewCell.swift */; };
 		92A361C91C911D720075831B /* CellDelegateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361C81C911D720075831B /* CellDelegateProtocols.swift */; };
 		92C8DB1C1CA368710063FB99 /* UserConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C8DB1B1CA368710063FB99 /* UserConnection.swift */; };
+		92C8DB1E1CA37E3E0063FB99 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C8DB1D1CA37E3E0063FB99 /* UserCell.xib */; };
+		92C8DB201CA37F950063FB99 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C8DB1F1CA37F950063FB99 /* UserTableViewCell.swift */; };
 		92CE70261C83986000E3A7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70251C83986000E3A7B6 /* User.swift */; };
 		92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70281C839C0000E3A7B6 /* DateExtensions.swift */; };
 		92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */; };
@@ -117,6 +119,8 @@
 		92A361C61C9117D90075831B /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		92A361C81C911D720075831B /* CellDelegateProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDelegateProtocols.swift; sourceTree = "<group>"; };
 		92C8DB1B1CA368710063FB99 /* UserConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConnection.swift; sourceTree = "<group>"; };
+		92C8DB1D1CA37E3E0063FB99 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		92C8DB1F1CA37F950063FB99 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		92CE70251C83986000E3A7B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		92CE70281C839C0000E3A7B6 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = ../DateExtensions.swift; sourceTree = "<group>"; };
 		92CE702A1C839D8700E3A7B6 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -297,9 +301,11 @@
 			children = (
 				92A361C41C910D7C0075831B /* ActivityTableViewCell.swift */,
 				92A361C61C9117D90075831B /* QuestionTableViewCell.swift */,
+				92C8DB1F1CA37F950063FB99 /* UserTableViewCell.swift */,
 				92A361C81C911D720075831B /* CellDelegateProtocols.swift */,
 				92A361C11C9106A80075831B /* QuestionCell.xib */,
 				920CF2771C93C15200D29C2A /* AnswerCell.xib */,
+				92C8DB1D1CA37E3E0063FB99 /* UserCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				92A361B01C88B4210075831B /* PersonalFeed.storyboard in Resources */,
 				920CF27A1C9483E700D29C2A /* AnswerFeed.storyboard in Resources */,
 				9238E2271C8769F300313AB7 /* AskQuestion.storyboard in Resources */,
+				92C8DB1E1CA37E3E0063FB99 /* UserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +490,7 @@
 				92A361BE1C8E26BD0075831B /* Answer.swift in Sources */,
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9238E2201C875E6500313AB7 /* Question.swift in Sources */,
+				92C8DB201CA37F950063FB99 /* UserTableViewCell.swift in Sources */,
 				92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */,
 				920C8DC01C987A7200F4CFF3 /* ProfileViewController.swift in Sources */,
 				92A361C51C910D7C0075831B /* ActivityTableViewCell.swift in Sources */,

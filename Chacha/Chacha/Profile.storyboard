@@ -46,10 +46,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7w-wL-r2l">
                                         <rect key="frame" x="188" y="0.0" width="93" height="30"/>
                                         <state key="normal" title="Followers"/>
+                                        <connections>
+                                            <action selector="followerPressed:" destination="eUu-6s-hIF" eventType="touchUpInside" id="lVH-Bd-Kgr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvp-0G-pFt">
                                         <rect key="frame" x="281" y="0.0" width="94" height="30"/>
                                         <state key="normal" title="Following"/>
+                                        <connections>
+                                            <action selector="followingPressed:" destination="eUu-6s-hIF" eventType="touchUpInside" id="tVn-tj-48q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
