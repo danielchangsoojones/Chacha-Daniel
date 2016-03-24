@@ -140,8 +140,14 @@ extension ProfileViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        rowTapped = indexPath.row
-        performSegueWithIdentifier(.answerPageSegue, sender: self)
+        switch state {
+        case .question:
+            rowTapped = indexPath.row
+            performSegueWithIdentifier(.answerPageSegue, sender: self)
+        default:
+            break
+        }
+        
     }
 }
 
