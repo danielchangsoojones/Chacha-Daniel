@@ -16,7 +16,6 @@
 		9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2061C84BEBF00313AB7 /* Alert.swift */; };
 		9238E2111C861AA000313AB7 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2101C861AA000313AB7 /* ExploreViewController.swift */; };
 		9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2121C861B1B00313AB7 /* ExploreLayout.swift */; };
-		9238E2151C861B6100313AB7 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2141C861B6100313AB7 /* Photo.swift */; };
 		9238E2171C861DB800313AB7 /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9238E2161C861DB800313AB7 /* Photos.plist */; };
 		9238E2191C861DD900313AB7 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9238E2181C861DD900313AB7 /* Photos.xcassets */; };
 		9238E21C1C86243600313AB7 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E21B1C86243600313AB7 /* RoundedCornersView.swift */; };
@@ -77,7 +76,6 @@
 		9238E2061C84BEBF00313AB7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		9238E2101C861AA000313AB7 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		9238E2121C861B1B00313AB7 /* ExploreLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreLayout.swift; sourceTree = "<group>"; };
-		9238E2141C861B6100313AB7 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9238E2161C861DB800313AB7 /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
 		9238E2181C861DD900313AB7 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
 		9238E21B1C86243600313AB7 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				92CE70251C83986000E3A7B6 /* User.swift */,
-				9238E2141C861B6100313AB7 /* Photo.swift */,
 				9238E21F1C875E6500313AB7 /* Question.swift */,
 				92A361BD1C8E26BD0075831B /* Answer.swift */,
 				92A361BF1C8E78F20075831B /* Like.swift */,
@@ -502,7 +499,6 @@
 				9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */,
 				9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */,
 				92344F751CA2F5FF00CD1965 /* SuperViewController.swift in Sources */,
-				9238E2151C861B6100313AB7 /* Photo.swift in Sources */,
 				9238E21C1C86243600313AB7 /* RoundedCornersView.swift in Sources */,
 				9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */,
 				9238E2111C861AA000313AB7 /* ExploreViewController.swift in Sources */,

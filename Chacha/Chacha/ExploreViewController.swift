@@ -24,9 +24,6 @@ class ExploreViewController: UICollectionViewController {
         performSegueWithIdentifier("LogOutSegue", sender: self)
     }
     
-
-    var photos = Photo.allPhotos()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
