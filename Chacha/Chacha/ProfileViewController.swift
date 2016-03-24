@@ -16,6 +16,9 @@ class ProfileViewController: SuperViewController {
     @IBOutlet weak var profileImage: PFImageView!
     @IBOutlet weak var followButton: UIButton!
     
+    var followers = [User]()
+    var following = [User]()
+    
     var user = User.currentUser()
     
     @IBAction func followPressed(sender: AnyObject) {
@@ -51,6 +54,8 @@ class ProfileViewController: SuperViewController {
         setProfile()
         createQuestionArray()
         createAnswerArray()
+        createFollowerArray()
+        createFollowingArray()
         
         tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
@@ -123,6 +128,9 @@ extension ProfileViewController {
 //loading the page and queries
 extension ProfileViewController {
     func setProfile() {
+        if user?.objectId == currentUser?.objectId {
+            followButton.hidden = true
+        }
         fullName.text = user!.fullName
         if let profilePicture = user!.avatarImage {
             profileImage.file = profilePicture
@@ -151,6 +159,26 @@ extension ProfileViewController {
                     self.answers.append(answer)
                 }
                 self.tableView.reloadData()
+            }
+        })
+    }
+    
+    func createFollowerArray() {
+        let query = UserConnection.query()
+        query?.whereKey("leader", equalTo: user!.objectId!)
+        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if let followers = objects as? [User] {
+                self.followers = followers
+            }
+        })
+    }
+    
+    func createFollowingArray() {
+        let query = UserConnection.query()
+        query?.whereKey("follower", equalTo: user!.objectId!)
+        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            if let leaders = objects as? [User] {
+                self.following = leaders
             }
         })
     }
