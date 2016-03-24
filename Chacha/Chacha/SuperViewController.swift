@@ -49,8 +49,10 @@ extension SuperViewController {
                 if let objects = objects as! [Like]? {
                     //sets the ones that actually have likes to true
                     for like in objects {
-                        if let parentObjectId = like.postParent!.objectId {
-                            self.alreadyLikedDictionary.updateValue(like, forKey: parentObjectId)
+                        if let questionParent = like.questionParent {
+                            self.alreadyLikedDictionary.updateValue(like, forKey: questionParent.objectId!)
+                        } else if let answerParent = like.answerParent {
+                            self.alreadyLikedDictionary.updateValue(like, forKey: answerParent.objectId!)
                         }
                     }
                     self.tableView.reloadData()

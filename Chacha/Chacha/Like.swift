@@ -15,7 +15,8 @@ class Like: PFObject, PFSubclassing {
     }
     
     @NSManaged var createdBy: User?
-    @NSManaged var postParent: PFObject?
+    @NSManaged var questionParent: Question?
+    @NSManaged var answerParent: Answer?
     
     override init() {
         super.init()
