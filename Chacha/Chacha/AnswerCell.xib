@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="379" height="87"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MAP-TJ-3hJ" id="yhL-zy-CW1">
-                <rect key="frame" x="0.0" y="0.0" width="379" height="86.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="379" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQA-cw-Yvq">
@@ -82,7 +82,7 @@
                                                 <state key="normal" image="vibe-off"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Z-CZ-MCv">
-                                                <rect key="frame" x="17" y="5" width="6.5" height="12"/>
+                                                <rect key="frame" x="17" y="5" width="7" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -97,7 +97,7 @@
                                                 <state key="normal" image="bubble-off"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcc-4A-7N4">
-                                                <rect key="frame" x="16" y="5" width="6.5" height="12"/>
+                                                <rect key="frame" x="16" y="5" width="7" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

@@ -60,6 +60,7 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
         } else {
             let currentAnswer = answers[currentRow - 1]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("answerCell")! as! ActivityTableViewCell
+            cell.activityDelegate = self
             cell.fullNameText.text = currentAnswer.createdBy?.fullName
             cell.questionText.text = currentAnswer.answer
             return cell
