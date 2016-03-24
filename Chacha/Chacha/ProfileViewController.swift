@@ -15,6 +15,15 @@ class ProfileViewController: SuperViewController {
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var profileImage: PFImageView!
     
+    var user : User?
+    
+    @IBAction func followPressed(sender: AnyObject) {
+        let userConnection = UserConnection(isRequesting: true)
+        userConnection.follower = User.currentUser()
+        userConnection.leader = user
+    }
+    
+    
     enum tableState {
         case answer, question, follower, following
     }

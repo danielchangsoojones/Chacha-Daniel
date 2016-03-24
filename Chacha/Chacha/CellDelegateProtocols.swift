@@ -10,6 +10,7 @@ import Foundation
 
 protocol ActivityTableViewCellDelegate {
     func updateLike(likeCountTag: Int, isQuestion: Bool)
+    func segueToProfile(row: Int)
 }
 
 protocol QuestionTableViewCellDelegate {

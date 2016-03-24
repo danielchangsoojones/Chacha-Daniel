@@ -42,6 +42,11 @@ class ActivityTableViewCell: UITableViewCell {
         likeCountLabel.text = "\(likeCount)"
     }
     
+    @IBAction func profileImagePressed(sender: AnyObject) {
+        activityDelegate?.segueToProfile(likeCountLabel.tag)
+    }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
