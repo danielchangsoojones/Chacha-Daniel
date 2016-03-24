@@ -85,4 +85,11 @@ func populateAnswerArray() -> PFQuery {
     return query!
 }
 
+func createUserConnection(leader: User) -> UserConnection {
+    let userConnection = UserConnection(isRequesting: true)
+    userConnection.follower = User.currentUser()
+    userConnection.leader = leader
+    return userConnection
+}
+
 

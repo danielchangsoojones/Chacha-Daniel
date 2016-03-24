@@ -14,13 +14,19 @@ class ProfileViewController: SuperViewController {
     
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var profileImage: PFImageView!
+    @IBOutlet weak var followButton: UIButton!
     
     var user = User.currentUser()
     
     @IBAction func followPressed(sender: AnyObject) {
-        let userConnection = UserConnection(isRequesting: true)
-        userConnection.follower = User.currentUser()
-        userConnection.leader = user
+        let userConnection = createUserConnection(user!)
+        userConnection.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                self.followButton.setTitle("Requesting...", forState: .Normal)
+            } else {
+                let _ = Alert(title: "Error", subtitle: "Could Not Follow User", closeButtonTitle: "Try Again Later", type: .Error)
+            }
+        }
     }
     
     
@@ -117,8 +123,8 @@ extension ProfileViewController {
 //loading the page and queries
 extension ProfileViewController {
     func setProfile() {
-        fullName.text = currentUser?.fullName
-        if let profilePicture = currentUser?.avatarImage {
+        fullName.text = user!.fullName
+        if let profilePicture = user!.avatarImage {
             profileImage.file = profilePicture
             profileImage.loadInBackground()
         }
