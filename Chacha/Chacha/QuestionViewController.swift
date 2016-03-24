@@ -10,7 +10,6 @@ import UIKit
 import EFTools
 
 class QuestionViewController: SuperViewController {
-    var rowTapped : Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,24 +72,4 @@ extension QuestionViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-}
-
-extension QuestionViewController: SegueHandlerType {
-    enum SegueIdentifier: String {
-        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
-        case answerPageSegue
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segueIdentifierForSegue(segue) {
-        case .answerPageSegue:
-            let destinationVC = segue.destinationViewController as! AnswerViewController
-            if let rowTapped = rowTapped {
-                let question = questions[rowTapped]
-                destinationVC.question = question.question
-                destinationVC.createdBy = question.createdBy
-                destinationVC.questionObject = question
-            }
-        }
-    }
 }

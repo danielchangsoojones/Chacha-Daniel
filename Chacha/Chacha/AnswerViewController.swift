@@ -98,6 +98,10 @@ extension AnswerViewController: ActivityTableViewCellDelegate {
     func updateLike(likeCountTag: Int, isQuestion: Bool) {
        
     }
+    
+    func segueToProfile(row: Int) {
+        
+    }
 }
 
 extension AnswerViewController: QuestionTableViewCellDelegate {

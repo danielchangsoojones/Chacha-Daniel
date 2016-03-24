@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import EFTools
 
 class SuperViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class SuperViewController: UIViewController {
     var alreadyLikedDictionary: [String : Like] = [:]
     var likeIsSaving = false
     let currentUser = User.currentUser()
+    
+     var rowTapped : Int?
     
     var questions = [Question]()
     var answers = [Answer]()
@@ -78,6 +81,11 @@ extension SuperViewController {
     }
 }
 
+protocol ActivityTableViewCellDelegate {
+    func updateLike(likeCountTag: Int, isQuestion: Bool)
+    func segueToProfile(row: Int)
+}
+
 extension SuperViewController: ActivityTableViewCellDelegate {
     func updateLike(likeCountTag: Int, isQuestion: Bool) {
         if isQuestion {
@@ -99,11 +107,38 @@ extension SuperViewController: ActivityTableViewCellDelegate {
             }
         }
     }
+    
+    func segueToProfile(row: Int) {
+        rowTapped = row
+        performSegueWithIdentifier(.profileSegue, sender: self)
+    }
 }
 
 extension SuperViewController: QuestionTableViewCellDelegate {
     func createAnswer(answer: String) {
         
+    }
+}
+
+extension SuperViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
+        case answerPageSegue
+        case profileSegue
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let question = questions[rowTapped!]
+        switch segueIdentifierForSegue(segue) {
+        case .answerPageSegue:
+            let destinationVC = segue.destinationViewController as! AnswerViewController
+                destinationVC.question = question.question
+                destinationVC.createdBy = question.createdBy
+                destinationVC.questionObject = question
+        case .profileSegue:
+            let destinationVC = segue.destinationViewController as! ProfileViewController
+            destinationVC.user = question.createdBy
+        }
     }
 }
 

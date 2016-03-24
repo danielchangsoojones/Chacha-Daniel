@@ -184,5 +184,9 @@ extension ExploreViewController: ActivityTableViewCellDelegate {
             }
         }
     }
+    
+    func segueToProfile(row: Int) {
+        
+    }
 }
 
