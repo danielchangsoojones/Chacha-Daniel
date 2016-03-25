@@ -68,8 +68,6 @@ class ProfileViewController: SuperViewController {
         createFollowerArray()
         createFollowingArray()
         
-        tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
-        tableView.registerNib(UINib(nibName: "QuestionCellWithoutPicture", bundle: nil), forCellReuseIdentifier: "questionCellWithoutPicture")
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
         tableView.registerNib(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "userCell")
         

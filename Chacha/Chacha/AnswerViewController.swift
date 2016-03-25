@@ -22,7 +22,6 @@ class AnswerViewController: SuperViewController {
         //for making cells grow and shrink with cell size content
         self.tableView.estimatedRowHeight = 80
         
-        tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
         
         createAnswerArray()
