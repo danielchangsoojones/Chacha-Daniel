@@ -165,9 +165,22 @@ extension SuperViewController: ActivityTableViewCellDelegate {
     }
 }
 
+protocol QuestionTableViewCellDelegate {
+    func createAnswer(answer: String, questionObject: Question)
+}
+
 extension SuperViewController: QuestionTableViewCellDelegate {
-    func createAnswer(answer: String) {
-        
+    func createAnswer(answer: String, questionObject: Question) {
+        let newAnswer = createNewAnswer(answer, questionObject: questionObject)
+        newAnswer.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                self.answers.append(newAnswer)
+                self.tableView.reloadData()
+                let _ = Alert(title: "Answer Created!", subtitle: "You answered a question!", closeButtonTitle: "Awesome!", type: .Success)
+            } else {
+                print(error)
+            }
+        }
     }
 }
 
