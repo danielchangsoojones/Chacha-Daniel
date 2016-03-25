@@ -52,7 +52,7 @@ extension QuestionViewController : UITableViewDelegate, UITableViewDataSource {
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
         
-        if let questionImage = currentQuestion.questionImage {
+        if let _ = currentQuestion.questionImage {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
             cell.question = currentQuestion
             cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")

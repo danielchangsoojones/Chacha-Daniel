@@ -69,6 +69,7 @@ class ProfileViewController: SuperViewController {
         createFollowingArray()
         
         tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
+        tableView.registerNib(UINib(nibName: "QuestionCellWithoutPicture", bundle: nil), forCellReuseIdentifier: "questionCellWithoutPicture")
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
         tableView.registerNib(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "userCell")
         
@@ -103,21 +104,31 @@ extension ProfileViewController {
         switch state {
         case .question:
             let currentQuestion = questions[currentRow]
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
-            cell.fullNameText.text = currentQuestion.createdBy?.fullName
-            cell.questionText.text = currentQuestion.question
-            if let questionImage = currentQuestion.questionImage {
-                cell.questionImageHidden = false
-                cell.questionImage.file = questionImage
-                cell.questionImage.loadInBackground()
+            if let _ = currentQuestion.questionImage {
+                let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
+                cell.question = currentQuestion
+                cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
+                if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+                    cell.alreadyLiked = alreadyLiked
+                    cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
+                }
+                cell.likeCountLabel.tag = currentRow
+                cell.activityDelegate = self
+                cell.questionDelegate = self
+                return cell
+            } else {
+                let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCellWithoutPicture")! as! QuestionTableViewCell
+                cell.question = currentQuestion
+                cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
+                if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+                    cell.alreadyLiked = alreadyLiked
+                    cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
+                }
+                cell.likeCountLabel.tag = currentRow
+                cell.activityDelegate = self
+                cell.questionDelegate = self
+                return cell
             }
-            if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
-                cell.alreadyLiked = alreadyLiked
-            }
-            cell.likeCountLabel.tag = currentRow
-            cell.activityDelegate = self
-            cell.questionDelegate = self
-            return cell
         case .answer:
             let currentAnswer = answers[currentRow]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("answerCell")! as! ActivityTableViewCell
