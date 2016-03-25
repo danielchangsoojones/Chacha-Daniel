@@ -115,20 +115,13 @@ extension ExploreViewController {
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
     
-        cell.fullName.text = currentQuestion.createdBy?.fullName
-        cell.questionText.text = currentQuestion.question
-        if let questionImage = currentQuestion.questionImage {
-            cell.imageView.file = questionImage
-            cell.imageView.loadInBackground()
-        }
+        cell.currentQuestion = currentQuestion
         cell.likeImage.imageView!.image = UIImage(named: "vibe-off")
         if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
             cell.alreadyLiked = alreadyLiked
             cell.likeImage.imageView!.image = UIImage(named: "vibe-on")
         }
         cell.likeCountLabel.tag = currentRow
-        cell.likeCount = currentQuestion.likeCount
-        cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
         cell.activityDelegate = self
 //        cell.questionDelegate = self
         return cell
@@ -142,7 +135,8 @@ extension ExploreViewController: ExploreLayoutDelegate {
         let currentQuestion = questions[indexPath.item]
         let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
         if currentQuestion.questionImageHeight > 0 && currentQuestion.questionImageWidth > 0 {
-            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: currentQuestion.questionImageHeight, height: currentQuestion.questionImageWidth), boundingRect)
+//            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: currentQuestion.questionImageHeight, height: currentQuestion.questionImageWidth), boundingRect)
+            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: 50 , height: 40), boundingRect)
             return rect.height
         } else {
             let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: 50 , height: 40), boundingRect)

@@ -63,7 +63,8 @@ class AskAQuestionViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        questionTextBox.becomeFirstResponder()
+        //questionTextBox.becomeFirstResponder()
+        
     }
 
     override func didReceiveMemoryWarning() {
