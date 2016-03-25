@@ -31,6 +31,10 @@ class SuperViewController: UIViewController {
         // Do any additional setup after loading the view.
         //for making cells grow and shrink with cell size content
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
+        tableView.registerNib(UINib(nibName: "QuestionCellWithoutPicture", bundle: nil), forCellReuseIdentifier: "questionCellWithoutPicture")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,6 +83,34 @@ extension SuperViewController {
             } else {
                 print(error)
             }
+        }
+    }
+    
+    func createQuestionCells(currentQuestion: Question, currentRow: Int) -> QuestionTableViewCell {
+        if let _ = currentQuestion.questionImage {
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
+            cell.question = currentQuestion
+            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
+            if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+                cell.alreadyLiked = alreadyLiked
+                cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
+            }
+            cell.likeCountLabel.tag = currentRow
+            cell.activityDelegate = self
+            cell.questionDelegate = self
+            return cell
+        } else {
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCellWithoutPicture")! as! QuestionTableViewCell
+            cell.question = currentQuestion
+            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
+            if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
+                cell.alreadyLiked = alreadyLiked
+                cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
+            }
+            cell.likeCountLabel.tag = currentRow
+            cell.activityDelegate = self
+            cell.questionDelegate = self
+            return cell
         }
     }
 }

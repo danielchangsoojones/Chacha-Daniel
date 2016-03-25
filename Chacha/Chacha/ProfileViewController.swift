@@ -68,7 +68,6 @@ class ProfileViewController: SuperViewController {
         createFollowerArray()
         createFollowingArray()
         
-        tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
         tableView.registerNib(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "userCell")
         
@@ -103,21 +102,7 @@ extension ProfileViewController {
         switch state {
         case .question:
             let currentQuestion = questions[currentRow]
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
-            cell.fullNameText.text = currentQuestion.createdBy?.fullName
-            cell.questionText.text = currentQuestion.question
-            if let questionImage = currentQuestion.questionImage {
-                cell.questionImageHidden = false
-                cell.questionImage.file = questionImage
-                cell.questionImage.loadInBackground()
-            }
-            if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
-                cell.alreadyLiked = alreadyLiked
-            }
-            cell.likeCountLabel.tag = currentRow
-            cell.activityDelegate = self
-            cell.questionDelegate = self
-            return cell
+            return createQuestionCells(currentQuestion, currentRow: currentRow)
         case .answer:
             let currentAnswer = answers[currentRow]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("answerCell")! as! ActivityTableViewCell

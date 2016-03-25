@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Parse
+import EFTools
 
 class ExploreViewController: UICollectionViewController {
     
@@ -115,23 +116,21 @@ extension ExploreViewController {
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
     
-        cell.fullName.text = currentQuestion.createdBy?.fullName
-        cell.questionText.text = currentQuestion.question
-        if let questionImage = currentQuestion.questionImage {
-            cell.imageView.file = questionImage
-            cell.imageView.loadInBackground()
-        }
+        cell.currentQuestion = currentQuestion
         cell.likeImage.imageView!.image = UIImage(named: "vibe-off")
         if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
             cell.alreadyLiked = alreadyLiked
             cell.likeImage.imageView!.image = UIImage(named: "vibe-on")
         }
         cell.likeCountLabel.tag = currentRow
-        cell.likeCount = currentQuestion.likeCount
-        cell.likeCountLabel.text = "\(currentQuestion.likeCount)"
         cell.activityDelegate = self
 //        cell.questionDelegate = self
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        rowTapped = indexPath.row
+        performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
     
 }
@@ -142,7 +141,8 @@ extension ExploreViewController: ExploreLayoutDelegate {
         let currentQuestion = questions[indexPath.item]
         let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
         if currentQuestion.questionImageHeight > 0 && currentQuestion.questionImageWidth > 0 {
-            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: currentQuestion.questionImageHeight, height: currentQuestion.questionImageWidth), boundingRect)
+//            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: currentQuestion.questionImageHeight, height: currentQuestion.questionImageWidth), boundingRect)
+            let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: 50 , height: 40), boundingRect)
             return rect.height
         } else {
             let rect = AVMakeRectWithAspectRatioInsideRect(CGSize(width: 50 , height: 40), boundingRect)
@@ -185,7 +185,28 @@ extension ExploreViewController: ActivityTableViewCellDelegate {
     }
     
     func segueToProfile(row: Int) {
-        
+        rowTapped = row
+        performSegueWithIdentifier(.profileSegue, sender: self)
+    }
+}
+
+extension ExploreViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
+        case answerPageSegue
+        case profileSegue
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let question = questions[rowTapped!]
+        switch segueIdentifierForSegue(segue) {
+        case .answerPageSegue:
+            let destinationVC = segue.destinationViewController as! AnswerViewController
+            destinationVC.questionObject = question
+        case .profileSegue:
+            let destinationVC = segue.destinationViewController as! ProfileViewController
+            destinationVC.user = question.createdBy
+        }
     }
 }
 

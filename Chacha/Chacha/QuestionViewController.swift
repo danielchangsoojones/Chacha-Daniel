@@ -17,8 +17,6 @@ class QuestionViewController: SuperViewController {
         //for making cells grow and shrink with cell size content
         self.tableView.estimatedRowHeight = 278
         
-        tableView.registerNib(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "questionCell")
-        
         createQuestionArray()
     }
 
@@ -51,17 +49,7 @@ extension QuestionViewController : UITableViewDelegate, UITableViewDataSource {
         let currentRow = indexPath.row
         let currentQuestion = questions[currentRow]
         
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
-        cell.question = currentQuestion
-        cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-off")
-        if let alreadyLiked = alreadyLikedDictionary[currentQuestion.objectId!] {
-            cell.alreadyLiked = alreadyLiked
-            cell.likeButtonImage.imageView!.image = UIImage(named: "vibe-on")
-        }
-        cell.likeCountLabel.tag = currentRow
-        cell.activityDelegate = self
-        cell.questionDelegate = self
-        return cell
+        return createQuestionCells(currentQuestion, currentRow: currentRow)
     }
     
 }

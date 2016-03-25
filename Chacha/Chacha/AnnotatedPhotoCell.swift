@@ -10,8 +10,6 @@ import UIKit
 import ParseUI
 
 class AnnotatedPhotoCell: UICollectionViewCell {
-    
-    var alreadyLiked : Like?
    
     @IBOutlet weak var imageView: PFImageView!
     @IBOutlet weak var imageViewHeightLayoutConstraint: NSLayoutConstraint!
@@ -29,17 +27,21 @@ class AnnotatedPhotoCell: UICollectionViewCell {
     
     var activityDelegate: ActivityTableViewCellDelegate?
     
-//    var photo: Photo? {
-//        didSet {
-//            if let photo = photo {
-//                imageView.image = photo.image
-//                profileImage.image = photo.profileImage
-//                fullName.text = photo.fullName
-//                username.text = photo.username
-//                questionText.text = photo.question
-//            }
-//        }
-//    }
+    var alreadyLiked : Like?
+    var currentQuestion: Question? {
+        didSet {
+            if let currentQuestion = currentQuestion {
+                fullName.text = currentQuestion.createdBy?.fullName
+                questionText.text = currentQuestion.question
+                if let questionImage = currentQuestion.questionImage {
+                    imageView.file = questionImage
+                    imageView.loadInBackground()
+                }
+                likeCount = currentQuestion.likeCount
+                likeCountLabel.text = "\(currentQuestion.likeCount)"
+            }
+        }
+    }
     
     @IBAction func likeButtonPressed(sender: AnyObject) {
         activityDelegate?.updateLike(likeCountLabel.tag, isQuestion: true)
