@@ -32,6 +32,8 @@ class QuestionTableViewCell: ActivityTableViewCell {
                 isQuestion = true
                 answerCount = question.answerCount
                 answerCountLabel.text =  "\(answerCount)"
+                let timeStamp = NSDate().hoursFrom(question.createdAt!)
+                timestampCount.text = "\(timeStamp)h"
             }
         }
     }

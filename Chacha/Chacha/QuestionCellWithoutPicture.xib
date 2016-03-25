@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="384" height="154"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEb-73-kkr" id="gAZ-Fw-HCN">
-                <rect key="frame" x="0.0" y="0.0" width="384" height="154"/>
+                <rect key="frame" x="0.0" y="0.0" width="384" height="153.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Uf-VCw">
@@ -41,14 +41,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u0X-wC-r3l" userLabel="Time Stamp Stack View">
-                                <rect key="frame" x="342" y="13" width="28" height="22"/>
+                                <rect key="frame" x="324" y="13" width="46" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGa-UU-De4">
                                         <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="JHb-GF-mSo"/>
+                                        </constraints>
                                         <state key="normal" image="clock-off"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-8u-VL7">
-                                        <rect key="frame" x="16" y="5" width="12" height="12"/>
+                                        <rect key="frame" x="16" y="5" width="30" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="S1c-dO-0GK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -58,6 +64,11 @@
                                     <constraint firstAttribute="width" constant="28" id="SJg-gU-jR2"/>
                                     <constraint firstAttribute="height" constant="22" id="WNn-SG-IDk"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SJg-gU-jR2"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Do You Know The Answer?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4If-60-tDu">
                                 <rect key="frame" x="58" y="85" width="312" height="30"/>
@@ -140,7 +151,7 @@
                                         <state key="normal" image="bubble-off"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xu3-6x-suV">
-                                        <rect key="frame" x="16" y="5" width="7" height="12"/>
+                                        <rect key="frame" x="16" y="5" width="6.5" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="H7i-M3-pcj"/>
                                             <constraint firstAttribute="height" constant="12" id="SEu-K4-ofB"/>

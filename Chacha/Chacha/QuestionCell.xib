@@ -28,8 +28,8 @@
                                     <action selector="profileImagePressed:" destination="l1q-wU-gaT" eventType="touchUpInside" id="r5a-fk-JTN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HC-6r-hSb">
-                                <rect key="frame" x="58" y="10" width="61" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HC-6r-hSb">
+                                <rect key="frame" x="58" y="10" width="61" height="14"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -44,23 +44,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4CV-XQ-cdx" userLabel="Time Stamp Stack View">
-                                <rect key="frame" x="342" y="10" width="28" height="22"/>
+                                <rect key="frame" x="325" y="10" width="45" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz6-Oc-TQd">
-                                        <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="CNw-q2-bTV"/>
+                                        </constraints>
                                         <state key="normal" image="clock-off"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHN-oS-5ri">
-                                        <rect key="frame" x="17" y="5" width="12" height="12"/>
+                                        <rect key="frame" x="15" y="5" width="30" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Q3m-5p-GUT"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="DqW-It-VDq"/>
                                     <constraint firstAttribute="height" constant="22" id="FYF-lB-nqB"/>
                                     <constraint firstAttribute="width" constant="28" id="tZD-Lp-nuf"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DqW-It-VDq"/>
+                                        <exclude reference="tZD-Lp-nuf"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtW-re-V9k" userLabel="Like View">
                                 <rect key="frame" x="58" y="162" width="36" height="22"/>

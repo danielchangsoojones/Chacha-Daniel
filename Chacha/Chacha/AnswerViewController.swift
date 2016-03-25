@@ -52,6 +52,8 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
             cell.activityDelegate = self
             cell.fullNameText.text = currentAnswer.createdBy?.fullName
             cell.questionText.text = currentAnswer.answer
+            let timeStamp = NSDate().hoursFrom(currentAnswer.createdAt!)
+            cell.timestampCount.text = "\(timeStamp)h"
             return cell
         }
     }
