@@ -144,7 +144,7 @@
                                     <action selector="submitAnswer:" destination="l1q-wU-gaT" eventType="touchUpInside" id="Kaj-ee-VcU"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="07" translatesAutoresizingMaskIntoConstraints="NO" id="yHn-oy-tF0" customClass="PFImageView">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="07" translatesAutoresizingMaskIntoConstraints="NO" id="yHn-oy-tF0" customClass="PFImageView">
                                 <rect key="frame" x="58" y="52" width="312" height="106"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="EnX-kV-f2C"/>

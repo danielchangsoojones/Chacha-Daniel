@@ -43,18 +43,6 @@ class AnnotatedPhotoCell: UICollectionViewCell {
         }
     }
     
-//    var photo: Photo? {
-//        didSet {
-//            if let photo = photo {
-//                imageView.image = photo.image
-//                profileImage.image = photo.profileImage
-//                fullName.text = photo.fullName
-//                username.text = photo.username
-//                questionText.text = photo.question
-//            }
-//        }
-//    }
-    
     @IBAction func likeButtonPressed(sender: AnyObject) {
         activityDelegate?.updateLike(likeCountLabel.tag, isQuestion: true)
         if let _ = alreadyLiked {

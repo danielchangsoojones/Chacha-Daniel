@@ -258,11 +258,20 @@
                     </navigationItem>
                     <connections>
                         <segue destination="8Yd-Sc-CGd" kind="presentation" identifier="LogOutSegue" id="pNy-Ae-YAe"/>
+                        <segue destination="tlC-Na-oge" kind="show" identifier="answerPageSegue" id="rrk-vF-3Jk"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0H0-Li-JfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1379.5" y="319.5"/>
+        </scene>
+        <!--AnswerFeed-->
+        <scene sceneID="CFV-YY-Ewd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AnswerFeed" id="tlC-Na-oge" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKo-60-sxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="320"/>
         </scene>
         <!--Main-->
         <scene sceneID="R01-KT-04d">

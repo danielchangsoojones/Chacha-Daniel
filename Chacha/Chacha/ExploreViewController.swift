@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Parse
+import EFTools
 
 class ExploreViewController: UICollectionViewController {
     
@@ -127,6 +128,11 @@ extension ExploreViewController {
         return cell
     }
     
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        rowTapped = indexPath.row
+        performSegueWithIdentifier(.answerPageSegue, sender: self)
+    }
+    
 }
 
 extension ExploreViewController: ExploreLayoutDelegate {
@@ -179,7 +185,28 @@ extension ExploreViewController: ActivityTableViewCellDelegate {
     }
     
     func segueToProfile(row: Int) {
-        
+        rowTapped = row
+        performSegueWithIdentifier(.profileSegue, sender: self)
+    }
+}
+
+extension ExploreViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
+        case answerPageSegue
+        case profileSegue
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let question = questions[rowTapped!]
+        switch segueIdentifierForSegue(segue) {
+        case .answerPageSegue:
+            let destinationVC = segue.destinationViewController as! AnswerViewController
+            destinationVC.questionObject = question
+        case .profileSegue:
+            let destinationVC = segue.destinationViewController as! ProfileViewController
+            destinationVC.user = question.createdBy
+        }
     }
 }
 
