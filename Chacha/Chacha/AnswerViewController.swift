@@ -45,17 +45,7 @@ extension AnswerViewController : UITableViewDelegate, UITableViewDataSource {
         let currentRow = indexPath.row
         
         if currentRow == 0 {
-                let cell = self.tableView.dequeueReusableCellWithIdentifier("questionCell")! as! QuestionTableViewCell
-                cell.activityDelegate = self
-                cell.questionDelegate = self
-                cell.fullNameText.text = questionObject?.createdBy?.fullName
-                cell.questionText.text = questionObject?.question
-                if let questionImage = questionImage {
-                    cell.questionImageHidden = false
-                    cell.questionImage.file = questionImage
-                    cell.questionImage.loadInBackground()
-                }
-                return cell
+            return createQuestionCells(questionObject!, currentRow: currentRow)
         } else {
             let currentAnswer = answers[currentRow - 1]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("answerCell")! as! ActivityTableViewCell
