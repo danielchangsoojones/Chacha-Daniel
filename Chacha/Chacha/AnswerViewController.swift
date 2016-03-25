@@ -74,17 +74,6 @@ extension AnswerViewController {
 }
 
 extension AnswerViewController {
-    override func createAnswer(answer: String) {
-        let newAnswer = createNewAnswer(answer, questionObject: questionObject!)
-        newAnswer.saveInBackgroundWithBlock { (success, error) -> Void in
-            if success {
-                self.answers.append(newAnswer)
-                self.tableView.reloadData()
-//                let _ = Alert(title: "Answer Created!", subtitle: "You answered a question!", closeButtonTitle: "Awesome!", type: .Success)
-            } else {
-                print(error)
-            }
-        }
-    }
+   
 }
 

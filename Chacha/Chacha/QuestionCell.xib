@@ -243,6 +243,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="answerCountLabel" destination="hHY-4b-bxF" id="pYs-bh-5vo"/>
                 <outlet property="answerTextField" destination="woG-gc-HEw" id="wzp-yr-hxz"/>
                 <outlet property="askedOrUsernameText" destination="wio-zn-Mrr" id="KRM-6S-7tm"/>
                 <outlet property="fullNameText" destination="3HC-6r-hSb" id="csc-72-GWQ"/>

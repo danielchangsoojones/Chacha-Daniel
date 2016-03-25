@@ -30,6 +30,8 @@ class QuestionTableViewCell: ActivityTableViewCell {
                 likeCount = question.likeCount
                 likeCountLabel.text = "\(question.likeCount)"
                 isQuestion = true
+                answerCount = question.answerCount
+                answerCountLabel.text =  "\(answerCount)"
             }
         }
     }
@@ -38,8 +40,11 @@ class QuestionTableViewCell: ActivityTableViewCell {
     
     @IBAction func submitAnswer(sender: AnyObject) {
         if let delegate = questionDelegate {
-            delegate.createAnswer(answerTextField.text!)
+            delegate.createAnswer(answerTextField.text!, questionObject: question!)
         }
+        answerCount += 1
+        answerCountLabel.text =  "\(answerCount)"
+        question?.answerCount = answerCount
     }
     
     override func awakeFromNib() {
