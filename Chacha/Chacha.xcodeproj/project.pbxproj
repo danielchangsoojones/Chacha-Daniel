@@ -45,10 +45,7 @@
 		9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295FBF91C838DE3007B4B95 /* UIColorExtension.swift */; };
 		92A361B01C88B4210075831B /* PersonalFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A361AF1C88B4210075831B /* PersonalFeed.storyboard */; };
 		92A361B31C88B4DC0075831B /* PersonalFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */; };
-		92A361B51C88CD270075831B /* QuestionNoPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */; };
-		92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */; };
 		92A361BA1C8E12540075831B /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361B91C8E12540075831B /* AnswerViewController.swift */; };
-		92A361BC1C8E13440075831B /* AnswerNoPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361BB1C8E13440075831B /* AnswerNoPictureTableViewCell.swift */; };
 		92A361BE1C8E26BD0075831B /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361BD1C8E26BD0075831B /* Answer.swift */; };
 		92A361C01C8E78F20075831B /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A361BF1C8E78F20075831B /* Like.swift */; };
 		92A361C21C9106A80075831B /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A361C11C9106A80075831B /* QuestionCell.xib */; };
@@ -107,10 +104,7 @@
 		9295FBF91C838DE3007B4B95 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		92A361AF1C88B4210075831B /* PersonalFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonalFeed.storyboard; sourceTree = "<group>"; };
 		92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeedViewController.swift; sourceTree = "<group>"; };
-		92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionNoPictureTableViewCell.swift; sourceTree = "<group>"; };
-		92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionWithPictureTableViewCell.swift; sourceTree = "<group>"; };
 		92A361B91C8E12540075831B /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
-		92A361BB1C8E13440075831B /* AnswerNoPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerNoPictureTableViewCell.swift; sourceTree = "<group>"; };
 		92A361BD1C8E26BD0075831B /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		92A361BF1C8E78F20075831B /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		92A361C11C9106A80075831B /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
@@ -278,8 +272,6 @@
 			children = (
 				92A361AF1C88B4210075831B /* PersonalFeed.storyboard */,
 				92A361B21C88B4DC0075831B /* PersonalFeedViewController.swift */,
-				92A361B41C88CD270075831B /* QuestionNoPictureTableViewCell.swift */,
-				92A361B61C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift */,
 			);
 			name = "Personal Feed";
 			sourceTree = "<group>";
@@ -289,7 +281,6 @@
 			children = (
 				920CF2791C9483E700D29C2A /* AnswerFeed.storyboard */,
 				92A361B91C8E12540075831B /* AnswerViewController.swift */,
-				92A361BB1C8E13440075831B /* AnswerNoPictureTableViewCell.swift */,
 			);
 			name = "Answer Page";
 			sourceTree = "<group>";
@@ -476,7 +467,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A361B31C88B4DC0075831B /* PersonalFeedViewController.swift in Sources */,
-				92A361B51C88CD270075831B /* QuestionNoPictureTableViewCell.swift in Sources */,
 				9238E2291C877E7000313AB7 /* AskAQuestionViewController.swift in Sources */,
 				92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */,
 				92A361C01C8E78F20075831B /* Like.swift in Sources */,
@@ -488,12 +478,10 @@
 				92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */,
 				9238E2201C875E6500313AB7 /* Question.swift in Sources */,
 				92C8DB201CA37F950063FB99 /* UserTableViewCell.swift in Sources */,
-				92A361B71C89DC7D0075831B /* QuestionWithPictureTableViewCell.swift in Sources */,
 				920C8DC01C987A7200F4CFF3 /* ProfileViewController.swift in Sources */,
 				92A361C51C910D7C0075831B /* ActivityTableViewCell.swift in Sources */,
 				9295FBF61C7E9FF7007B4B95 /* SignUpViewController.swift in Sources */,
 				92CE70261C83986000E3A7B6 /* User.swift in Sources */,
-				92A361BC1C8E13440075831B /* AnswerNoPictureTableViewCell.swift in Sources */,
 				9238E2131C861B1B00313AB7 /* ExploreLayout.swift in Sources */,
 				9295FBFA1C838DE3007B4B95 /* UIColorExtension.swift in Sources */,
 				9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */,
