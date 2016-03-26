@@ -20,7 +20,7 @@ class AnswerViewController: SuperViewController {
         super.viewDidLoad()
         
         //for making cells grow and shrink with cell size content
-        self.tableView.estimatedRowHeight = 80
+        self.tableView.estimatedRowHeight = 278
         
         tableView.registerNib(UINib(nibName: "AnswerCell", bundle: nil), forCellReuseIdentifier: "answerCell")
         
