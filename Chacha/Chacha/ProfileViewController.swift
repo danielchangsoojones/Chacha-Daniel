@@ -133,10 +133,19 @@ extension ProfileViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        rowTapped = indexPath.row
+        let profileStoryBoard = UIStoryboard(name: "Profile", bundle: nil)
+        let destVC = profileStoryBoard.instantiateViewControllerWithIdentifier("profilePage") as! ProfileViewController
+        
         switch state {
         case .question:
-            rowTapped = indexPath.row
             performSegueWithIdentifier(.answerPageSegue, sender: self)
+        case .following:
+            destVC.user = following[rowTapped!]
+            self.navigationController?.pushViewController(destVC, animated: true)
+        case .follower:
+            destVC.user = followers[rowTapped!]
+            self.navigationController?.pushViewController(destVC, animated: true)
         default:
             break
         }
