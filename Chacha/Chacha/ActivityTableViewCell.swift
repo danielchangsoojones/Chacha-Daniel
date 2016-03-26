@@ -26,6 +26,7 @@ class ActivityTableViewCell: UITableViewCell {
     
     var activityDelegate: ActivityTableViewCellDelegate?
     
+    var onProfilePage = false
     var isQuestion = false
     
     @IBAction func likeButtonPressed(sender: AnyObject) {
@@ -45,7 +46,9 @@ class ActivityTableViewCell: UITableViewCell {
     }
     
     @IBAction func profileImagePressed(sender: AnyObject) {
-        activityDelegate?.segueToProfile(likeCountLabel.tag)
+        if !onProfilePage {
+            activityDelegate?.segueToProfile(likeCountLabel.tag)
+        }
     }
     
     

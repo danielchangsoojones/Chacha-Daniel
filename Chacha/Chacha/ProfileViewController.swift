@@ -102,12 +102,15 @@ extension ProfileViewController {
         switch state {
         case .question:
             let currentQuestion = questions[currentRow]
-            return createQuestionCells(currentQuestion, currentRow: currentRow)
+            let cell = createQuestionCells(currentQuestion, currentRow: currentRow)
+            cell.onProfilePage = true
+            return cell
         case .answer:
             let currentAnswer = answers[currentRow]
             let cell = self.tableView.dequeueReusableCellWithIdentifier("answerCell")! as! ActivityTableViewCell
             cell.fullNameText.text = currentAnswer.createdBy?.fullName
             cell.questionText.text = currentAnswer.answer
+            cell.onProfilePage = true
             return cell
         case .follower:
             let currentFollower = followers[currentRow]
