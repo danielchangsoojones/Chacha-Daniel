@@ -59,10 +59,6 @@ class SignUpViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
-        if let _ = PFUser.currentUser() {
-            //user is already logged in, so we should send them right into the app
-            self.performSegueWithIdentifier(.SignUpSuccessSegue, sender: self)
-        }
     }
     
     override func didReceiveMemoryWarning() {

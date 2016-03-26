@@ -32,6 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Like.registerSubclass()
         UserConnection.registerSubclass()
         
+        if let _ = PFUser.currentUser() {
+            //user is already logged in, so we should send them right into the app
+            let exploreFeedStoryBoard : UIStoryboard = UIStoryboard(name: "QuestionFeed", bundle: nil)
+            let exploreFeedVC : UIViewController = exploreFeedStoryBoard.instantiateViewControllerWithIdentifier("TabBar") as UIViewController
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            self.window?.rootViewController = exploreFeedVC
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 
