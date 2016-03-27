@@ -27,7 +27,6 @@ class AskAQuestionViewController: UIViewController {
     
     @IBAction func cancel(sender: AnyObject) {
         resetUI()
-        
     }
     
     //Backend Swap
