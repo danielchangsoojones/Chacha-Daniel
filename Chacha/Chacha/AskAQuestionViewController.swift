@@ -18,9 +18,6 @@ class AskAQuestionViewController: UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var questionImageViewOverlay: UIImageView!
     
-    
-    
-    
     let descriptionPlaceHolderText = "Optional Description..."
     let questionPlaceHolderText = "Ask Your Question..."
     
@@ -28,10 +25,10 @@ class AskAQuestionViewController: UIViewController {
         setImagePickerDelegate()
     }
     
-    @IBAction func dismissTheKeyboard(sender: AnyObject) {
-        questionTextBox.resignFirstResponder()
+    @IBAction func cancel(sender: AnyObject) {
+        resetUI()
+        
     }
-    
     
     //Backend Swap
     @IBAction func askQuestion(sender: AnyObject) {
@@ -49,8 +46,7 @@ class AskAQuestionViewController: UIViewController {
         spinner.startAnimating()
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
             self.spinner.stopAnimating()
-            self.questionTextBox.resignFirstResponder()
-            self.questionTextBox.text = "Ask a question..."
+            self.resetUI()
             let _ = Alert(title: "Question Asked!", subtitle: "Your question is now being answered by the Chacha Universe", closeButtonTitle: "Awesome!", type: .Success)
         }
     }
@@ -75,7 +71,7 @@ class AskAQuestionViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        //questionTextBox.becomeFirstResponder()
+        questionTextBox.becomeFirstResponder()
         
     }
 
@@ -84,6 +80,12 @@ class AskAQuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func resetUI() {
+        self.questionTextBox.resignFirstResponder()
+        questionImageViewOverlay.image = nil
+        self.questionTextBox.text = "Ask a question..."
+        questionTextBox.textColor = UIColor.lightGrayColor()
+    }
 
 }
 
@@ -96,7 +98,7 @@ extension AskAQuestionViewController {
                 //tab bar height is default by Apple at 49
                 let tabBarHeight = CGFloat(49)
                 bottomConstraint.constant = keyboardSize.height - tabBarHeight
-                UIView.animateWithDuration(0.35, animations: { () -> Void in
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
                     self.view.layoutIfNeeded()
                 })
             }
@@ -106,7 +108,8 @@ extension AskAQuestionViewController {
     func keyboardWillHide(notification: NSNotification) {
         guard let bottomConstraint = bottomComposeBarConstraint else { return }
         bottomConstraint.constant = 0
-        UIView.animateWithDuration(0.25, animations: { () -> Void in
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
     }
@@ -125,8 +128,8 @@ extension AskAQuestionViewController: UIImagePickerControllerDelegate, UINavigat
     {
         if image != nil {
             let img = image.resizeImage(CGSize(width:23,height:23))
-//            self.questionImage.image = img
             self.questionImageViewOverlay.image = img
+//            self.questionImageViewOverlay.hidden = false
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
