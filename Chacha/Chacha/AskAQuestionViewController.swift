@@ -12,9 +12,11 @@ import Parse
 class AskAQuestionViewController: UIViewController {
     
     @IBOutlet weak var questionTextBox: UITextView!
-    @IBOutlet weak var questionImage: UIImageView!
     @IBOutlet weak var bottomComposeBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var composeBarView: UIView!
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var questionImageViewOverlay: UIImageView!
     
     let descriptionPlaceHolderText = "Optional Description..."
     let questionPlaceHolderText = "Ask Your Question..."
@@ -23,10 +25,9 @@ class AskAQuestionViewController: UIViewController {
         setImagePickerDelegate()
     }
     
-    @IBAction func dismissTheKeyboard(sender: AnyObject) {
-        questionTextBox.resignFirstResponder()
+    @IBAction func cancel(sender: AnyObject) {
+        resetUI()
     }
-    
     
     //Backend Swap
     @IBAction func askQuestion(sender: AnyObject) {
@@ -34,21 +35,17 @@ class AskAQuestionViewController: UIViewController {
         newQuestion.question = questionTextBox.text
         //newQuestion.questionDescription = questionDescriptionTextBox.text
         newQuestion.createdBy = User.currentUser()
-        if let image = questionImage.image {
+        if let image = questionImageViewOverlay.image {
             let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
             newQuestion.questionImage = file
             newQuestion.questionImageHeight = image.size.height
             newQuestion.questionImageWidth = image.size.width
-        } else {
-            newQuestion.questionImageHeight = 0
-            newQuestion.questionImageWidth = 0
         }
         spinner.hidden = false
         spinner.startAnimating()
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
             self.spinner.stopAnimating()
-            self.questionTextBox.resignFirstResponder()
-            self.questionTextBox.text = "Ask a question..."
+            self.resetUI()
             let _ = Alert(title: "Question Asked!", subtitle: "Your question is now being answered by the Chacha Universe", closeButtonTitle: "Awesome!", type: .Success)
         }
     }
@@ -61,6 +58,8 @@ class AskAQuestionViewController: UIViewController {
         
         questionTextBox.textColor = UIColor.lightGrayColor()
         //questionDescriptionTextBox.textColor = UIColor.lightGrayColor()
+        composeBarView.layer.borderWidth = 0.5
+        composeBarView.layer.borderColor = UIColor.lightGrayColor().CGColor
         
         // Keyboard notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
@@ -71,7 +70,7 @@ class AskAQuestionViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        //questionTextBox.becomeFirstResponder()
+        questionTextBox.becomeFirstResponder()
         
     }
 
@@ -80,6 +79,12 @@ class AskAQuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func resetUI() {
+        self.questionTextBox.resignFirstResponder()
+        questionImageViewOverlay.image = nil
+        self.questionTextBox.text = "Ask a question..."
+        questionTextBox.textColor = UIColor.lightGrayColor()
+    }
 
 }
 
@@ -92,7 +97,7 @@ extension AskAQuestionViewController {
                 //tab bar height is default by Apple at 49
                 let tabBarHeight = CGFloat(49)
                 bottomConstraint.constant = keyboardSize.height - tabBarHeight
-                UIView.animateWithDuration(0.35, animations: { () -> Void in
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
                     self.view.layoutIfNeeded()
                 })
             }
@@ -102,7 +107,8 @@ extension AskAQuestionViewController {
     func keyboardWillHide(notification: NSNotification) {
         guard let bottomConstraint = bottomComposeBarConstraint else { return }
         bottomConstraint.constant = 0
-        UIView.animateWithDuration(0.25, animations: { () -> Void in
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
     }
@@ -120,8 +126,9 @@ extension AskAQuestionViewController: UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         if image != nil {
-            let img = image.resizeImage(CGSize(width:256,height:256))
-            self.questionImage.image = img
+            let img = image.resizeImage(CGSize(width:23,height:23))
+            self.questionImageViewOverlay.image = img
+//            self.questionImageViewOverlay.hidden = false
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
