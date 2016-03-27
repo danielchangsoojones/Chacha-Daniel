@@ -39,15 +39,12 @@ class AskAQuestionViewController: UIViewController {
         newQuestion.question = questionTextBox.text
         //newQuestion.questionDescription = questionDescriptionTextBox.text
         newQuestion.createdBy = User.currentUser()
-//        if let image = questionImage.image {
-//            let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
-//            newQuestion.questionImage = file
-//            newQuestion.questionImageHeight = image.size.height
-//            newQuestion.questionImageWidth = image.size.width
-//        } else {
-//            newQuestion.questionImageHeight = 0
-//            newQuestion.questionImageWidth = 0
-//        }
+        if let image = questionImageViewOverlay.image {
+            let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
+            newQuestion.questionImage = file
+            newQuestion.questionImageHeight = image.size.height
+            newQuestion.questionImageWidth = image.size.width
+        }
         spinner.hidden = false
         spinner.startAnimating()
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
