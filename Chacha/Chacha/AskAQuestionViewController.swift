@@ -12,9 +12,14 @@ import Parse
 class AskAQuestionViewController: UIViewController {
     
     @IBOutlet weak var questionTextBox: UITextView!
-    @IBOutlet weak var questionImage: UIImageView!
     @IBOutlet weak var bottomComposeBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var composeBarView: UIView!
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var questionImageViewOverlay: UIImageView!
+    
+    
+    
     
     let descriptionPlaceHolderText = "Optional Description..."
     let questionPlaceHolderText = "Ask Your Question..."
@@ -34,15 +39,15 @@ class AskAQuestionViewController: UIViewController {
         newQuestion.question = questionTextBox.text
         //newQuestion.questionDescription = questionDescriptionTextBox.text
         newQuestion.createdBy = User.currentUser()
-        if let image = questionImage.image {
-            let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
-            newQuestion.questionImage = file
-            newQuestion.questionImageHeight = image.size.height
-            newQuestion.questionImageWidth = image.size.width
-        } else {
-            newQuestion.questionImageHeight = 0
-            newQuestion.questionImageWidth = 0
-        }
+//        if let image = questionImage.image {
+//            let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
+//            newQuestion.questionImage = file
+//            newQuestion.questionImageHeight = image.size.height
+//            newQuestion.questionImageWidth = image.size.width
+//        } else {
+//            newQuestion.questionImageHeight = 0
+//            newQuestion.questionImageWidth = 0
+//        }
         spinner.hidden = false
         spinner.startAnimating()
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
@@ -61,6 +66,8 @@ class AskAQuestionViewController: UIViewController {
         
         questionTextBox.textColor = UIColor.lightGrayColor()
         //questionDescriptionTextBox.textColor = UIColor.lightGrayColor()
+        composeBarView.layer.borderWidth = 0.5
+        composeBarView.layer.borderColor = UIColor.lightGrayColor().CGColor
         
         // Keyboard notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
@@ -120,8 +127,9 @@ extension AskAQuestionViewController: UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         if image != nil {
-            let img = image.resizeImage(CGSize(width:256,height:256))
-            self.questionImage.image = img
+            let img = image.resizeImage(CGSize(width:23,height:23))
+//            self.questionImage.image = img
+            self.questionImageViewOverlay.image = img
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
