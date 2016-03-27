@@ -12,9 +12,9 @@ import Parse
 class AskAQuestionViewController: UIViewController {
     
     @IBOutlet weak var questionTextBox: UITextView!
-    @IBOutlet weak var questionDescriptionTextBox: UITextView!
     @IBOutlet weak var questionImage: UIImageView!
     @IBOutlet weak var bottomComposeBarConstraint: NSLayoutConstraint!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     let descriptionPlaceHolderText = "Optional Description..."
     let questionPlaceHolderText = "Ask Your Question..."
@@ -22,6 +22,11 @@ class AskAQuestionViewController: UIViewController {
     @IBAction func addQuestionImage(sender: AnyObject) {
         setImagePickerDelegate()
     }
+    
+    @IBAction func dismissTheKeyboard(sender: AnyObject) {
+        questionTextBox.resignFirstResponder()
+    }
+    
     
     //Backend Swap
     @IBAction func askQuestion(sender: AnyObject) {
@@ -38,7 +43,10 @@ class AskAQuestionViewController: UIViewController {
             newQuestion.questionImageHeight = 0
             newQuestion.questionImageWidth = 0
         }
+        spinner.hidden = false
+        spinner.startAnimating()
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
+            self.spinner.stopAnimating()
             self.questionTextBox.resignFirstResponder()
             self.questionTextBox.text = "Ask a question..."
             let _ = Alert(title: "Question Asked!", subtitle: "Your question is now being answered by the Chacha Universe", closeButtonTitle: "Awesome!", type: .Success)

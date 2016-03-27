@@ -137,24 +137,42 @@ IMAGE?</string>
                                             <action selector="askQuestion:" destination="gnx-Or-nIL" eventType="touchUpInside" id="HpK-KP-YrD"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="eKw-Do-Nol">
+                                        <rect key="frame" x="276" y="15" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="ErT-Fr-lD2"/>
+                                            <constraint firstAttribute="width" constant="20" id="SgW-tP-Jrh"/>
+                                        </constraints>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AUi-ys-liH"/>
+                                    <constraint firstItem="eKw-Do-Nol" firstAttribute="centerY" secondItem="L8A-WC-mIr" secondAttribute="centerY" id="LYg-bX-q5d"/>
+                                    <constraint firstItem="L8A-WC-mIr" firstAttribute="leading" secondItem="eKw-Do-Nol" secondAttribute="trailing" constant="-34" id="Oc7-D9-JPH"/>
                                     <constraint firstAttribute="bottom" secondItem="L8A-WC-mIr" secondAttribute="bottom" id="Wbn-4b-KJc"/>
                                     <constraint firstItem="L8A-WC-mIr" firstAttribute="top" secondItem="QS0-mh-vVj" secondAttribute="top" id="Y8I-Wu-AqL"/>
                                     <constraint firstAttribute="trailing" secondItem="L8A-WC-mIr" secondAttribute="trailing" id="yOT-Hk-sLy"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0L-ix-No2">
+                                <rect key="frame" x="8" y="183" width="123" height="30"/>
+                                <state key="normal" title="Dismiss Keyboard"/>
+                                <connections>
+                                    <action selector="dismissTheKeyboard:" destination="gnx-Or-nIL" eventType="touchUpInside" id="qDr-Qr-MlV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pkz-PF-hoQ" firstAttribute="trailing" secondItem="4Yv-Xe-bOs" secondAttribute="trailingMargin" constant="4" id="7YV-Xl-w9d"/>
                             <constraint firstAttribute="trailing" secondItem="QS0-mh-vVj" secondAttribute="trailing" id="9SL-Lv-BkU"/>
                             <constraint firstItem="fSy-ux-CZy" firstAttribute="top" secondItem="QS0-mh-vVj" secondAttribute="bottom" id="EXc-ai-lkv"/>
+                            <constraint firstItem="u0L-ix-No2" firstAttribute="leading" secondItem="g0q-1P-7PJ" secondAttribute="leading" id="Ffs-5h-1LL"/>
                             <constraint firstItem="pkz-PF-hoQ" firstAttribute="leading" secondItem="4Yv-Xe-bOs" secondAttribute="leadingMargin" id="HTK-GD-Gcc"/>
                             <constraint firstItem="pkz-PF-hoQ" firstAttribute="leading" secondItem="4Yv-Xe-bOs" secondAttribute="leading" constant="8" id="Z4V-JH-vFB"/>
                             <constraint firstItem="QS0-mh-vVj" firstAttribute="leading" secondItem="4Yv-Xe-bOs" secondAttribute="leading" id="bml-UC-NVF"/>
+                            <constraint firstItem="u0L-ix-No2" firstAttribute="top" secondItem="g0q-1P-7PJ" secondAttribute="bottom" constant="16" id="c9V-Yv-eYx"/>
                             <constraint firstItem="pkz-PF-hoQ" firstAttribute="top" secondItem="u9L-7J-J2k" secondAttribute="bottom" constant="8" id="rF1-4d-8Av"/>
                         </constraints>
                         <variation key="default">
@@ -168,6 +186,7 @@ IMAGE?</string>
                         <outlet property="bottomComposeBarConstraint" destination="EXc-ai-lkv" id="hbi-yU-fkc"/>
                         <outlet property="questionImage" destination="jB2-fJ-qXk" id="1fI-TL-7mH"/>
                         <outlet property="questionTextBox" destination="fH3-oj-yeD" id="6db-0F-XZ0"/>
+                        <outlet property="spinner" destination="eKw-Do-Nol" id="06i-vl-SzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLo-Ho-YpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
