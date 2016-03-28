@@ -14,6 +14,7 @@
 		922185351CA5C43000ED3009 /* QuestionCellWithoutPicture.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922185341CA5C43000ED3009 /* QuestionCellWithoutPicture.xib */; };
 		922185391CA98C5E00ED3009 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922185381CA98C5E00ED3009 /* MoreTableViewController.swift */; };
 		9221853D1CA9953300ED3009 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221853C1CA9953300ED3009 /* FindFriendsViewController.swift */; };
+		9221853F1CA9A43000ED3009 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221853E1CA9A43000ED3009 /* Notification.swift */; };
 		92344F751CA2F5FF00CD1965 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344F741CA2F5FF00CD1965 /* SuperViewController.swift */; };
 		92344F781CA3060100CD1965 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344F771CA3060100CD1965 /* QuestionViewController.swift */; };
 		9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2061C84BEBF00313AB7 /* Alert.swift */; };
@@ -73,6 +74,7 @@
 		922185341CA5C43000ED3009 /* QuestionCellWithoutPicture.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCellWithoutPicture.xib; sourceTree = "<group>"; };
 		922185381CA98C5E00ED3009 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		9221853C1CA9953300ED3009 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
+		9221853E1CA9A43000ED3009 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		92344F741CA2F5FF00CD1965 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
 		92344F771CA3060100CD1965 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9238E2061C84BEBF00313AB7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				92A361BD1C8E26BD0075831B /* Answer.swift */,
 				92A361BF1C8E78F20075831B /* Like.swift */,
 				92C8DB1B1CA368710063FB99 /* UserConnection.swift */,
+				9221853E1CA9A43000ED3009 /* Notification.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				92A361C71C9117D90075831B /* QuestionTableViewCell.swift in Sources */,
 				92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */,
 				92C8DB1C1CA368710063FB99 /* UserConnection.swift in Sources */,
+				9221853F1CA9A43000ED3009 /* Notification.swift in Sources */,
 				92CE702B1C839D8700E3A7B6 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

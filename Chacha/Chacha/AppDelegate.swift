@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Answer.registerSubclass()
         Like.registerSubclass()
         UserConnection.registerSubclass()
+        Notification.registerSubclass()
         
         if let _ = PFUser.currentUser() {
             //user is already logged in, so we should send them right into the app
