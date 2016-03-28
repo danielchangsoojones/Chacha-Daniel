@@ -20,7 +20,6 @@ class Answer: PFObject, PFSubclassing {
     @NSManaged var likeCount: Int
     @NSManaged var answer: String
     @NSManaged var questionParent: Question?
-    @NSManaged var anonymous: Bool
     
     override init() {
         super.init()

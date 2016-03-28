@@ -21,7 +21,12 @@ class QuestionTableViewCell: ActivityTableViewCell {
     var question: Question? {
         didSet {
             if let question = question {
-                fullNameText.text = question.createdBy?.fullName
+                if question.anonymous {
+                    fullNameText.text = "Anonymous"
+                    profileImage.setImage(UIImage(named: "anonymousProfileImage"), forState: .Normal)
+                } else {
+                    fullNameText.text = question.createdBy?.fullName
+                }
                 questionText.text = question.question
                 if let questionImage = question.questionImage {
                     self.questionImage.file = questionImage

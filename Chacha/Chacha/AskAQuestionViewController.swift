@@ -44,10 +44,12 @@ class AskAQuestionViewController: UIViewController {
     
     //Backend Swap
     @IBAction func askQuestion(sender: AnyObject) {
+        spinner.hidden = false
+        spinner.startAnimating()
         let newQuestion = Question(likeCount: 0, answerCount: 0)
         newQuestion.question = questionTextBox.text
         //newQuestion.questionDescription = questionDescriptionTextBox.text
-        if let image = cameraButton.imageView!.image {
+        if let image = cameraButton.imageView!.image where image != UIImage(named: "camera") {
             let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
             newQuestion.questionImage = file
             newQuestion.questionImageHeight = image.size.height
@@ -56,9 +58,9 @@ class AskAQuestionViewController: UIViewController {
         newQuestion.createdBy = User.currentUser()
         if anonymousQuestion {
             newQuestion.anonymous = true
+        } else {
+            newQuestion.anonymous = false
         }
-        spinner.hidden = false
-        spinner.startAnimating()
         newQuestion.saveInBackgroundWithBlock { (success, error) -> Void in
             self.spinner.stopAnimating()
             self.resetUI()
