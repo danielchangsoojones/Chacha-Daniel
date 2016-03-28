@@ -24,6 +24,7 @@ class QuestionTableViewCell: ActivityTableViewCell {
                 if question.anonymous {
                     fullNameText.text = "Anonymous"
                     profileImage.setImage(UIImage(named: "anonymousProfileImage"), forState: .Normal)
+                    profileImage.userInteractionEnabled = false
                 } else {
                     fullNameText.text = question.createdBy?.fullName
                 }
