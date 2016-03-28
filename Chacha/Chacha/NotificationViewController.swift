@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EFTools
 
 class NotificationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -59,5 +60,28 @@ extension NotificationViewController {
                 self.tableView.reloadData()
             }
         })
+    }
+}
+
+extension NotificationViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
+        case answerPageSegue
+        case profileSegue
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segueIdentifierForSegue(segue) {
+        case .answerPageSegue: break
+//            let question = questions[rowTapped!]
+//            let destinationVC = segue.destinationViewController as! AnswerViewController
+//            destinationVC.questionObject = question
+        case .profileSegue: break
+//            let question = questions[rowTapped!]
+//            let destinationVC = segue.destinationViewController as! ProfileViewController
+//            destinationVC.user = question.createdBy
+        default:
+            break
+        }
     }
 }
