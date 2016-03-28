@@ -26,8 +26,10 @@ class AskAQuestionViewController: UIViewController {
     @IBAction func anonymousPressed(sender: AnyObject) {
         anonymousQuestion = !anonymousQuestion
         if anonymousQuestion {
+            self.title = "Anonymous"
             anonymousButton.setImage(UIImage(named: "Anonymous-Clicked"), forState: .Normal)
         } else {
+            self.title = "Ask a Question"
             anonymousButton.setImage(UIImage(named: "Anonymous-Unclicked"), forState: .Normal)
         }
     }
@@ -45,12 +47,15 @@ class AskAQuestionViewController: UIViewController {
         let newQuestion = Question(likeCount: 0, answerCount: 0)
         newQuestion.question = questionTextBox.text
         //newQuestion.questionDescription = questionDescriptionTextBox.text
-        newQuestion.createdBy = User.currentUser()
         if let image = cameraButton.imageView!.image {
             let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
             newQuestion.questionImage = file
             newQuestion.questionImageHeight = image.size.height
             newQuestion.questionImageWidth = image.size.width
+        }
+        newQuestion.createdBy = User.currentUser()
+        if anonymousQuestion {
+            newQuestion.anonymous = true
         }
         spinner.hidden = false
         spinner.startAnimating()
@@ -99,6 +104,7 @@ class AskAQuestionViewController: UIViewController {
         self.questionTextBox.text = "Ask a question..."
         questionTextBox.textColor = UIColor.lightGrayColor()
         anonymousButton.setImage(UIImage(named: "Anonymous-Unclicked"), forState: .Normal)
+        self.title = "Ask a Question"
         anonymousQuestion = false
     }
 

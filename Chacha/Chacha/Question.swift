@@ -22,6 +22,7 @@ class Question: PFObject, PFSubclassing {
     @NSManaged var questionDescription: String
     @NSManaged var questionImageHeight: CGFloat
     @NSManaged var questionImageWidth: CGFloat
+    @NSManaged var anonymous: Bool
     
     override init() {
         super.init()

@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-28.5" y="1106.5"/>
         </scene>
-        <!--Ask A Question-->
+        <!--Ask a Question-->
         <scene sceneID="pxg-oZ-hEo">
             <objects>
                 <viewController id="gnx-Or-nIL" customClass="AskAQuestionViewController" customModule="Chacha" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +121,7 @@
                             <constraint firstItem="QS0-mh-vVj" firstAttribute="top" secondItem="fH3-oj-yeD" secondAttribute="bottom" id="leA-E0-zfi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ask A Question" id="0RC-3r-fRv">
+                    <navigationItem key="navigationItem" title="Ask a Question" id="0RC-3r-fRv">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="nKd-C6-zRf">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
