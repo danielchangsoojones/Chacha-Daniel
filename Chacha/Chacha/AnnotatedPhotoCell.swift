@@ -31,7 +31,13 @@ class AnnotatedPhotoCell: UICollectionViewCell {
     var currentQuestion: Question? {
         didSet {
             if let currentQuestion = currentQuestion {
-                fullName.text = currentQuestion.createdBy?.fullName
+                if currentQuestion.anonymous {
+                    fullName.text = "Anonymous"
+//                    profileImage.setImage(UIImage(named: "anonymousProfileImage"), forState: .Normal)
+                    profileImage.userInteractionEnabled = false
+                } else {
+                    fullName.text = currentQuestion.createdBy?.fullName
+                }
                 questionText.text = currentQuestion.question
                 if let questionImage = currentQuestion.questionImage {
                     imageView.file = questionImage
