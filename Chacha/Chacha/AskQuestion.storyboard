@@ -76,22 +76,28 @@
                                             <action selector="addQuestionImage:" destination="gnx-Or-nIL" eventType="touchUpInside" id="ubb-in-KQx"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="onj-Wy-SdH">
-                                        <rect key="frame" x="18" y="13" width="23" height="23"/>
-                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upq-UO-wpj">
+                                        <rect key="frame" x="60" y="13" width="23" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="23" id="U0B-B4-RMk"/>
+                                        </constraints>
+                                        <state key="normal" image="Anonymous-Unclicked"/>
+                                        <connections>
+                                            <action selector="anonymousPressed:" destination="gnx-Or-nIL" eventType="touchUpInside" id="qT4-GX-2Oh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.91764705882352937" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="onj-Wy-SdH" firstAttribute="top" secondItem="g0q-1P-7PJ" secondAttribute="top" id="5WT-DX-oRP"/>
-                                    <constraint firstItem="onj-Wy-SdH" firstAttribute="trailing" secondItem="g0q-1P-7PJ" secondAttribute="trailing" id="683-no-G4r"/>
+                                    <constraint firstItem="Upq-UO-wpj" firstAttribute="bottom" secondItem="g0q-1P-7PJ" secondAttribute="bottom" id="6YH-5V-1zE"/>
                                     <constraint firstAttribute="height" constant="50" id="AUi-ys-liH"/>
                                     <constraint firstItem="g0q-1P-7PJ" firstAttribute="centerY" secondItem="L8A-WC-mIr" secondAttribute="centerY" id="IQv-5d-XeI"/>
                                     <constraint firstItem="eKw-Do-Nol" firstAttribute="centerY" secondItem="L8A-WC-mIr" secondAttribute="centerY" id="LYg-bX-q5d"/>
+                                    <constraint firstItem="Upq-UO-wpj" firstAttribute="leading" secondItem="g0q-1P-7PJ" secondAttribute="trailing" constant="19" id="Mwg-oh-Dex"/>
                                     <constraint firstItem="L8A-WC-mIr" firstAttribute="leading" secondItem="eKw-Do-Nol" secondAttribute="trailing" constant="-27" id="Oc7-D9-JPH"/>
                                     <constraint firstAttribute="bottom" secondItem="L8A-WC-mIr" secondAttribute="bottom" constant="10" id="Wbn-4b-KJc"/>
                                     <constraint firstItem="L8A-WC-mIr" firstAttribute="top" secondItem="QS0-mh-vVj" secondAttribute="top" constant="10" id="Y8I-Wu-AqL"/>
-                                    <constraint firstItem="onj-Wy-SdH" firstAttribute="leading" secondItem="g0q-1P-7PJ" secondAttribute="leading" id="ZDF-dc-Ysm"/>
-                                    <constraint firstItem="onj-Wy-SdH" firstAttribute="bottom" secondItem="g0q-1P-7PJ" secondAttribute="bottom" id="dHs-XA-6Ci"/>
+                                    <constraint firstItem="Upq-UO-wpj" firstAttribute="top" secondItem="g0q-1P-7PJ" secondAttribute="top" id="je1-4I-T9d"/>
                                     <constraint firstItem="g0q-1P-7PJ" firstAttribute="leading" secondItem="QS0-mh-vVj" secondAttribute="leading" constant="18" id="vtS-zn-ZDo"/>
                                     <constraint firstAttribute="trailing" secondItem="L8A-WC-mIr" secondAttribute="trailing" constant="5" id="yOT-Hk-sLy"/>
                                 </constraints>
@@ -124,10 +130,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="anonymousButton" destination="Upq-UO-wpj" id="7tI-Y3-5Y4"/>
                         <outlet property="bottomComposeBarConstraint" destination="EXc-ai-lkv" id="hbi-yU-fkc"/>
                         <outlet property="cameraButton" destination="g0q-1P-7PJ" id="FjM-xi-gwq"/>
                         <outlet property="composeBarView" destination="QS0-mh-vVj" id="aAx-sU-4Fv"/>
-                        <outlet property="questionImageViewOverlay" destination="onj-Wy-SdH" id="Kc4-2M-Q8g"/>
                         <outlet property="questionTextBox" destination="fH3-oj-yeD" id="6db-0F-XZ0"/>
                         <outlet property="spinner" destination="eKw-Do-Nol" id="06i-vl-SzJ"/>
                     </connections>
@@ -138,6 +144,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Anonymous-Unclicked" width="60" height="60"/>
         <image name="camera" width="60" height="46"/>
         <image name="question-off" width="38" height="34"/>
     </resources>

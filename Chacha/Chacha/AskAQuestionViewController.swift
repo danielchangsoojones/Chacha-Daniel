@@ -16,10 +16,21 @@ class AskAQuestionViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var composeBarView: UIView!
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var questionImageViewOverlay: UIImageView!
+    @IBOutlet weak var anonymousButton: UIButton!
     
     let descriptionPlaceHolderText = "Optional Description..."
     let questionPlaceHolderText = "Ask Your Question..."
+    
+    var anonymousQuestion = false
+    
+    @IBAction func anonymousPressed(sender: AnyObject) {
+        anonymousQuestion = !anonymousQuestion
+        if anonymousQuestion {
+            anonymousButton.setImage(UIImage(named: "Anonymous-Clicked"), forState: .Normal)
+        } else {
+            anonymousButton.setImage(UIImage(named: "Anonymous-Unclicked"), forState: .Normal)
+        }
+    }
     
     @IBAction func addQuestionImage(sender: AnyObject) {
         setImagePickerDelegate()
@@ -35,7 +46,7 @@ class AskAQuestionViewController: UIViewController {
         newQuestion.question = questionTextBox.text
         //newQuestion.questionDescription = questionDescriptionTextBox.text
         newQuestion.createdBy = User.currentUser()
-        if let image = questionImageViewOverlay.image {
+        if let image = cameraButton.imageView!.image {
             let file = PFFile(name: "questionImage.jpg",data: UIImageJPEGRepresentation(image, 0.6)!)
             newQuestion.questionImage = file
             newQuestion.questionImageHeight = image.size.height
@@ -60,6 +71,8 @@ class AskAQuestionViewController: UIViewController {
         //questionDescriptionTextBox.textColor = UIColor.lightGrayColor()
         composeBarView.layer.borderWidth = 0.5
         composeBarView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        cameraButton.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
+        anonymousButton.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
         
         // Keyboard notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
@@ -81,9 +94,12 @@ class AskAQuestionViewController: UIViewController {
     
     func resetUI() {
         self.questionTextBox.resignFirstResponder()
-        questionImageViewOverlay.image = nil
+        cameraButton.setImage(UIImage(named: "camera"), forState: .Normal)
+        cameraButton.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
         self.questionTextBox.text = "Ask a question..."
         questionTextBox.textColor = UIColor.lightGrayColor()
+        anonymousButton.setImage(UIImage(named: "Anonymous-Unclicked"), forState: .Normal)
+        anonymousQuestion = false
     }
 
 }
@@ -126,9 +142,10 @@ extension AskAQuestionViewController: UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         if image != nil {
+            cameraButton.imageView!.contentMode = UIViewContentMode.ScaleAspectFill
+            cameraButton.imageView?.clipsToBounds = true
             let img = image.resizeImage(CGSize(width:23,height:23))
-            self.questionImageViewOverlay.image = img
-//            self.questionImageViewOverlay.hidden = false
+            self.cameraButton.setImage(img, forState: .Normal)
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
