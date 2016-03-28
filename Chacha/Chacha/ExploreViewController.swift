@@ -20,11 +20,6 @@ class ExploreViewController: UICollectionViewController {
     var alreadyLikedDictionary: [String : Like] = [:]
     var likeIsSaving = false
     
-    @IBAction func logOut(sender: AnyObject) {
-        PFUser.logOut()
-        performSegueWithIdentifier("LogOutSegue", sender: self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -195,6 +190,7 @@ extension ExploreViewController: SegueHandlerType {
         // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
         case answerPageSegue
         case profileSegue
+        case LogOutSegue
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -206,6 +202,8 @@ extension ExploreViewController: SegueHandlerType {
         case .profileSegue:
             let destinationVC = segue.destinationViewController as! ProfileViewController
             destinationVC.user = question.createdBy
+        default:
+            break
         }
     }
 }
