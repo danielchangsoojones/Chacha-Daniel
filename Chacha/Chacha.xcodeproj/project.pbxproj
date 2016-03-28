@@ -13,6 +13,7 @@
 		920CF27A1C9483E700D29C2A /* AnswerFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 920CF2791C9483E700D29C2A /* AnswerFeed.storyboard */; };
 		922185351CA5C43000ED3009 /* QuestionCellWithoutPicture.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922185341CA5C43000ED3009 /* QuestionCellWithoutPicture.xib */; };
 		922185391CA98C5E00ED3009 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922185381CA98C5E00ED3009 /* MoreTableViewController.swift */; };
+		9221853D1CA9953300ED3009 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221853C1CA9953300ED3009 /* FindFriendsViewController.swift */; };
 		92344F751CA2F5FF00CD1965 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344F741CA2F5FF00CD1965 /* SuperViewController.swift */; };
 		92344F781CA3060100CD1965 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344F771CA3060100CD1965 /* QuestionViewController.swift */; };
 		9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2061C84BEBF00313AB7 /* Alert.swift */; };
@@ -71,6 +72,7 @@
 		920CF2791C9483E700D29C2A /* AnswerFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AnswerFeed.storyboard; sourceTree = "<group>"; };
 		922185341CA5C43000ED3009 /* QuestionCellWithoutPicture.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCellWithoutPicture.xib; sourceTree = "<group>"; };
 		922185381CA98C5E00ED3009 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		9221853C1CA9953300ED3009 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		92344F741CA2F5FF00CD1965 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
 		92344F771CA3060100CD1965 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9238E2061C84BEBF00313AB7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				920C8DBD1C98796D00F4CFF3 /* Profile.storyboard */,
 				920C8DBF1C987A7200F4CFF3 /* ProfileViewController.swift */,
 				922185381CA98C5E00ED3009 /* MoreTableViewController.swift */,
+				9221853C1CA9953300ED3009 /* FindFriendsViewController.swift */,
 			);
 			name = "Profile Page";
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */,
 				92A361C01C8E78F20075831B /* Like.swift in Sources */,
 				92A361BA1C8E12540075831B /* AnswerViewController.swift in Sources */,
+				9221853D1CA9953300ED3009 /* FindFriendsViewController.swift in Sources */,
 				92344F781CA3060100CD1965 /* QuestionViewController.swift in Sources */,
 				9295FBF81C7EA4FC007B4B95 /* Globals.swift in Sources */,
 				9238E21E1C8625E300313AB7 /* AnnotatedPhotoCell.swift in Sources */,
