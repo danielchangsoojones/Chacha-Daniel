@@ -172,6 +172,7 @@ extension ProfileViewController {
     func createQuestionArray() {
         let query = populateQuestionArray()
         query.whereKey("createdBy", equalTo: user!)
+        
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let objects = objects as? [Question] {
                 self.questions = objects
