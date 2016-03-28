@@ -190,16 +190,17 @@ extension ExploreViewController: SegueHandlerType {
         // THESE CASES WILL ALL MATCH THE IDENTIFIERS YOU CREATED IN THE STORYBOARD
         case answerPageSegue
         case profileSegue
-        case LogOutSegue
+        case notificationSegue
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let question = questions[rowTapped!]
         switch segueIdentifierForSegue(segue) {
         case .answerPageSegue:
+            let question = questions[rowTapped!]
             let destinationVC = segue.destinationViewController as! AnswerViewController
             destinationVC.questionObject = question
         case .profileSegue:
+            let question = questions[rowTapped!]
             let destinationVC = segue.destinationViewController as! ProfileViewController
             destinationVC.user = question.createdBy
         default:

@@ -249,7 +249,13 @@
                             <outlet property="delegate" destination="Wfm-R0-MaW" id="Rx5-4t-keV"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Title" id="Y3b-eg-GgG"/>
+                    <navigationItem key="navigationItem" title="Title" id="Y3b-eg-GgG">
+                        <barButtonItem key="rightBarButtonItem" title="Notifications" id="aRO-k7-fpk">
+                            <connections>
+                                <segue destination="F46-PJ-YCE" kind="show" identifier="notificationSegue" id="ZH1-sV-dkW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="tlC-Na-oge" kind="show" identifier="answerPageSegue" id="rrk-vF-3Jk"/>
                     </connections>
@@ -295,6 +301,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ec0-WP-VpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-340" y="447"/>
+        </scene>
+        <!--Notification-->
+        <scene sceneID="v9K-rW-Gwv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notification" id="F46-PJ-YCE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJ8-kn-xrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373.5" y="-345"/>
         </scene>
     </scenes>
     <resources>

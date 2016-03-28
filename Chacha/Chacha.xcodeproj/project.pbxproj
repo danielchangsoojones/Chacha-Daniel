@@ -15,6 +15,10 @@
 		922185391CA98C5E00ED3009 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922185381CA98C5E00ED3009 /* MoreTableViewController.swift */; };
 		9221853D1CA9953300ED3009 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221853C1CA9953300ED3009 /* FindFriendsViewController.swift */; };
 		9221853F1CA9A43000ED3009 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221853E1CA9A43000ED3009 /* Notification.swift */; };
+		922185411CA9A8AE00ED3009 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922185401CA9A8AE00ED3009 /* NotificationCell.xib */; };
+		922185431CA9A8FB00ED3009 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922185421CA9A8FB00ED3009 /* NotificationTableViewCell.swift */; };
+		922185461CA9AA6100ED3009 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922185451CA9AA6100ED3009 /* NotificationViewController.swift */; };
+		922185481CA9AB2800ED3009 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 922185471CA9AB2800ED3009 /* Notification.storyboard */; };
 		92344F751CA2F5FF00CD1965 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344F741CA2F5FF00CD1965 /* SuperViewController.swift */; };
 		92344F781CA3060100CD1965 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344F771CA3060100CD1965 /* QuestionViewController.swift */; };
 		9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238E2061C84BEBF00313AB7 /* Alert.swift */; };
@@ -75,6 +79,10 @@
 		922185381CA98C5E00ED3009 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		9221853C1CA9953300ED3009 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		9221853E1CA9A43000ED3009 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		922185401CA9A8AE00ED3009 /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
+		922185421CA9A8FB00ED3009 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		922185451CA9AA6100ED3009 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		922185471CA9AB2800ED3009 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		92344F741CA2F5FF00CD1965 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
 		92344F771CA3060100CD1965 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9238E2061C84BEBF00313AB7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -164,6 +172,17 @@
 			name = "Profile Page";
 			sourceTree = "<group>";
 		};
+		922185441CA9AA3800ED3009 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				922185471CA9AB2800ED3009 /* Notification.storyboard */,
+				922185451CA9AA6100ED3009 /* NotificationViewController.swift */,
+				922185421CA9A8FB00ED3009 /* NotificationTableViewCell.swift */,
+				922185401CA9A8AE00ED3009 /* NotificationCell.xib */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
 		9238E21A1C86240400313AB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +221,7 @@
 		9295FBC31C7E86FE007B4B95 /* Chacha */ = {
 			isa = PBXGroup;
 			children = (
+				922185441CA9AA3800ED3009 /* Notifications */,
 				9295FBF01C7E9783007B4B95 /* LogIn */,
 				92A361B81C8E122F0075831B /* Answer Page */,
 				920CF27B1C94847200D29C2A /* Profile Page */,
@@ -408,9 +428,11 @@
 				9238E2191C861DD900313AB7 /* Photos.xcassets in Resources */,
 				92CE70361C83FF4200E3A7B6 /* QuestionFeed.storyboard in Resources */,
 				92A361C21C9106A80075831B /* QuestionCell.xib in Resources */,
+				922185481CA9AB2800ED3009 /* Notification.storyboard in Resources */,
 				9295FBCA1C7E86FE007B4B95 /* Main.storyboard in Resources */,
 				920C8DBE1C98796D00F4CFF3 /* Profile.storyboard in Resources */,
 				9238E2171C861DB800313AB7 /* Photos.plist in Resources */,
+				922185411CA9A8AE00ED3009 /* NotificationCell.xib in Resources */,
 				920CF2781C93C15200D29C2A /* AnswerCell.xib in Resources */,
 				92A361B01C88B4210075831B /* PersonalFeed.storyboard in Resources */,
 				920CF27A1C9483E700D29C2A /* AnswerFeed.storyboard in Resources */,
@@ -479,6 +501,7 @@
 				9238E2291C877E7000313AB7 /* AskAQuestionViewController.swift in Sources */,
 				92CE70291C839C0000E3A7B6 /* DateExtensions.swift in Sources */,
 				92A361C01C8E78F20075831B /* Like.swift in Sources */,
+				922185431CA9A8FB00ED3009 /* NotificationTableViewCell.swift in Sources */,
 				92A361BA1C8E12540075831B /* AnswerViewController.swift in Sources */,
 				9221853D1CA9953300ED3009 /* FindFriendsViewController.swift in Sources */,
 				92344F781CA3060100CD1965 /* QuestionViewController.swift in Sources */,
@@ -497,6 +520,7 @@
 				9238E2071C84BEBF00313AB7 /* Alert.swift in Sources */,
 				9295FBC71C7E86FE007B4B95 /* ViewController.swift in Sources */,
 				92344F751CA2F5FF00CD1965 /* SuperViewController.swift in Sources */,
+				922185461CA9AA6100ED3009 /* NotificationViewController.swift in Sources */,
 				9238E21C1C86243600313AB7 /* RoundedCornersView.swift in Sources */,
 				922185391CA98C5E00ED3009 /* MoreTableViewController.swift in Sources */,
 				9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */,

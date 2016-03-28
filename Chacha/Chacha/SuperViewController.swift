@@ -177,6 +177,12 @@ extension SuperViewController: QuestionTableViewCellDelegate {
                 self.answers.append(newAnswer)
                 self.tableView.reloadData()
                 let _ = Alert(title: "Answer Created!", subtitle: "You answered a question!", closeButtonTitle: "Awesome!", type: .Success)
+                let notification = Notification()
+                notification.reciever = questionObject.createdBy
+                notification.sender = User.currentUser()
+                notification.read = false
+                notification.answer = newAnswer
+                notification.saveInBackground()
             } else {
                 print(error)
             }
