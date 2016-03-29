@@ -42,6 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         
+          Instabug.startWithToken("fac43cb39d976b322aff694926620999", invocationEvent: IBGInvocationEvent.Shake)
+        
         return true
     }
 
