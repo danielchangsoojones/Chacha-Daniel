@@ -11,6 +11,16 @@ import UIKit
 class NotificationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var theFullName: UILabel!
+    @IBOutlet weak var theProfileImage: UIButton!
+    @IBOutlet weak var theNotificationDescription: UILabel!
+    
+    var notification: Notification? {
+        didSet {
+            theFullName.text = notification?.sender?.fullName
+            
+                
+            }
+        }
     
     override func awakeFromNib() {
         super.awakeFromNib()

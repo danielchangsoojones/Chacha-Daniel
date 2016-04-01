@@ -13,6 +13,8 @@ class NotificationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var notifications = [Notification]()
+    
+    var rowTapped: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +43,14 @@ extension NotificationViewController : UITableViewDelegate, UITableViewDataSourc
         let currentNotification = notifications[currentRow]
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("notificationCell")! as! NotificationTableViewCell
+        cell.notification = currentNotification
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        rowTapped = indexPath.row
+        performSegueWithIdentifier(.answerPageSegue, sender: self)
     }
     
 }
@@ -52,6 +60,10 @@ extension NotificationViewController {
     func createNotificationArray() {
         let query = Notification.query()
         query?.whereKey("reciever", equalTo: User.currentUser()!)
+        query?.includeKey("sender")
+        query?.includeKey("answer")
+        query?.includeKey("answer.questionParent")
+        query?.includeKey("answer.questionParent.createdBy")
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if let notifications = objects as? [Notification] {
                 for notification in notifications {
@@ -72,10 +84,10 @@ extension NotificationViewController: SegueHandlerType {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segueIdentifierForSegue(segue) {
-        case .answerPageSegue: break
-//            let question = questions[rowTapped!]
-//            let destinationVC = segue.destinationViewController as! AnswerViewController
-//            destinationVC.questionObject = question
+        case .answerPageSegue:
+            let notification = notifications[rowTapped!]
+            let destinationVC = segue.destinationViewController as! AnswerViewController
+            destinationVC.questionObject = notification.answer?.questionParent
         case .profileSegue: break
 //            let question = questions[rowTapped!]
 //            let destinationVC = segue.destinationViewController as! ProfileViewController

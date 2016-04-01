@@ -41,11 +41,20 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="cKT-O9-H6f" id="swq-fJ-KWk"/>
+                        <segue destination="YNH-Cb-WIs" kind="show" identifier="answerPageSegue" id="kOQ-Cr-Ess"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zB-cd-lTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1366.5" y="-432.5"/>
+        </scene>
+        <!--AnswerFeed-->
+        <scene sceneID="aJX-4G-YBX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AnswerFeed" id="YNH-Cb-WIs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jA-FU-lcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="-580"/>
         </scene>
     </scenes>
 </document>

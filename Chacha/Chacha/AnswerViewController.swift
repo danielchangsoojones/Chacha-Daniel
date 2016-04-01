@@ -12,7 +12,6 @@ import EFTools
 
 class AnswerViewController: SuperViewController {
     
-    var questionImage : PFFile?
     var answerText: String?
     var questionObject: Question?
     

@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="384" height="154"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEb-73-kkr" id="gAZ-Fw-HCN">
-                <rect key="frame" x="0.0" y="0.0" width="384" height="153.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="384" height="154"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Uf-VCw">
@@ -151,7 +151,7 @@
                                         <state key="normal" image="bubble-off"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xu3-6x-suV">
-                                        <rect key="frame" x="16" y="5" width="6.5" height="12"/>
+                                        <rect key="frame" x="16" y="5" width="7" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="H7i-M3-pcj"/>
                                             <constraint firstAttribute="height" constant="12" id="SEu-K4-ofB"/>
