@@ -61,6 +61,9 @@ class SignUpTwoViewController: UIViewController {
         newUser.fullName = fullName.text!
         newUser.lowercaseFullName = fullName.text!.lowercaseString
         newUser.email = theEmail.text
+        var delimiter = "@"
+        var username = theEmail.text!.componentsSeparatedByString(delimiter)
+        newUser.username = username[0]
         newUser.password = thePassword.text
         self.view.userInteractionEnabled = false
         theSpinner.startAnimating()
