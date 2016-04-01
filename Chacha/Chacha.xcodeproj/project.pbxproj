@@ -67,6 +67,7 @@
 		92CE702D1C839F7300E3A7B6 /* iLikeyDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */; };
 		92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */; };
 		92CE70361C83FF4200E3A7B6 /* QuestionFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CE70351C83FF4200E3A7B6 /* QuestionFeed.storyboard */; };
+		92D3BC0C1CAF0F62006CBF7B /* SignUpTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3BC0B1CAF0F62006CBF7B /* SignUpTwoViewController.swift */; };
 		F74FA308D54281B0CF512C21 /* Pods_Chacha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E591D4BDBA0D2B57591ED3EB /* Pods_Chacha.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		92CE702C1C839F7300E3A7B6 /* iLikeyDateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iLikeyDateTextField.swift; sourceTree = "<group>"; };
 		92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		92CE70351C83FF4200E3A7B6 /* QuestionFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuestionFeed.storyboard; sourceTree = "<group>"; };
+		92D3BC0B1CAF0F62006CBF7B /* SignUpTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTwoViewController.swift; sourceTree = "<group>"; };
 		CEC0C52EB7CE8FDB4BE73F2A /* Pods-Chacha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chacha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chacha/Pods-Chacha.debug.xcconfig"; sourceTree = "<group>"; };
 		E591D4BDBA0D2B57591ED3EB /* Pods_Chacha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chacha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F928ED878B9E405364379687 /* Pods-Chacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chacha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chacha/Pods-Chacha.release.xcconfig"; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				9295FBC81C7E86FE007B4B95 /* Main.storyboard */,
 				9295FBF51C7E9FF7007B4B95 /* SignUpViewController.swift */,
 				92CE70301C83AAA800E3A7B6 /* LogInViewController.swift */,
+				92D3BC0B1CAF0F62006CBF7B /* SignUpTwoViewController.swift */,
 			);
 			name = LogIn;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				9295FBC51C7E86FE007B4B95 /* AppDelegate.swift in Sources */,
 				9238E2111C861AA000313AB7 /* ExploreViewController.swift in Sources */,
 				92A361C71C9117D90075831B /* QuestionTableViewCell.swift in Sources */,
+				92D3BC0C1CAF0F62006CBF7B /* SignUpTwoViewController.swift in Sources */,
 				92CE70311C83AAA800E3A7B6 /* LogInViewController.swift in Sources */,
 				92C8DB1C1CA368710063FB99 /* UserConnection.swift in Sources */,
 				9221853F1CA9A43000ED3009 /* Notification.swift in Sources */,

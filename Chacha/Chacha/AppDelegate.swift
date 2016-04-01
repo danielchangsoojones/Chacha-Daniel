@@ -33,14 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserConnection.registerSubclass()
         Notification.registerSubclass()
         
-        if let _ = PFUser.currentUser() {
-            //user is already logged in, so we should send them right into the app
-            let exploreFeedStoryBoard : UIStoryboard = UIStoryboard(name: "QuestionFeed", bundle: nil)
-            let exploreFeedVC : UIViewController = exploreFeedStoryBoard.instantiateViewControllerWithIdentifier("TabBar") as UIViewController
-            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            self.window?.rootViewController = exploreFeedVC
-            self.window?.makeKeyAndVisible()
-        }
+//        if let _ = PFUser.currentUser() {
+//            //user is already logged in, so we should send them right into the app
+//            let exploreFeedStoryBoard : UIStoryboard = UIStoryboard(name: "QuestionFeed", bundle: nil)
+//            let exploreFeedVC : UIViewController = exploreFeedStoryBoard.instantiateViewControllerWithIdentifier("TabBar") as UIViewController
+//            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//            self.window?.rootViewController = exploreFeedVC
+//            self.window?.makeKeyAndVisible()
+//        }
         
           Instabug.startWithToken("fac43cb39d976b322aff694926620999", invocationEvent: IBGInvocationEvent.Shake)
         
