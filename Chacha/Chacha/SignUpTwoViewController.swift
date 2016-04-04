@@ -11,7 +11,7 @@ import EFTools
 import Parse
 import SnapKit
 
-class SignUpTwoViewController: UIViewController {
+class SignUpTwoViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var theEmail: UITextField!
@@ -241,6 +241,18 @@ class SignUpTwoViewController: UIViewController {
         else {
             return true
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField===self.fullName
+        {
+            self.theEmail.becomeFirstResponder()
+        }
+        else if textField===self.theEmail
+        {
+            self.thePassword.becomeFirstResponder()
+        }
+        return true
     }
     
 }

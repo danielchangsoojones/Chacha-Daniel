@@ -135,7 +135,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" secureTextEntry="YES"/>
                                         <connections>
-                                            <outlet property="delegate" destination="KTL-TT-r4Z" id="uYh-HT-GD7"/>
+                                            <outlet property="delegate" destination="I9A-bp-1uT" id="dHO-35-hEx"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-4A-eMv">
@@ -146,7 +146,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                         <connections>
-                                            <outlet property="delegate" destination="KTL-TT-r4Z" id="sez-q7-2Yk"/>
+                                            <outlet property="delegate" destination="I9A-bp-1uT" id="wWj-oH-jdK"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fqa-OV-FKx">
@@ -157,7 +157,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                         <connections>
-                                            <outlet property="delegate" destination="KTL-TT-r4Z" id="vlp-og-YR2"/>
+                                            <outlet property="delegate" destination="I9A-bp-1uT" id="uEj-vU-Qb0"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -994,6 +994,6 @@ AVATAR</string>
         <image name="facebook_logo" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oGW-NR-ezq"/>
+        <segue reference="C3w-mU-Su9"/>
     </inferredMetricsTieBreakers>
 </document>
