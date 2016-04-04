@@ -19,6 +19,10 @@ class SignUpTwoViewController: UIViewController {
     @IBOutlet weak var theFacebookButton: UIButton!
     @IBOutlet weak var theTextfieldsView: UIView!
     @IBOutlet weak var theSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var orLine: UIImageView!
+    @IBOutlet weak var theFacebookLogo: UIImageView!
+    @IBOutlet weak var theCreateAccountLabel: UILabel!
+    @IBOutlet weak var theTermsOfService: UIButton!
     
     
     @IBAction func signUp(sender: AnyObject) {
@@ -53,6 +57,14 @@ class SignUpTwoViewController: UIViewController {
         view.layer.shadowOffset = CGSizeMake(0, 1)
         view.layer.shadowColor = UIColor(rgba: "#555").CGColor
         view.layer.shadowOpacity = 2.0
+    }
+    
+    func hideOrUnhideFacebook(hidden: Bool) {
+        theFacebookButton.hidden = hidden
+        orLine.hidden = hidden
+        theFacebookLogo.hidden = hidden
+        theCreateAccountLabel.hidden = hidden
+        theTermsOfService.hidden = hidden
     }
     
     func signUp()

@@ -195,6 +195,16 @@
                                     <constraint firstAttribute="height" constant="20" id="zE4-rr-LrG"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or, Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHU-1H-ncM">
+                                <rect key="frame" x="160" y="633" width="56" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="HpO-bk-e5O"/>
+                                    <constraint firstAttribute="width" constant="56" id="S9f-La-crS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -206,6 +216,7 @@
                             <constraint firstItem="Vrs-pe-MWI" firstAttribute="centerX" secondItem="2hY-Z1-udw" secondAttribute="centerX" id="Kc3-J7-r8q"/>
                             <constraint firstItem="Xg4-gJ-Daf" firstAttribute="top" secondItem="fMZ-u2-BfW" secondAttribute="bottom" constant="1" id="Llc-Ys-lKf"/>
                             <constraint firstItem="fMZ-u2-BfW" firstAttribute="leading" secondItem="qLf-fP-aj2" secondAttribute="leading" id="Lwv-I0-ycs"/>
+                            <constraint firstItem="cHU-1H-ncM" firstAttribute="centerX" secondItem="2hY-Z1-udw" secondAttribute="centerX" id="PSk-6H-z5l"/>
                             <constraint firstItem="fMZ-u2-BfW" firstAttribute="leading" secondItem="AHb-bS-Mcx" secondAttribute="trailing" constant="-40" id="Ryi-YB-eiC"/>
                             <constraint firstItem="Xg4-gJ-Daf" firstAttribute="top" secondItem="fMZ-u2-BfW" secondAttribute="bottom" constant="3" id="VOH-Gc-edh"/>
                             <constraint firstItem="fMZ-u2-BfW" firstAttribute="centerX" secondItem="2hY-Z1-udw" secondAttribute="centerX" id="Vsd-8I-6va"/>
@@ -213,6 +224,7 @@
                             <constraint firstItem="fMZ-u2-BfW" firstAttribute="leading" secondItem="qLf-fP-aj2" secondAttribute="leading" id="Whz-oJ-zhy"/>
                             <constraint firstItem="fMZ-u2-BfW" firstAttribute="trailing" secondItem="qLf-fP-aj2" secondAttribute="trailing" id="a7v-QY-yu4"/>
                             <constraint firstItem="0bt-DX-3hR" firstAttribute="top" secondItem="Vrs-pe-MWI" secondAttribute="bottom" id="cAD-Qp-NGt"/>
+                            <constraint firstItem="T0R-ov-iaI" firstAttribute="top" secondItem="cHU-1H-ncM" secondAttribute="bottom" constant="20" id="dAX-Jc-tir"/>
                             <constraint firstItem="AHb-bS-Mcx" firstAttribute="centerY" secondItem="fMZ-u2-BfW" secondAttribute="centerY" id="dTR-Vd-exT"/>
                             <constraint firstItem="qLf-fP-aj2" firstAttribute="top" secondItem="0bt-DX-3hR" secondAttribute="bottom" constant="10" id="e2E-c6-YNN"/>
                             <constraint firstItem="fMZ-u2-BfW" firstAttribute="trailing" secondItem="2hY-Z1-udw" secondAttribute="trailingMargin" id="fPM-7e-Opq"/>
@@ -245,18 +257,22 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="fullName" destination="fqa-OV-FKx" id="HRp-bq-qQf"/>
+                        <outlet property="orLine" destination="3YB-sB-lTV" id="BAB-V9-G4z"/>
+                        <outlet property="theCreateAccountLabel" destination="Xg4-gJ-Daf" id="WXe-Iw-aiJ"/>
                         <outlet property="theEmail" destination="ye8-4A-eMv" id="Yqh-y5-m4v"/>
                         <outlet property="theFacebookButton" destination="fMZ-u2-BfW" id="nX6-mB-jL7"/>
+                        <outlet property="theFacebookLogo" destination="AHb-bS-Mcx" id="b0M-iY-e0b"/>
                         <outlet property="thePassword" destination="ceo-c4-SV8" id="psq-dy-0m9"/>
                         <outlet property="theSignUpButton" destination="qLf-fP-aj2" id="Njo-tB-kSW"/>
                         <outlet property="theSpinner" destination="2t1-Sd-86d" id="iBh-uA-EXF"/>
+                        <outlet property="theTermsOfService" destination="YZj-q8-D4k" id="7lw-Hm-r4i"/>
                         <outlet property="theTextfieldsView" destination="0bt-DX-3hR" id="PYP-ih-v8I"/>
                         <segue destination="sQa-ig-YW5" kind="presentation" identifier="SignUpSuccessSegue" id="C3w-mU-Su9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXX-vC-b0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-477.5" y="1091.5"/>
+            <point key="canvasLocation" x="-416.5" y="1070.5"/>
         </scene>
         <!--QuestionFeed-->
         <scene sceneID="heU-AC-Klg">
