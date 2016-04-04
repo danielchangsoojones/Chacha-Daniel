@@ -43,7 +43,7 @@ class SignUpTwoViewController: UIViewController {
                 signUp()
             } else {
                 //logging In
-                
+                logIn()
             }
         }
     }
@@ -221,7 +221,7 @@ class SignUpTwoViewController: UIViewController {
             alert.createAlert("Email is Required", subtitle: "Please enter an email address.", closeButtonTitle: "", type: .Error)
             return false
         }
-        else if EFUtils.isValidEmail(theEmail.text!) == false {let alert = Alert()
+        else if EFUtils.isValidEmail(theEmail.text!) == false && signUpState {let alert = Alert()
             alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
                 alert.closeAlert()
                 self.theEmail.becomeFirstResponder()
