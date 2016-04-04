@@ -43,8 +43,8 @@ class SignUpTwoViewController: UIViewController {
     
     func setGUI() {
         self.view.backgroundColor = ChachaTeal
-        applyShadow(theSignUpButton)
-        applyShadow(theFacebookButton)
+//        applyShadow(theSignUpButton)
+//        applyShadow(theFacebookButton)
         applyShadow(theTextfieldsView)
     }
     
