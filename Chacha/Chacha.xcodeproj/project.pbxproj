@@ -402,6 +402,11 @@
 					9295FBC01C7E86FE007B4B95 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = K385R9QJ5N;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
