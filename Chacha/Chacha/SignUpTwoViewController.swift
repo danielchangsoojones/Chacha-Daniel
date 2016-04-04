@@ -23,6 +23,7 @@ class SignUpTwoViewController: UIViewController {
     @IBOutlet weak var theFacebookLogo: UIImageView!
     @IBOutlet weak var theCreateAccountLabel: UILabel!
     @IBOutlet weak var theTermsOfService: UIButton!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     
     @IBAction func signUp(sender: AnyObject) {
@@ -37,7 +38,17 @@ class SignUpTwoViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setGUI()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name:UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name:UIKeyboardWillHideNotification, object: nil)
         
+        //hide keyboard when tap anywhere on screen
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,11 +71,21 @@ class SignUpTwoViewController: UIViewController {
     }
     
     func hideOrUnhideFacebook(hidden: Bool) {
-        theFacebookButton.hidden = hidden
-        orLine.hidden = hidden
-        theFacebookLogo.hidden = hidden
-        theCreateAccountLabel.hidden = hidden
-        theTermsOfService.hidden = hidden
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                if hidden {
+                    self.theFacebookButton.alpha = 0
+                    self.orLine.alpha = 0
+                    self.theFacebookLogo.alpha = 0
+                    self.theCreateAccountLabel.alpha = 0
+                    self.theTermsOfService.alpha = 0
+                } else {
+                    self.theFacebookButton.alpha = 1
+                    self.orLine.alpha = 1
+                    self.theFacebookLogo.alpha = 1
+                    self.theCreateAccountLabel.alpha = 1
+                    self.theTermsOfService.alpha = 1
+                }
+            })
     }
     
     func signUp()
@@ -146,6 +167,33 @@ class SignUpTwoViewController: UIViewController {
         }
     }
     
+}
+
+//keyboard notification
+extension SignUpTwoViewController {
+    func keyboardWillShow(notification: NSNotification) {
+        guard let bottomConstraint = bottomConstraint else { return }
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
+                //tab bar height is default by Apple at 49
+                let originalHeight = CGFloat(20)
+                bottomConstraint.constant = keyboardSize.height + originalHeight
+                self.hideOrUnhideFacebook(true)
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.view.layoutIfNeeded()
+                })
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        guard let bottomConstraint = bottomConstraint else { return }
+        bottomConstraint.constant = 20
+        self.hideOrUnhideFacebook(false)
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
+    }
 }
 
 extension SignUpTwoViewController: SegueHandlerType {
