@@ -39,7 +39,12 @@ class SignUpTwoViewController: UIViewController {
     
     @IBAction func signUp(sender: AnyObject) {
         if allValidates() {
-            signUp()
+            if signUpState {
+                signUp()
+            } else {
+                //logging In
+                
+            }
         }
     }
     
@@ -135,9 +140,7 @@ class SignUpTwoViewController: UIViewController {
         newUser.fullName = fullName.text!
         newUser.lowercaseFullName = fullName.text!.lowercaseString
         newUser.email = theEmail.text
-        var delimiter = "@"
-        var username = theEmail.text!.componentsSeparatedByString(delimiter)
-        newUser.username = username[0]
+        newUser.username = theEmail.text
         newUser.password = thePassword.text
         self.view.userInteractionEnabled = false
         theSpinner.startAnimating()
@@ -162,6 +165,38 @@ class SignUpTwoViewController: UIViewController {
                     }
                     _ = Alert(title: "Problem Signing Up", subtitle: "error:\(error!.code)", closeButtonTitle: "Okay", type: .Error)
                 }
+            }
+        }
+    }
+    
+    func logIn() {
+        view.userInteractionEnabled=false
+        theSpinner.startAnimating()
+        User.logInWithUsernameInBackground(theEmail.text!.lowercaseString, password: thePassword.text!) { (user, error) -> Void in
+            self.theSpinner.stopAnimating()
+            self.view.userInteractionEnabled=true
+            
+            if let error = error {
+                let code = error.code
+                if code == PFErrorCode.ErrorObjectNotFound.rawValue {
+                    let alert = Alert()
+                    alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
+                        alert.closeAlert()
+                        self.theEmail.becomeFirstResponder()
+                    })
+                    alert.createAlert("Log In Problem", subtitle: "Username or Password is incorrect.", closeButtonTitle: "", type: .Error)
+                }
+                else {
+                    _ = Alert(title: "Failed Login", subtitle: "Login failed at this time.", closeButtonTitle: "Okay", type: .Error)
+                }
+                return;
+            }
+            
+            if user != nil {
+                self.performSegueWithIdentifier(.SignUpSuccessSegue, sender: self)
+                let installation = PFInstallation.currentInstallation()
+                installation["user"] = PFUser.currentUser()
+                installation.saveEventually(nil)
             }
         }
     }
