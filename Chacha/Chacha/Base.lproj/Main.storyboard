@@ -190,6 +190,7 @@
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="2t1-Sd-86d">
                                 <rect key="frame" x="127" y="251" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.80392156859999997" green="0.91764705879999997" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="iTK-uZ-ARI"/>
                                     <constraint firstAttribute="height" constant="20" id="zE4-rr-LrG"/>
