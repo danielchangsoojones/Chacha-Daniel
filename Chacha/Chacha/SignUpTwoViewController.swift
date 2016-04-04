@@ -9,6 +9,7 @@
 import UIKit
 import EFTools
 import Parse
+import SnapKit
 
 class SignUpTwoViewController: UIViewController {
     
@@ -23,8 +24,18 @@ class SignUpTwoViewController: UIViewController {
     @IBOutlet weak var theFacebookLogo: UIImageView!
     @IBOutlet weak var theCreateAccountLabel: UILabel!
     @IBOutlet weak var theTermsOfService: UIButton!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var changeScreenButton: UIButton!
     
+    //constraint outlets
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var theTextFieldsView: UIView!
+    @IBOutlet weak var fullNameHeight: NSLayoutConstraint!
+    @IBOutlet weak var lineViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var textFieldsViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var FullNameTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lineViewTopConstraint: NSLayoutConstraint!
+    
+    var signUpState = true
     
     @IBAction func signUp(sender: AnyObject) {
         if allValidates() {
@@ -32,6 +43,36 @@ class SignUpTwoViewController: UIViewController {
         }
     }
     
+    @IBAction func changeToLoginScreen(sender: AnyObject) {
+        signUpState = !signUpState
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            if self.signUpState {
+                self.fullNameHeight.constant = 35
+                self.lineViewHeight.constant = 1
+                self.lineViewTopConstraint.constant = 4
+                self.FullNameTopConstraint.constant = 4
+                self.textFieldsViewHeight.constant = 130
+                self.changeScreenButton.setTitle("Or, Sign In", forState: .Normal)
+                self.theFacebookButton.setTitle("Sign Up With Facebook", forState: .Normal)
+                self.theSignUpButton.setTitle("Sign Up", forState: .Normal)
+                self.theCreateAccountLabel.alpha = 1
+                self.theTermsOfService.alpha = 1
+                self.view.layoutIfNeeded()
+            } else {
+                self.fullNameHeight.constant = 0
+                self.lineViewHeight.constant = 0
+                self.lineViewTopConstraint.constant = 0
+                self.FullNameTopConstraint.constant = 0
+                self.textFieldsViewHeight.constant = 85
+                self.changeScreenButton.setTitle("Or, Sign Up", forState: .Normal)
+                self.theFacebookButton.setTitle("Sign In With Facebook", forState: .Normal)
+                self.theSignUpButton.setTitle("Sign In", forState: .Normal)
+                self.theCreateAccountLabel.alpha = 0
+                self.theTermsOfService.alpha = 0
+                self.view.layoutIfNeeded()
+            }
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,7 +168,7 @@ class SignUpTwoViewController: UIViewController {
     
     func allValidates() -> Bool
     {
-        if fullName.text!.isEmpty {
+        if fullName.text!.isEmpty && signUpState {
             let alert = Alert()
             alert.addButton("Okay", closeButtonHidden: true, buttonAction: { () -> Void in
                 alert.closeAlert()
